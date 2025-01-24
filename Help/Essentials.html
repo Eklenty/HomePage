@@ -1,0 +1,711 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Eklenty Essentials Help</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(10, 15, 40);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(10, 15, 40, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(10, 15, 40, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(10, 15, 40, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(10, 15, 40, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(10, 15, 40);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(10, 15, 40, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(10, 15, 40, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-default_background {
+	color: rgba(10, 15, 40, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-transparentGray { background-color: rgba(227, 226, 224, 0); }
+.select-value-color-translucentGray { background-color: rgba(0, 0, 0, 0.06); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="16bcb2be-8b3f-8043-b255-f968167eca5c" class="page sans"><header><h1 class="page-title">Eklenty Essentials Help</h1><p class="page-description"></p></header><div class="page-body"><h1 id="16bcb2be-8b3f-80bc-8e21-cf68371ba4da" class="">Unit Set Changer</h1><p id="16bcb2be-8b3f-802c-8f00-fb292034f5c3" class="">When you start Unit Set Changer, a prompt will appear asking whether you want to set the unit system of the active file to Imperial or Metric.<br/>Selecting Imperial sets the document&#x27;s units to the default Revit Imperial system.<br/>Selecting Metric applies the most commonly used Metric unit definitions to the document settings.<br/></p><p id="16bcb2be-8b3f-8022-9a01-db8eda660155" class="">
+</p><p id="16bcb2be-8b3f-80f3-9ce7-feb1027e9265" class="">
+</p><h1 id="16bcb2be-8b3f-8045-804c-e9194b0297b5" class="">View Dependents</h1><p id="16bcb2be-8b3f-8068-be5a-e3b13613c7cc" class="">View Dependents prints the view names of view-dependent components (such as tags or dimensions) associated with the selected element.</p><p id="16bcb2be-8b3f-80a9-b551-f8067b2f8504" class="">This tool helps you determine if elements you plan to move, delete, or modify have already been tagged or are referenced in dimensions across the project.</p><h3 id="16bcb2be-8b3f-8040-bb67-e7d17f73fafb" class="">Using View Dependents:</h3><ul id="16bcb2be-8b3f-8047-9f33-c0c7b2b11bb2" class="bulleted-list"><li style="list-style-type:disc">Select the elements you suspect may have dependencies.</li></ul><ul id="16bcb2be-8b3f-805d-8259-fa06406f3389" class="bulleted-list"><li style="list-style-type:disc">Start View Dependents.</li></ul><p id="16bcb2be-8b3f-8068-bad6-c39349e1ca6e" class="">A console will open, displaying:</p><ul id="16bcb2be-8b3f-807e-a354-e25218bbaef1" class="bulleted-list"><li style="list-style-type:disc">ElementIds of the selected elements.</li></ul><ul id="16bcb2be-8b3f-8070-b964-de504525dac4" class="bulleted-list"><li style="list-style-type:disc">ElementIds of the dependent elements related to the selected ones.</li></ul><ul id="16bcb2be-8b3f-80f3-92ef-d8a589ba088d" class="bulleted-list"><li style="list-style-type:disc">The names of the views where these dependent elements can be found.</li></ul><p id="16bcb2be-8b3f-8069-820c-c23f84df3b40" class="">The information will be displayed in this specific order.</p><p id="16bcb2be-8b3f-809e-a598-d966e571f008" class="">
+</p><p id="16bcb2be-8b3f-80ce-994a-f4a03a894f7d" class="">
+</p><h1 id="16bcb2be-8b3f-80e4-8916-c0dbc42b35d5" class="">Slipped Duct Taps</h1><p id="16bcb2be-8b3f-8093-8399-d0e531f1f7bb" class="">Slipped Duct Taps identifies and lists duct tap elements that are misaligned or positioned away from the duct boundaries, helping to detect potential installation issues.</p><p id="16bcb2be-8b3f-8067-86ab-eb6af9b27f27" class="">The tool scans the entire project and reports any issues, printing the ElementId and Level Name of the found tap elements to the console.</p><p id="16bcb2be-8b3f-80ae-afb5-f373155e422d" class="">
+</p><p id="16bcb2be-8b3f-80c6-b2ff-c47dfbb4073a" class="">
+</p><h1 id="16bcb2be-8b3f-800a-80c2-fac863e5e02b" class="">Align Gauge</h1><p id="16bcb2be-8b3f-80e8-a314-fb5ff84d80d0" class="">If you notice that a Duct, Pipe, Cable Tray, Conduit, or accessory element behaves unexpectedly during design or review, there’s a high possibility that the element is sloped, tilted, leaning, rotated, or a combination of these.</p><p id="16bcb2be-8b3f-80b1-9d13-ed7f341af920" class="">Align Gauge helps you identify what&#x27;s wrong with the element.</p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="16bcb2be-8b3f-80cf-9ac2-fe852135c113"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><p id="16bcb2be-8b3f-8037-b5fd-c4d8d908b631" class=""><strong>Tip: </strong></p><p id="16bcb2be-8b3f-8062-ad0f-c7cdbd022a6d" class="">If you find yourself needing to press the Tab key to connect two elements, it&#x27;s a sign that something is wrong with either of those elements.</p></div></figure><h3 id="16bcb2be-8b3f-80b6-8144-c3ce87031ef0" class="">Using Align Gauge:</h3><ul id="16bcb2be-8b3f-80dd-ac24-e7b47ff49443" class="bulleted-list"><li style="list-style-type:disc">Select the elements you suspect may have issues.</li></ul><ul id="16bcb2be-8b3f-80dd-819c-f3b7e113a7e7" class="bulleted-list"><li style="list-style-type:disc">Start Align Gauge.</li></ul><ul id="16bcb2be-8b3f-8067-8290-ff488f7f5ec2" class="bulleted-list"><li style="list-style-type:disc">It will report the ElementId of the affected elements and describe the issues found.</li></ul><ul id="16bcb2be-8b3f-809e-b432-ff8c2707d160" class="bulleted-list"><li style="list-style-type:disc">Align Gauge will also automatically select the elements with issues.</li></ul><p id="16bcb2be-8b3f-8020-b2be-ca2bb414d103" class="">
+</p><p id="16bcb2be-8b3f-80b6-a13e-d77ceda2e761" class="">
+</p><h1 id="16bcb2be-8b3f-8052-9fbc-f24d82da8f67" class="">Connect Nearest</h1><p id="16bcb2be-8b3f-80dc-bd9a-eb009cab32ee" class="">Connect Nearest connects the nearest open connectors of the selected elements.</p><h3 id="16bcb2be-8b3f-802c-8d5e-d77937d929ab" class="">Using Connect Nearest:</h3><ul id="16bcb2be-8b3f-80e2-af62-f51ee5222aef" class="bulleted-list"><li style="list-style-type:disc">Select the elements you want to connect.</li></ul><ul id="16bcb2be-8b3f-807a-8de1-f309dc53ff5b" class="bulleted-list"><li style="list-style-type:disc">Start Connect Nearest.</li></ul><ul id="16bcb2be-8b3f-802e-9802-f81306370daf" class="bulleted-list"><li style="list-style-type:disc">The tool works within a 15 mm tolerance. If the connectors are more than 15 mm apart, they will be ignored.</li></ul><ul id="16bcb2be-8b3f-8003-976e-d804439c8a22" class="bulleted-list"><li style="list-style-type:disc">If only one of the elements is a system family (such as a pipe, duct, etc.), the system family will be moved towards the other connector, and a fitting will be created if needed.</li></ul><ul id="16bcb2be-8b3f-8050-b6c1-f2bd5c374803" class="bulleted-list"><li style="list-style-type:disc">If both elements are families, they will still connect. However, you need to nudge the element you want to keep in position (by using the Right Arrow and Left Arrow one after another , or Up Arrow and Down Arrow one after another) to automatically move the other family instance into the correct position. You can nudge multiple elements at once.</li></ul><p id="16bcb2be-8b3f-808f-b274-f5778d3b4c4d" class="">
+</p><p id="16bcb2be-8b3f-8048-bbd7-db26ccc100c5" class="">
+</p><h1 id="16bcb2be-8b3f-8070-8c0b-d067dfc23b58" class="">Transition Connect</h1><p id="16bcb2be-8b3f-806c-8b28-e64321dafd1e" class="">Transition Connect creates a transition fitting instance between two ducts.</p><h3 id="16bcb2be-8b3f-8038-8316-fc8b12d58965" class="">Using Transition Connect:</h3><ul id="16bcb2be-8b3f-8099-b427-c2ab47e53579" class="bulleted-list"><li style="list-style-type:disc">Start Transition Connect, and it will first ask you to select a duct with at least one open connection. Ensure that you click near the connection where you want the transition to be created.</li></ul><ul id="16bcb2be-8b3f-8054-bdb5-fe07ceed6d5a" class="bulleted-list"><li style="list-style-type:disc">Next, select another duct or any element with an open duct connection. Again, click near the connection where you want the transition to be created.</li></ul><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="16bcb2be-8b3f-808c-8a4a-e84007123eaf"><div style="font-size:1.5em"><span class="icon">⚠️</span></div><div style="width:100%"><p id="16bcb2be-8b3f-80e0-b940-ddd34e74ae9b" class=""><strong>Important Notes:</strong></p><p id="16bcb2be-8b3f-80f0-97ca-cbf9d2a0e9e7" class="">Ensure that the connectors are properly aligned and oriented so a transition fitting can be created.</p></div></figure><p id="16bcb2be-8b3f-8018-b213-e1b165d54b86" class="">
+</p><p id="16bcb2be-8b3f-806d-aba3-fecef6c04702" class="">
+</p><h1 id="16bcb2be-8b3f-8029-a074-efacc7e8ce53" class="">Toggle Insulation</h1><p id="16bcb2be-8b3f-80af-973d-fa728137af8e" class="">Toggle Insulation allows you to toggle the visibility of duct and pipe insulation categories on and off.</p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="16bcb2be-8b3f-80ed-9925-f962b52a48c5"><div style="font-size:1.5em"><span class="icon">⚠️</span></div><div style="width:100%"><p id="16bcb2be-8b3f-80b5-8aca-f4ec6147b0d3" class=""><strong>Important Notes:</strong></p><p id="16bcb2be-8b3f-8006-8291-df913c0bc943" class="">This tool will not work if the visibility setting is locked by the view template.</p></div></figure><p id="16bcb2be-8b3f-801c-89aa-ef311ce06c63" class="">
+</p><p id="16bcb2be-8b3f-801f-aeb9-caf1132a5b4e" class="">
+</p><h1 id="16bcb2be-8b3f-8065-9176-d70e233fdba6" class="">Tee Fixer</h1><p id="16bcb2be-8b3f-8030-8b1c-e8264c7e8c79" class="">Tee Fixer adjusts the connection sizes of duct Tee fittings to match the dimensions of the connected ducts, ensuring a seamless and accurate fit.</p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="16bcb2be-8b3f-80e9-9f57-fb4f2613c461"><div style="font-size:1.5em"><span class="icon">⚠️</span></div><div style="width:100%"><p id="16bcb2be-8b3f-8080-a7a3-d60a7a912941" class=""><strong>Important Notes:</strong></p><p id="16bcb2be-8b3f-80c3-b61a-c6d7e6f9e98b" class="">This tool only works with Reducing type Tee fittings.</p></div></figure><p id="16bcb2be-8b3f-803b-96fa-dc380e37e0ab" class="">Select your Tee fitting instances you want to fix and start the tool.</p><p id="16bcb2be-8b3f-803e-934a-e4973621d5fd" class="">
+</p><p id="16bcb2be-8b3f-8035-b7cd-f03b3e5ff13d" class="">
+</p><h1 id="16bcb2be-8b3f-8026-95fb-e2f79df9a049" class="">Select All Family</h1><p id="16bcb2be-8b3f-8054-abec-e298d3916638" class="">The Select All Family tool selects all elements in the project that belong to the same family as the user-selected element(s).</p><h3 id="16bcb2be-8b3f-800a-901d-c5b5a0a6d544" class="">Steps to use Select All Family:</h3><ul id="16bcb2be-8b3f-8092-be0a-e7d27a81ad47" class="bulleted-list"><li style="list-style-type:disc">Select at least one Family Instance in your project.</li></ul><ul id="16bcb2be-8b3f-8097-b324-ed2a497e6fc0" class="bulleted-list"><li style="list-style-type:disc">Start Select All Family, and it will select all instances of all types within the selected family across the entire project, excluding those in Legends.</li></ul><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="16bcb2be-8b3f-80da-9fec-e683503b0606"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><p id="16bcb2be-8b3f-8054-8be2-fbb03b5a4ef8" class=""><strong>Tip:</strong></p><p id="16bcb2be-8b3f-80a7-b136-c3e56803eece" class="">You can also use Select All Family to select all instances of a family of a Legend element.</p></div></figure><p id="16bcb2be-8b3f-80db-b6d2-db4fa119638c" class="">
+</p><p id="16bcb2be-8b3f-8092-88e6-f3585830034c" class="">
+</p><h1 id="16bcb2be-8b3f-8090-85e7-cee4b8f77a27" class="">Select Visible Family</h1><p id="16bcb2be-8b3f-80ad-977b-e205755b11ff" class="">The Select Visible Family tool selects all elements in the project that belong to the same family as the user-selected element(s).</p><h3 id="16bcb2be-8b3f-80b9-bc5c-eab1408d44d6" class="">Steps to use Select Visible Family:</h3><ul id="16bcb2be-8b3f-8011-9634-d3fc15a34d11" class="bulleted-list"><li style="list-style-type:disc">Select at least one Family Instance in your project.</li></ul><ul id="16bcb2be-8b3f-80f8-af94-d7721cc025da" class="bulleted-list"><li style="list-style-type:disc">Start Select Visible Family, and it will select all instances of all types within the selected family across the entire project, excluding those in Legends.</li></ul><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="16bcb2be-8b3f-80ec-93b0-daa5be5a7dc8"><div style="font-size:1.5em"><span class="icon">⚠️</span></div><div style="width:100%"><p id="16bcb2be-8b3f-80ec-99b8-cd08a6d4ad7e" class=""><strong>Important Notes:</strong></p><p id="213a004b-a07f-425f-be45-cea711d10d89" class="">You can&#x27;t use Select Visible Family to select all instances of a family of a Legend element.</p></div></figure><p id="16bcb2be-8b3f-809c-a4f7-f177cda92a41" class="">
+</p><p id="16bcb2be-8b3f-80c4-821b-dbfa630a876b" class="">
+</p><h1 id="16bcb2be-8b3f-8054-8e99-e169bd1b41e6" class="">Zoom Selected</h1><p id="16bcb2be-8b3f-80d0-b3b5-f0e8dd21ff2b" class="">The Zoom Selected tool zooms in on the selected element(s) in the active view.</p><h3 id="16bcb2be-8b3f-80bd-98f1-de70c0c61550" class="">Steps to use Zoom Selected:</h3><ul id="16bcb2be-8b3f-8012-9c4a-cb6e67eb0c83" class="bulleted-list"><li style="list-style-type:disc">Select your elements</li></ul><ul id="16bcb2be-8b3f-8005-9bf2-f3d15227c20c" class="bulleted-list"><li style="list-style-type:disc">If one or more of the selected elements are not visible in the active view, it will zoom in on the visible ones.</li></ul><ul id="16bcb2be-8b3f-8027-aab4-d5c5f92441a3" class="bulleted-list"><li style="list-style-type:disc">If none of the selected elements are visible in the active view, a warning message will be displayed, and no zoom will be performed.</li></ul><p id="16bcb2be-8b3f-8095-a25b-c83bdc0a0992" class="">
+</p><p id="16bcb2be-8b3f-8090-86a3-c0472a25e7e9" class="">
+</p><h1 id="16bcb2be-8b3f-80ba-9a8a-f8fa467f054d" class="">System Members</h1><p id="16bcb2be-8b3f-80f5-8b62-e43065fd490c" class="">The System Members tool selects all components of the system(s) that the selected element(s) are connected to.</p><h3 id="16bcb2be-8b3f-8066-826c-dd16e4cea58b" class="">Steps to use System Members:</h3><ul id="16bcb2be-8b3f-807c-bff6-d622b446a734" class="bulleted-list"><li style="list-style-type:disc">Simply select elements that are connected to systems.</li></ul><ul id="16bcb2be-8b3f-8022-9268-fc391f2b688a" class="bulleted-list"><li style="list-style-type:disc">Start System Members, and all components of the connected system(s) will be selected.</li></ul><p id="16bcb2be-8b3f-80e3-bae3-e6f2cff5e513" class="">
+</p><p id="16bcb2be-8b3f-8095-ae35-d089b5fb676b" class="">
+</p><h1 id="16bcb2be-8b3f-8093-b488-e33603d41e9f" class="">Select System</h1><p id="16bcb2be-8b3f-8014-b06e-e6cde18a4ee0" class="">The Select System tool selects all of the system(s) that the selected element(s) are connected to.</p><h3 id="16bcb2be-8b3f-80d2-b8f4-f1cc98293eef" class="">Steps to use System Members:</h3><ul id="16bcb2be-8b3f-805c-8275-d84d0d7a805c" class="bulleted-list"><li style="list-style-type:disc">Simply select elements that are connected to systems.</li></ul><ul id="16bcb2be-8b3f-80b9-a857-fe80b9d09c04" class="bulleted-list"><li style="list-style-type:disc">Start Select System, and connected system(s) will be selected.</li></ul><p id="16bcb2be-8b3f-80da-9159-eae62ec80d7f" class="">
+</p><p id="16bcb2be-8b3f-8083-8a74-cbd1bf068797" class="">
+</p><h1 id="16bcb2be-8b3f-8027-ad53-dd5ec5a1596d" class="">Sub Components</h1><p id="16bcb2be-8b3f-801e-bad4-f3aeb94707f6" class="">If you have family instances with nested shared families, you may need to select those sub-components to modify their parameters.</p><h3 id="16bcb2be-8b3f-802c-8204-f5923062d975" class="">Steps to use Sub Components:</h3><ul id="16bcb2be-8b3f-809e-bddb-fba97ed2d867" class="bulleted-list"><li style="list-style-type:disc">Start Sub Components.</li></ul><ul id="16bcb2be-8b3f-8081-afe6-c8fbc3bf4fbb" class="bulleted-list"><li style="list-style-type:disc">The tool will prompt you to select elements.</li></ul><ul id="16bcb2be-8b3f-80dd-9f39-da64ebe57c05" class="bulleted-list"><li style="list-style-type:disc">After selecting the elements, the tool will automatically select all the sub-components within the selected family instances.</li></ul><p id="16bcb2be-8b3f-80cb-9735-e71ac3e21fac" class="">
+</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
