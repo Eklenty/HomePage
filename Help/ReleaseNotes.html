@@ -1,0 +1,708 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Release Notes</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-default_background {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.highlight-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.block-color-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: undefined; }
+.select-value-color-pink { background-color: rgba(225, 136, 179, 0.27); }
+.select-value-color-purple { background-color: rgba(168, 129, 197, 0.27); }
+.select-value-color-green { background-color: rgba(123, 183, 129, 0.27); }
+.select-value-color-gray { background-color: rgba(84, 72, 49, 0.15); }
+.select-value-color-transparentGray { background-color: undefined; }
+.select-value-color-translucentGray { background-color: undefined; }
+.select-value-color-orange { background-color: rgba(224, 124, 57, 0.27); }
+.select-value-color-brown { background-color: rgba(210, 162, 141, 0.35); }
+.select-value-color-red { background-color: rgba(244, 171, 159, 0.4); }
+.select-value-color-yellow { background-color: rgba(236, 191, 66, 0.39); }
+.select-value-color-blue { background-color: rgba(93, 165, 206, 0.27); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="19ccb2be-8b3f-804d-864e-c884cdd3c1f0" class="page sans"><header><h1 class="page-title">Release Notes</h1><p class="page-description"></p></header><div class="page-body"><h1 id="19ccb2be-8b3f-8068-8b02-d42caa1277a4" class="">Release Notes v0.8.8</h1><h2 id="19ccb2be-8b3f-80d0-9433-fd91d595b672" class="">3D Corner</h2><ul id="19ccb2be-8b3f-802d-9041-e96d87082408" class="bulleted-list"><li style="list-style-type:disc">Tool relocated to Productivity panel.</li></ul><ul id="19ccb2be-8b3f-8052-b3ae-ea8ca68e4c7a" class="bulleted-list"><li style="list-style-type:disc">Object selection algorithm has been modified so that it won&#x27;t allow selection of Insulation elements.</li></ul><ul id="19ccb2be-8b3f-8081-a39b-eb3336618f71" class="bulleted-list"><li style="list-style-type:disc">Tool automatically applies insulation based on selected elements.</li></ul><h2 id="19ccb2be-8b3f-808c-aac5-ee98e5085792" class="">3D Insert</h2><ul id="19ccb2be-8b3f-807f-aa56-e480e799e203" class="bulleted-list"><li style="list-style-type:disc">Tool relocated to Productivity panel.</li></ul><ul id="19ccb2be-8b3f-80a8-bbc0-c2c5f93e2668" class="bulleted-list"><li style="list-style-type:disc">Object selection algorithm has been modified so that it won&#x27;t allow selection of Insulation elements.</li></ul><ul id="19ccb2be-8b3f-80b2-be72-c10379a2b452" class="bulleted-list"><li style="list-style-type:disc">Tool automatically applies insulation based on selected elements.</li></ul><h2 id="19ccb2be-8b3f-80de-a29c-cd475c06465f" class="">Intersect</h2><ul id="19ccb2be-8b3f-8087-aa5b-c265e782ce1b" class="bulleted-list"><li style="list-style-type:disc">Resolved the issue causing an error when perpendicular elements are selected.</li></ul><h2 id="19ccb2be-8b3f-80b1-9eec-ce0c12978103" class="">Transition Connect</h2><ul id="19ccb2be-8b3f-80a5-b038-cb5586effcdc" class="bulleted-list"><li style="list-style-type:disc">Tool now disallows selection of 2 elements that are impossible to connect with a transition.</li></ul><ul id="19ccb2be-8b3f-804b-9241-d0f1e3f7e192" class="bulleted-list"><li style="list-style-type:disc">Tool now disallows selection of same element in both selection.</li></ul><p id="19ccb2be-8b3f-80c3-8b04-eb1e6174bfea" class="">
+</p><p id="19ccb2be-8b3f-806e-bdae-d3b3794bee32" class="">
+</p><h1 id="19ccb2be-8b3f-8041-b425-c77dee9eb890" class="">Release Notes v0.8.7</h1><h2 id="19ccb2be-8b3f-8043-b068-dad4bc691280" class="">New Tools</h2><ul id="19ccb2be-8b3f-8006-b97e-e9e7ff756f4e" class="bulleted-list"><li style="list-style-type:disc">3D Corner tool added.</li></ul><ul id="19ccb2be-8b3f-807a-aea8-f8db2dc1e399" class="bulleted-list"><li style="list-style-type:disc">3D Insert tool added.</li></ul><p id="19ccb2be-8b3f-80ff-8bc0-ee6d668e1ef5" class="">
+</p><p id="19ccb2be-8b3f-8010-8be8-c005b4eb13d4" class="">
+</p><h1 id="19ccb2be-8b3f-8067-a760-cdcc138da04d" class="">Release Notes v0.8.6</h1><h2 id="19ccb2be-8b3f-8057-bcd1-e092ec1ef2cb" class="">Leapfrog</h2><ul id="19ccb2be-8b3f-8049-a675-ef050c745c81" class="bulleted-list"><li style="list-style-type:disc">Transaction renamed to Leapfrog.</li></ul><h2 id="19ccb2be-8b3f-8061-84e8-f7b73b7f88ef" class="">ToggleInsulation</h2><ul id="19ccb2be-8b3f-8068-ba2d-d155d60fce43" class="bulleted-list"><li style="list-style-type:disc">Resolved the issue where the tool throws an exception when a 3D view graphic settings are controlled by a View Template.</li></ul><h2 id="19ccb2be-8b3f-8076-ae0a-f5eb19f3f783" class="">Eklenty Console</h2><ul id="19ccb2be-8b3f-80d5-b7f5-d5400f65f210" class="bulleted-list"><li style="list-style-type:disc">Clear button moved so that it won&#x27;t overlap the scroll bar.</li></ul><h2 id="19ccb2be-8b3f-80e1-b39d-c0d9efebbe21" class="">Sheetbridge</h2><ul id="19ccb2be-8b3f-80c8-9bef-c715caf06cfc" class="bulleted-list"><li style="list-style-type:disc">Default folder has been replaced.</li></ul><p id="19ccb2be-8b3f-807e-8f78-e0f59d3af34d" class="">
+</p><p id="19ccb2be-8b3f-8005-aa14-fc54733ec670" class="">
+</p><h1 id="19ccb2be-8b3f-8087-8ebc-e8b3478909c9" class="">Release Notes v0.8.5</h1><h2 id="19ccb2be-8b3f-8065-963f-c6c61a0f2ce6" class="">Sheetbridge</h2><ul id="19ccb2be-8b3f-803f-a087-c0c287182912" class="bulleted-list"><li style="list-style-type:disc">Indirect user created parameters are now supported (eg. user created Room instance parameters, Space instance parameters etc.).</li></ul><p id="19ccb2be-8b3f-80f4-b3d1-eccbe32b9539" class="">
+</p><p id="19ccb2be-8b3f-80d9-aa20-fa897f36e008" class="">
+</p><h1 id="19ccb2be-8b3f-8066-b540-e06e801fabf3" class="">Release Notes v0.8.4</h1><h2 id="19ccb2be-8b3f-80b3-905e-d2104116b253" class="">Sheetbridge</h2><ul id="19ccb2be-8b3f-8072-ab95-cb32f53a1e22" class="bulleted-list"><li style="list-style-type:disc">Bug fixed where a Family Type change returns different Family with the same type name.</li></ul><ul id="19ccb2be-8b3f-804b-9fc7-c101bf6ec15a" class="bulleted-list"><li style="list-style-type:disc">When an element doesn&#x27;t exist in the model add-in reports the issue.</li></ul><h2 id="19ccb2be-8b3f-80c0-86e7-dfd7bb2e9285" class="">Intersect</h2><ul id="19ccb2be-8b3f-80ff-a3d7-d072bb6e63bd" class="bulleted-list"><li style="list-style-type:disc">no longer allows selection of duct and pipe insulation.</li></ul><h2 id="19ccb2be-8b3f-80e1-98be-e35e77f17dfc" class="">Eklenty Console</h2><ul id="19ccb2be-8b3f-80a3-b984-dc0bddab9354" class="bulleted-list"><li style="list-style-type:disc">Clear button added.</li></ul><p id="19ccb2be-8b3f-808c-9f0a-fdfbe80585f8" class="">
+</p><p id="19ccb2be-8b3f-8037-97ff-f22f3459b054" class="">
+</p><h1 id="19ccb2be-8b3f-8099-bd47-fa6031aafd5b" class="">Release Notes v0.8.3</h1><h2 id="19ccb2be-8b3f-80d9-8d89-ff160c5232af" class="">Intersect</h2><ul id="19ccb2be-8b3f-80e6-932f-f3017170aa48" class="bulleted-list"><li style="list-style-type:disc">Licensing tools added.</li></ul><h2 id="19ccb2be-8b3f-80eb-81f7-f42a33f7f01a" class="">Sheetbridge</h2><ul id="19ccb2be-8b3f-807b-b0c0-c467677ba5f6" class="bulleted-list"><li style="list-style-type:disc">Licensing tools added.</li></ul><h2 id="19ccb2be-8b3f-804c-9da4-e66efc7fddee" class="">Leapfrog</h2><ul id="19ccb2be-8b3f-8028-94ac-ff9e53ea9e75" class="bulleted-list"><li style="list-style-type:disc">Licensing tools added.</li></ul><h2 id="19ccb2be-8b3f-800c-aaff-f65615c218b5" class="">SprinklerPack</h2><ul id="19ccb2be-8b3f-80bf-a4bf-d9db3aca2597" class="bulleted-list"><li style="list-style-type:disc">Licensing tools added.</li></ul><p id="19ccb2be-8b3f-8069-81e1-cc970a8069d4" class="">
+</p><p id="19ccb2be-8b3f-800b-8886-ddb8e21db253" class="">
+</p><h1 id="19ccb2be-8b3f-800f-bdfc-dd434b3c2c3c" class="">Release Notes v0.8.2</h1><h2 id="19ccb2be-8b3f-80e3-9fc5-d27449081edc" class="">Eklenty Essentials</h2><ul id="19ccb2be-8b3f-8059-b24e-e59b68516788" class="bulleted-list"><li style="list-style-type:disc">Package sent to Autodesk for review.</li></ul><p id="19ccb2be-8b3f-8029-b6bb-d44c61129d0d" class="">
+</p><p id="19ccb2be-8b3f-8085-ab70-c367796ed68b" class="">
+</p><h1 id="19ccb2be-8b3f-80b0-8cf8-c46d245863e3" class="">Release Notes v0.8.1</h1><h2 id="19ccb2be-8b3f-802f-9017-f97d33900476" class="">SheetBridge</h2><ul id="19ccb2be-8b3f-803d-acf1-db7a73ae37c0" class="bulleted-list"><li style="list-style-type:disc">Key Schedules are now also supported.</li></ul><ul id="19ccb2be-8b3f-8009-b7fa-ea922942440a" class="bulleted-list"><li style="list-style-type:disc">Integer based String parameters are now fully supported (eg. &quot;Condition Type&quot; parameter of Space instances).</li></ul><ul id="19ccb2be-8b3f-8038-9c85-d040c3316ce1" class="bulleted-list"><li style="list-style-type:disc">Resolved the issue where an empty schedule list can still be exported.</li></ul><h2 id="19ccb2be-8b3f-80e5-ba39-f65c151e473f" class="">FreePack</h2><ul id="19ccb2be-8b3f-8043-b774-ccfcc6dab123" class="bulleted-list"><li style="list-style-type:disc">Now renamed to Essentials.</li></ul><h2 id="19ccb2be-8b3f-8048-8736-c3eb6acbf86a" class="">Buttons</h2><ul id="19ccb2be-8b3f-801b-92dc-dfaf8f193c4c" class="bulleted-list"><li style="list-style-type:disc">They now disable or enable based on the type of the document.</li></ul><p id="19ccb2be-8b3f-8064-a285-ff76a032a535" class="">
+</p><p id="19ccb2be-8b3f-8037-a80c-fff402f6814b" class="">
+</p><h1 id="19ccb2be-8b3f-80fd-8547-fb1e5006473f" class="">Release Notes v0.8.0</h1><h2 id="19ccb2be-8b3f-80db-ac63-cafacf6c265e" class="">Revit 2025 Compatibility</h2><ul id="19ccb2be-8b3f-8047-a5d4-d4e1c20cbe53" class="bulleted-list"><li style="list-style-type:disc">Eklenty now compatible with Revit 2025.</li></ul><p id="19ccb2be-8b3f-800c-a359-ff5814dc8b05" class="">
+</p><p id="19ccb2be-8b3f-8001-baca-f85c5e52693d" class="">
+</p><h1 id="19ccb2be-8b3f-80c0-b146-c0eabbf46305" class="">Release Notes v0.7.9</h1><h2 id="19ccb2be-8b3f-800a-88b2-db02c7b8a323" class="">Pulldown Buttons</h2><ul id="19ccb2be-8b3f-80cf-9825-dccba30212d8" class="bulleted-list"><li style="list-style-type:disc">Resolved an issue where the Split Button icons wouldn&#x27;t change their colors when the theme is changed in Revit 2024.</li></ul><h2 id="19ccb2be-8b3f-8033-85ec-e767c10199a3" class="">SheetBridge</h2><ul id="19ccb2be-8b3f-805e-972e-fbb22d2fb81b" class="bulleted-list"><li style="list-style-type:disc">Resolved an issue where the first Integer based string parameter in the sheet getting ignored during import session.</li></ul><p id="19ccb2be-8b3f-8058-ba72-dd4c20d58b29" class="">
+</p><p id="19ccb2be-8b3f-807a-a998-dc98e94843be" class="">
+</p><h1 id="19ccb2be-8b3f-8088-8cb5-f9db01394acc" class="">Release Notes v0.7.8</h1><h2 id="19ccb2be-8b3f-8030-a7ca-db5db26e184e" class="">Leapfrog</h2><p id="19ccb2be-8b3f-8040-9700-e429b5fe0f57" class="">Bug fix where a multi-system mechanical equipment gets involved with the selection and moves more than once.</p><h2 id="19ccb2be-8b3f-803b-86ee-c83479721d00" class="">SelectFamily</h2><ul id="19ccb2be-8b3f-80c4-9063-d5f8e64d46df" class="bulleted-list"><li style="list-style-type:disc">Bug, causing exception when incompatible element is selected, is now resolved.</li></ul><ul id="19ccb2be-8b3f-8085-bd9c-d30c9ac6987c" class="bulleted-list"><li style="list-style-type:disc">Legend Components are also can now be selected as reference element. The result will, however, exclude the legend component after running the tool.</li></ul><ul id="19ccb2be-8b3f-80ec-8229-f55bb1f58a49" class="bulleted-list"><li style="list-style-type:disc">Select Family tool is now split into 2 different tools: Select All Family, Select Visible Family.<blockquote id="19ccb2be-8b3f-80dd-9efb-fc9e073e3848" class="">Select All Family: selects all type independent family instances all accross the project.<br/>Sleect Visible Family: selects all type independent family instances visible in the active view.<br/></blockquote></li></ul><h2 id="19ccb2be-8b3f-8092-92c7-e981f306f675" class="">AlignGauge</h2><ul id="19ccb2be-8b3f-805d-af19-c58ff8d86258" class="bulleted-list"><li style="list-style-type:disc">Bug causing an exception when insulation is selected has been resolved.</li></ul><h2 id="19ccb2be-8b3f-809b-ad69-e8bb70176092" class="">SlippedDuctTaps</h2><ul id="19ccb2be-8b3f-809d-93d0-e6b5243ccb36" class="bulleted-list"><li style="list-style-type:disc">Now reports also Level Name of the elements.</li></ul><h2 id="19ccb2be-8b3f-80e2-8277-fe315fa6b8ef" class="">TeeFixer</h2><ul id="19ccb2be-8b3f-804f-b03b-d589996d9633" class="bulleted-list"><li style="list-style-type:disc">Fixed the issue where the tool fails to set the height of the fitting instance correctly.</li></ul><h2 id="19ccb2be-8b3f-80cd-a30e-f941836d3539" class="">SheetBridge</h2><ul id="19ccb2be-8b3f-8070-9106-f6d6f8731f73" class="bulleted-list"><li style="list-style-type:disc">Resolved an issue where Space instances with their Space Type parameter initially set to Null would cause an exception during processing.</li></ul><ul id="19ccb2be-8b3f-8049-a2bd-cd1590b6a773" class="bulleted-list"><li style="list-style-type:disc">ElementId type of parameters now exported as empty cells if they are set to Null.</li></ul><ul id="19ccb2be-8b3f-808e-9df9-e9d665dcfc95" class="bulleted-list"><li style="list-style-type:disc">User can now empty an ElementId type of cell if he wants to set it to Null.</li></ul><ul id="19ccb2be-8b3f-8046-acf5-dd87d7a81b84" class="bulleted-list"><li style="list-style-type:disc">the tool is now able to report all the cells that has faulty input and asks user to correct them.</li></ul><p id="19ccb2be-8b3f-80f1-b32e-f203313ae05f" class="">
+</p><p id="19ccb2be-8b3f-8090-b340-d95164a2861a" class="">
+</p><h1 id="19ccb2be-8b3f-808e-9204-f72a5308107c" class="">Release Notes v0.7.7</h1><h2 id="19ccb2be-8b3f-80dc-a4a5-df88cdac9b5b" class="">SheetBridge</h2><ul id="19ccb2be-8b3f-800c-9f3c-c032d5bf5b41" class="bulleted-list"><li style="list-style-type:disc">Issue with &quot;Preserve Schedule Formatting&quot; option has been resolved.</li></ul><p id="19ccb2be-8b3f-80f3-9ff8-e8f9a9d6ba98" class="">
+</p><p id="19ccb2be-8b3f-8032-b214-e60e938000f2" class="">
+</p><h1 id="19ccb2be-8b3f-80ae-9746-e56d2b4c1753" class="">Release Notes v0.7.6</h1><h2 id="19ccb2be-8b3f-8070-85c1-c9e8b709ae8c" class="">SheetBridge</h2><ul id="19ccb2be-8b3f-80ed-b4fd-daa310a42c30" class="bulleted-list"><li style="list-style-type:disc">UI allows Shift Select.</li></ul><h2 id="19ccb2be-8b3f-803a-b254-d2678e9b9c12" class="">ZoomSelected</h2><ul id="19ccb2be-8b3f-800c-a695-ccb4cc58efc8" class="bulleted-list"><li style="list-style-type:disc">Fixed the issue causing the tool throw an exception when no element is selected.</li></ul><h2 id="19ccb2be-8b3f-804b-a1bd-d91c4bc1a8de" class="">SelectFamily</h2><ul id="19ccb2be-8b3f-8072-909c-ed1af4004c7f" class="bulleted-list"><li style="list-style-type:disc">Fixed the issue causing the tool throw an exception when no element is selected.</li></ul><h2 id="19ccb2be-8b3f-8075-9a55-dcf8e8c75aaf" class="">SubComponents</h2><ul id="19ccb2be-8b3f-8034-8c2e-cb4a883559db" class="bulleted-list"><li style="list-style-type:disc">Fixed the issue causing the tool throw an exception when no element is selected when prompted.</li></ul><h2 id="19ccb2be-8b3f-80c1-bdec-e16a6a76c217" class="">Leapfrog</h2><ul id="19ccb2be-8b3f-80b9-be17-c6794b0185e3" class="bulleted-list"><li style="list-style-type:disc">Prompts you to select elements if no MEPCurve element is selected before starting the tool.</li></ul><h2 id="19ccb2be-8b3f-8007-b671-e329c8b8678d" class="">ToggleInsulation</h2><ul id="19ccb2be-8b3f-8030-9f18-c3c1e0aecc90" class="bulleted-list"><li style="list-style-type:disc">Refuses to function only when V/G Overrides Model is checked in View Template of the Active View.</li></ul></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
