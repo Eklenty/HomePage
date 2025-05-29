@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Built-In Category Dictionary</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      min-height: 100vh;
+      margin: 150px 0 0;
+      font-family: Arial, sans-serif;
+    }
+
+    .container {
+      width: 650px;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    .search-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    input[type="text"] {
+      width: 100%;
+      max-width: 530px;
+      box-sizing: border-box;
+      padding: 10px;
+      margin-right: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    select {
+      width: 120px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+
+    th, td {
+      padding: 8px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+
+    th {
+      background-color: #f2f2f2;
+    }
+  </style>
+  <script>
+    var dictionary = {
+      "Above Cut Marks":"Oberhalb Schnittmarkierungen",
+      "Above Handrails":"Oberhalb  Handläufe",
+      "Above Nosing Lines":"Oberhalb Trittüberstandslinien",
+      "Above Outlines":"Oberhalb Konturen",
+      "Above Railings Cut Line":"Oberhalb Geländerschnittlinie",
+      "Above Riser Lines":"Oberhalb Steigungslinien",
+      "Above Supports":"Oberhalb Auflager",
+      "Above Top Rails":"Oberhalb  Obere Holme",
+      "Above Up Arrows":"Oberhalb Pfeil AUF",
+      "Abutment Foundation Tags":"Widerlagerfundament - Beschriftungen",
+      "Abutment Foundations":"Widerlager - Fundamente",
+      "Abutment Pile Tags":"Widerlagerpfahl - Beschriftungen",
+      "Abutment Piles":"Widerlagerpfähle",
+      "Abutment Tags":"Widerlager - Beschriftungen",
+      "Abutment Wall Tags":"Widerlagerwand - Beschriftungen",
+      "Abutment Walls":"Widerlagerwände",
+      "Abutments":"Widerlager",
+      "Accidental Loads":"Außergewöhnliche Lasten",
+      "Adaptive Points":"Adaptive Punkte",
+      "Air Openings":"Luftöffnungen",
+      "Air Surfaces":"Luftflächen",
+      "Air Systems":"Lüftungsanlagen",
+      "Air Terminal Tags":"Luftdurchlassbeschriftungen",
+      "Air Terminals":"Luftdurchlässe",
+      "Alignment Station Label Sets":"Achspunktbeschriftungssätze",
+      "Alignment Station Labels":"Achspunktbeschriftungen",
+      "Alignment Tags":"Achsen - Beschriftungen",
+      "Alignments":"Achsen",
+      "Analysis Display Style":"Anzeigestil für Analyse",
+      "Analysis Results":"Ergebnisse der Analyse",
+      "Analytical Beam Tags":"Träger (analytisch) - Beschriftungen",
+      "Analytical Beams":"Skelettbau Träger (analytisch)",
+      "Analytical Brace Tags":"Strebe (analytisch) - Beschriftungen",
+      "Analytical Braces":"Skelettbau Streben (analytisch)",
+      "Analytical Column Tags":"Stütze (analytisch) - Beschriftungen",
+      "Analytical Columns":"Tragwerksstützen (analytisch)",
+      "Analytical Floor Tags":"Geschossdecke (analytisch) - Beschriftungen",
+      "Analytical Floors":"Geschossdecken (analytisch)",
+      "Analytical Foundation Slabs":"Fundamente Platte (analytisch)",
+      "Analytical Isolated Foundation Tags":"Einzelfundament (analytisch) - Beschriftungen",
+      "Analytical Isolated Foundations":"Fundamente Einzeln (analytisch)",
+      "Analytical Link Tags":"Kopplungsbeschriftungen",
+      "Analytical Links":"Kopplungen",
+      "Analytical Node Tags":"Beschriftungen für analytische Knoten",
+      "Analytical Nodes":"Analytische Knoten",
+      "Analytical Pipe Connections":"Analytische Rohrverbindungen",
+      "Analytical Slab Foundation Tags":"Plattenfundament (analytisch) - Beschriftungen",
+      "Analytical Spaces":"Berechnete Räume",
+      "Analytical Surfaces":"Analytische Flächen",
+      "Analytical Wall Foundation Tags":"Wandfundament (analytisch) - Beschriftungen",
+      "Analytical Wall Foundations":"Fundamente Wand (analytisch)",
+      "Analytical Wall Tags":"Wand (analytisch) - Beschriftungen",
+      "Analytical Walls":"Wände (analytisch)",
+      "Anchor Tags":"Ankerbezeichnungen",
+      "Anchors":"Anker",
+      "Annotation Crop Boundary":"Zuschneidegrenze für Beschriftung",
+      "Approach Slab Tags":"Schleppplatten - Beschriftungen",
+      "Approach Slabs":"Schleppplatten",
+      "Arches":"Bogen",
+      "Area Boundary":"Flächenbegrenzung",
+      "Area Load Tags":"Flächenlastenbeschriftungen",
+      "Area Loads":"Flächenlasten",
+      "Area Tags":"Flächenbeschriftungen",
+      "Areas":"Flächen",
+      "Assemblies":"Baugruppen",
+      "Assembly Tags":"Baugruppenbeschriftungen",
+      "Audio Visual Device Tags":"Beschriftungen für audiovisuelle Geräte",
+      "Audio Visual Devices":"Audiovisuelle Geräte",
+      "Automatic Sketch Dimensions":"Automatische Skizzenbemaßungen",
+      "Axis of Rotation":"Drehachse",
+      "Balusters":"Vertikale Holme",
+      "Base Segment":"Basissegment",
+      "Bearing Tags":"Lager - Beschriftungen",
+      "Bearings":"Lager",
+      "Beyond":"Außerhalb des Bereichs",
+      "Bolt Tags":"Schraubenbezeichnungen",
+      "Bolts":"Schrauben",
+      "Boundary":"Begrenzung",
+      "Boundary":"Verlegebereich",
+      "Boundary Conditions":"Auflagerbedingungen",
+      "Boundary Point":"Grenzpunkt",
+      "Brace in Plan View Symbols":"Strebe in Symbolen in Draufsicht",
+      "Bridge Cable Tags":"Brückenkabel - Beschriftungen",
+      "Bridge Cables":"Brückenkabel",
+      "Bridge Deck Tags":"Brückenüberbau - Beschriftungen",
+      "Bridge Decks":"Brückenüberbauten",
+      "Bridge Framing":"Brückentragwerk",
+      "Bridge Framing Tags":"Brückentragwerk - Beschriftungen",
+      "Broken Section Line":"Versetzte Schnittlinie",
+      "Cable Tray Fitting Tags":"Kabeltrassenformteil - Beschriftungen",
+      "Cable Tray Fittings":"Kabeltrassenformteile",
+      "Cable Tray Runs":"Kabeltrassenführung",
+      "Cable Tray Tags":"Kabeltrasse - Beschriftungen",
+      "Cable Trays":"Kabeltrassen",
+      "Callout Boundary":"Begrenzung des Detailausschnitts",
+      "Callout Heads":"Detailausschnittsbeschriftung",
+      "Callout Leader Line":"Führungslinie des Detailausschnitts",
+      "Callouts":"Detailausschnitte",
+      "Cameras":"Kameras",
+      "Casework":"Schreinerarbeiten",
+      "Casework Tags":"Schreinerarbeiten - Beschriftungen",
+      "Ceiling Tags":"Deckenbeschriftungen",
+      "Ceilings":"Decken",
+      "Center Line":"Achse",
+      "Center line":"Achse",
+      "Center line":"Mittellinie",
+      "Centerline":"Achse",
+      "Chord":"Gurt",
+      "Color Fill":"Farbfüllung",
+      "Color Fill Legends":"Farbenlegenden",
+      "Columns":"Stützen",
+      "Common Edges":"Gemeinsame Kanten",
+      "Communication Device Tags":"Kommunikationsgerätebeschriftungen",
+      "Communication Devices":"Kommunikationsgeräte",
+      "Conduit Fitting Tags":"Leerrohrformteil - Beschriftungen",
+      "Conduit Fittings":"Leerrohrformteile",
+      "Conduit Runs":"Leerrohrstrecken",
+      "Conduit Tags":"Leerrohre - Beschriftungen",
+      "Conduits":"Leerrohr",
+      "Connection Line Symbol":"Verbindungsliniensymbol",
+      "Connection Symbols":"Verbindungssymbole",
+      "Contour Labels":"Höhenlinienbeschriftungen",
+      "Coordination Model":"Koordinationsmodell",
+      "Crop Boundaries":"Zuschneidegrenzen",
+      "Cross Bracing":"Querverbände",
+      "Curtain Grids":"Fassadenraster",
+      "Curtain Panel Tags":"Fassadenelementbeschriftungen",
+      "Curtain Panels":"Fassadenelemente",
+      "Curtain Roof Grids":"Fassadendachraster",
+      "Curtain System Grids":"Fassadensystemraster",
+      "Curtain System Tags":"Fassadensystembeschriftungen",
+      "Curtain Systems":"Fassadensysteme",
+      "Curtain Wall Grids":"Fassadenraster",
+      "Curtain Wall Mullion Tags":"Fassadenpfosten-Beschriftungen",
+      "Curtain Wall Mullions":"Fassadenpfosten",
+      "Cut Marks":"Schnittmarkierungen",
+      "Cut Pattern":"Schnittmuster",
+      "Data Device Tags":"Datengerätebeschriftungen",
+      "Data Devices":"Datengeräte",
+      "Dead Loads":"Ständige Lasten",
+      "Demolished":"Abgebrochen",
+      "Detail Item Tags":"Detailelementbeschriftungen",
+      "Detail Items":"Detailelemente",
+      "Diaphragms":"Membrane",
+      "Dimensions":"Bemaßungen",
+      "Displacement Path":"Verschiebungspfad",
+      "Door Tags":"Türbeschriftungen",
+      "Doors":"Türen",
+      "Down Arrow":"Pfeil nach unten",
+      "Down Arrows":"Pfeile AB",
+      "DOWN text":"Text AB",
+      "DOWN Text":"Text AB",
+      "Drop":"Gefälle",
+      "Duct Accessories":"Luftkanalzubehör",
+      "Duct Accessory Tags":"Luftkanalzubehör - Beschriftungen",
+      "Duct Color Fill":"Farbfüllung für Luftkanäle",
+      "Duct Color Fill Legends":"Farbenlegenden für Luftkanäle",
+      "Duct Fitting Tags":"Luftkanalformteilbeschriftung",
+      "Duct Fittings":"Luftkanalformteile",
+      "Duct Insulation Tags":"Luftkanaldämmung außen - Beschriftungen",
+      "Duct Insulations":"Luftkanaldämmung außen",
+      "Duct Lining Tags":"Luftkanaldämmung innen - Beschriftungen",
+      "Duct Linings":"Luftkanaldämmung innen",
+      "Duct Placeholders":"Luftkanalplatzhalter",
+      "Duct Systems":"Luftkanal Systeme",
+      "Duct Tags":"Luftkanalbeschriftungen",
+      "Ducts":"Luftkanäle",
+      "Electrical Circuits":"Elektrischer Stromkreis",
+      "Electrical Equipment":"Elektrische Ausstattung",
+      "Electrical Equipment Tags":"Elektrische Ausstattung - Beschriftungen",
+      "Electrical Fixture Tags":"Elektroinstallationsbeschriftungen",
+      "Electrical Fixtures":"Elektroinstallationen",
+      "Electrical Spare/Space Circuits":"Elektrische Stromkreise für Reserve/Leerfeld",
+      "Elevation Marks":"Ansichtsbeschriftungen",
+      "Elevations":"Ansichtsdarstellungen",
+      "End Segment":"Endsegment",
+      "Entourage":"Umgebung",
+      "Expansion Joint Tags":"Dehnfuge - Beschriftungen",
+      "Expansion Joints":"Dehnfugen",
+      "Exterior":"Außen",
+      "Exterior Walls":"Außenwände",
+      "Fabric Envelope":"Mattenfeld",
+      "Fabric Sheets":"Einzelmatten",
+      "Fabric Wire":"Mattenstab",
+      "Fascias":"Traufen",
+      "Filled region":"Gefüllter Bereich",
+      "Finish":"Nichttragende Schicht",
+      "Fire Alarm Device Tags":"Brandmelderbeschriftungen",
+      "Fire Alarm Devices":"Brandmelder",
+      "Fire Protection":"Brandschutz",
+      "Fire Protection Tags":"Beschriftungen für Brandschutz",
+      "Fixed Skylights":"Festverglaste Dachfenster",
+      "Fixed Windows":"Festverglaste Fenster",
+      "Flex Duct Tags":"Flexkanalbeschriftungen",
+      "Flex Ducts":"Flexkanäle",
+      "Flex Pipe Tags":"Flexible Rohre - Beschriftungen",
+      "Flex Pipes":"Flexible Rohre",
+      "Floor Tags":"Geschossdeckenbeschriftungen",
+      "Floors":"Geschossdecken",
+      "Food Service Equipment":"Gastronomieausstattung",
+      "Food Service Equipment Tags":"Beschriftungen für Gastronomieausstattung",
+      "Form":"Form",
+      "Foundation Span Direction Symbol":"Symbol für Spannrichtung des Fundaments",
+      "Frame/Mullion":"Rahmen/Pfosten",
+      "Furniture":"Möbel",
+      "Furniture System Tags":"Möbelsystembeschriftungen",
+      "Furniture Systems":"Möbelsysteme",
+      "Furniture Tags":"Möbelbeschriftungen",
+      "Generic Annotations":"Allgemeine Beschriftungen",
+      "Generic Model Tags":"Allgemeine Modellbeschriftungen",
+      "Generic Models":"Allgemeines Modell",
+      "Glass":"Glas",
+      "Grid Heads":"Rasterbeschriftungen",
+      "Gridlines":"Rasterlinien",
+      "Grids":"Raster",
+      "Guide Grid":"Hilfslinienraster",
+      "Gutters":"Rinnen",
+      "Handrails":"Handläufe",
+      "Hardscape":"Außenanlagen",
+      "Hardscape Tags":"Außenanlagen-Beschriftungen",
+      "Hidden":"Verdeckt",
+      "Hidden Lines":"Verdeckte Linien",
+      "Hole Tags":"Bohrungsbezeichnungen",
+      "Holes":"Bohrungen",
+      "Home Run Arrows":"Rückführungspfeile",
+      "HVAC Zones":"HLK-Zonen",
+      "Hydraulic Separation Symbols":"Symbole für Warmwassertrennung",
+      "Imports in Families":"Importiert in Familien",
+      "Insulation":"Dämmung außen",
+      "Insulation Batting Lines":"Dämmung",
+      "Interior":"Innen",
+      "Interior Edges":"Innenkanten",
+      "Interior Fill":"Innenfüllung",
+      "Interior Floors":"Geschossdecken innen",
+      "Interior Point":"Innenpunkt",
+      "Interior Walls":"Innenwände",
+      "Internal Area Load Tags":"Beschriftungen für interne Flächenlasten",
+      "Internal Area Loads":"Interne Flächenlasten",
+      "Internal Line Load Tags":"Beschriftungen für interne Linienlasten",
+      "Internal Line Loads":"Interne Linienlasten",
+      "Internal Origin":"Interner Ursprung",
+      "Internal Point Load Tags":"Beschriftungen für interne Einzellasten",
+      "Internal Point Loads":"Interne Einzellasten",
+      "Keynote Tags":"Bauelementbeschriftungen",
+      "Kicker Bracing":"Aussteifungselement",
+      "Landings":"Podeste",
+      "Level Heads":"Ebenenbeschriftungen",
+      "Levels":"Ebenen",
+      "Light Source":"Lichtquelle",
+      "Lighting Device Tags":"Lichtschalterbeschriftung",
+      "Lighting Devices":"Lichtschalter",
+      "Lighting Fixture Tags":"Leuchtenbeschriftungen",
+      "Lighting Fixtures":"Leuchten",
+      "Line Load Tags":"Linienlastenbeschriftungen",
+      "Line Loads":"Linienlasten",
+      "Lines":"Linien",
+      "Lining":"Dämmung innen",
+      "Live Loads":"Nicht ständige Lasten",
+      "Local Coordinate System":"Lokales Koordinatensystem",
+      "Location Lines":"Basislinien",
+      "Masking Region":"Maskierung",
+      "Mass":"Körper",
+      "Mass Exterior Wall":"Außenwand - Typ",
+      "Mass Floor":"Körpergeschoss",
+      "Mass Floor Tags":"Körpergeschossbeschriftungen",
+      "Mass Glazing":"Körper - Verglasung",
+      "Mass Interior Wall":"Innenwand - Typ",
+      "Mass Opening":"Körper - Öffnung",
+      "Mass Roof":"Körper - Dach",
+      "Mass Shade":"Körper - Schatten",
+      "Mass Skylight":"Körper - Dachfenster",
+      "Mass Tags":"Körperbeschriftungen",
+      "Mass Zone":"Körpermodellzone",
+      "Matchline":"Anpassungslinie",
+      "Material Tags":"Materialbeschriftungen",
+      "Materials":"Materialien",
+      "Mechanical Equipment":"HLS-Bauteile",
+      "Mechanical Equipment Set Boundary Lines":"Begrenzungslinien für HLS-Bauteilsatz",
+      "Mechanical Equipment Set Tags":"Beschriftungen für HSL-Bauteile",
+      "Mechanical Equipment Sets":"HLS-Bauteilsätze",
+      "Mechanical Equipment Tags":"HLS-Bauteile - Beschriftungen",
+      "Medical Equipment":"Medizinische Ausstattung",
+      "Medical Equipment Tags":"Beschriftungen für medizinische Ausstattung",
+      "Medium Lines":"Mittelstarke Linien",
+      "Membrane Layer":"Sperrschicht",
+      "MEP Fabrication Containment":"MEP Fabrication Kabelführungen",
+      "MEP Fabrication Containment Tags":"MEP Fabrication Kabelführungsbeschriftungen",
+      "MEP Fabrication Ductwork":"MEP Fabrication Luftkanäle",
+      "MEP Fabrication Ductwork Tags":"MEP Fabrication Luftkanalbeschriftungen",
+      "MEP Fabrication Hanger Tags":"MEP Fabrication Halterungsbeschriftungen",
+      "MEP Fabrication Hangers":"MEP Fabrication Halterungen",
+      "MEP Fabrication Pipework":"MEP Fabrication Rohre",
+      "MEP Fabrication Pipework Tags":"MEP Fabrication Rohrbeschriftungen",
+      "Model Groups":"Modellgruppen",
+      "Modifiers":"Modifikatoren",
+      "Multi Leader Tag":"Beschriftung Multi-Führungslinie",
+      "Multi-Category Tags":"Mehrere Kategorien - Beschriftungen",
+      "Multi-Rebar Annotations":"Beschriftung Mehrfachbewehrung",
+      "Multi-segmented Grid":"Segmentierte Rasterlinie",
+      "Nodes":"Knoten",
+      "Non-Core Layers":"Schichten außerhalb des Kerns",
+      "Non-sliding Doors":"Türen außer Schiebetüren",
+      "Nosing Lines":"Trittüberstandslinien",
+      "Nurse Call Device Tags":"Notrufgerätebeschriftungen",
+      "Nurse Call Devices":"Notrufgeräte",
+      "Opening":"Öffnung",
+      "Operable Skylights":"Bewegliche Dachfenster",
+      "Operable Windows":"Bewegliche Fenster",
+      "Other":"Sonstige",
+      "Others":"Sonstige",
+      "Outlines":"Konturen",
+      "Overhead":"Oberhalb",
+      "Pads":"Sohlen",
+      "Panel":"Element",
+      "Panel Schedule Graphics":"Grafiken für Verteiler-Bauteilliste",
+      "Parking":"Parkplatz",
+      "Parking Tags":"Parkplatzbeschriftungen",
+      "Part Tags":"Teilebeschriftungen",
+      "Parts":"Teile",
+      "Path of Travel Lines":"Bewegungspfadlinien",
+      "Path of Travel Tags":"Bewegungspfad-Beschriftungen",
+      "Pattern":"Muster",
+      "Pattern Fill":"Musterfüllung",
+      "Pattern Lines":"Musterlinien",
+      "Pier Cap Tags":"Pfeilerabschluss - Beschriftungen",
+      "Pier Caps":"Pfeilerabschlüsse",
+      "Pier Column Tags":"Pfeilerstützen - Beschriftungen",
+      "Pier Columns":"Pfeilerstützen",
+      "Pier Foundation Tags":"Pfeilerfundament - Beschriftungen",
+      "Pier Foundations":"Pfeilerfundamente",
+      "Pier Pile Tags":"Pfeilerpfahl - Beschriftungen",
+      "Pier Piles":"Pfeilerpfähle",
+      "Pier Tags":"Pfeiler - Beschriftungen",
+      "Pier Tower Tags":"Pfeilerturm - Beschriftungen",
+      "Pier Towers":"Pfeilertürme",
+      "Pier Wall Tags":"Pfeilerwand - Beschriftungen",
+      "Pier Walls":"Pfeilerwände",
+      "Piers":"Pfeiler",
+      "Pipe Accessories":"Rohrzubehör",
+      "Pipe Accessory Tags":"Rohrzubehörbeschriftungen",
+      "Pipe Color Fill":"Rohrfarbfüllung",
+      "Pipe Color Fill Legends":"Rohr-Farbenlegenden",
+      "Pipe Fitting Tags":"Rohrformteilbeschriftung",
+      "Pipe Fittings":"Rohrformteile",
+      "Pipe Insulation Tags":"Rohrdämmung außen - Beschriftungen",
+      "Pipe Insulations":"Rohrdämmung",
+      "Pipe Placeholders":"Rohrplatzhalter",
+      "Pipe Segments":"Rohrsegmente",
+      "Pipe Tags":"Rohrbeschriftungen",
+      "Pipes":"Rohre",
+      "Piping Systems":"Rohr Systeme",
+      "Plan Bracing":"Horizontaler Verband",
+      "Plan Region":"Planbereich",
+      "Planes":"Ebenen",
+      "Planting":"Bepflanzung",
+      "Planting Tags":"Bepflanzungsbeschriftungen",
+      "Plate Tags":"Plattenbezeichnungen",
+      "Plates":"Platten",
+      "Plumbing Fixture Tags":"Sanitärinstallationsbeschriftungen",
+      "Plumbing Fixtures":"Sanitärinstallationen",
+      "Point Clouds":"Punktwolken",
+      "Point Load Tags":"Einzellastenbeschriftungen",
+      "Point Loads":"Einzellasten",
+      "Points":"Punkte",
+      "Primary":"Tragwerk",
+      "Primary Contours":"Primäre Höhenlinien",
+      "Primarys":"Träger",
+      "Profile Tags":"Profilbezeichnungen",
+      "Profiles":"Profile",
+      "Project Base Point":"Projekt-Basispunkt",
+      "Project Information":"Projektinformationen",
+      "Property Line Segment Tags":"Grundstücksgrenzensegmente - Beschriftungen",
+      "Property Line Segments":"Grundstücksgrenzensegmente",
+      "Property Lines":"Grundstücksgrenzen",
+      "Property Tags":"Eigenschaftsbeschriftungen",
+      "Railing Tags":"Geländerholmbeschriftungen",
+      "Railings":"Geländer",
+      "Rails":"Geländer",
+      "Raised Floors":"Erhöhte Geschossdecken",
+      "Ramps":"Rampen",
+      "Ramps Beyond Cut Line":"Rampen hinter Schnittlinie",
+      "Raster Images":"Rasterbilder",
+      "Rebar Cover References":"Betonüberdeckungsreferenzen",
+      "Rebar Set Toggle":"Bewehrungsverlegung ein/aus",
+      "Rebar Shape":"Biegeform",
+      "Reference":"Referenz",
+      "Reference Lines":"Referenzlinien",
+      "Reference Planes":"Referenzebenen",
+      "Reference Points":"Referenzpunkte",
+      "Render Regions":"Renderbereiche",
+      "Revision Cloud Tags":"Änderungswolken-Beschriftungen",
+      "Revision Clouds":"Änderungswolken",
+      "Rigid Links":"Starre Kopplungen",
+      "Rise":"Anstieg",
+      "Riser Lines":"Steigungslinien",
+      "Road Tags":"Straßenbeschriftungen",
+      "Roads":"Straßen",
+      "Roof Live Loads":"Nicht ständige Dachlasten",
+      "Roof Soffits":"Dachuntersichten",
+      "Roof Tags":"Dachbeschriftungen",
+      "Roofs":"Dächer",
+      "Room Separation":"Raumtrennung",
+      "Room Tags":"Raumbeschriftungen",
+      "Rooms":"Räume",
+      "Routing Preferences":"Routing-Voreinstellungen",
+      "Runs":"Läufe",
+      "RVT Links":"RVT-Verknüpfungen",
+      "Schedule Graphics":"Grafikliste",
+      "Schedules":"Bauteillisten",
+      "Scope Boxes":"Bildausschnitte",
+      "Secondary":"Balken",
+      "Secondary Contours":"Sekundäre Höhenlinien",
+      "Section Boxes":"3D-Schnittbereiche",
+      "Section Line":"Schnittlinie",
+      "Section Marks":"Schnittlinienbeschriftung",
+      "Sections":"Schnitte",
+      "Security Device Tags":"Sicherheitsgerätebeschriftungen",
+      "Security Devices":"Sicherheitsgeräte",
+      "Seismic Loads":"Erdbebenlasten",
+      "Shades":"Schattierungen",
+      "Shaft Openings":"Schachtöffnungen",
+      "Shear Stud Tags":"Kopfbolzenbezeichnungen",
+      "Shear Studs":"Kopfbolzen",
+      "Sheets":"Pläne",
+      "Signage":"Hinweisschilder",
+      "Signage Tags":"Beschriftungen für Hinweisschilder",
+      "Sill/Head":"Brüstung/Sturzhöhe",
+      "Site":"Grundstück",
+      "Site Tags":"Grundstücksbeschriftungen",
+      "Sketch":"Skizze",
+      "Slab Edges":"Deckenkanten",
+      "Slabs on Grade":"Eingemessene Platten",
+      "Sliding Doors":"Schiebetüren",
+      "Snow Loads":"Schneelasten",
+      "Space Separation":"MEP-Raumtrennung",
+      "Space Tags":"MEP-Raumbeschriftungen",
+      "Spaces":"MEP-Räume",
+      "Span Direction Symbol":"Spannrichtungssymbol",
+      "Specialty Equipment":"Sonderausstattung",
+      "Specialty Equipment Tags":"Sonderausstattung - Beschriftungen",
+      "Spot Coordinates":"Höhenkoordinaten",
+      "Spot Elevation Symbols":"Höhenkotensymbole",
+      "Spot Elevations":"Höhenkoten",
+      "Spot Slopes":"Neigungskoten",
+      "Sprinkler Tags":"Sprinklerbeschriftungen",
+      "Sprinklers":"Sprinkler",
+      "Stair Landing Tags":"Treppe - Podestbeschriftungen",
+      "Stair Paths":"Treppe - Lauflinien",
+      "Stair Run Tags":"Treppe - Laufbeschriftungen",
+      "Stair Support Tags":"Treppe - Auflagerbeschriftungen",
+      "Stair Tags":"Treppe - Beschriftungen",
+      "Stair Tread/Riser Numbers":"Treppe - Nummerierung Auftritte/Steigugen",
+      "Stairs":"Treppen",
+      "Start Segment":"Anfangssegment",
+      "Stick Symbols":"Einfügesymbole",
+      "Stringers":"Wangen",
+      "Stringers Beyond Cut Line":"Wangen hinter Schnittverlauf",
+      "Structural Annotations":"Tragwerksbeschriftungen",
+      "Structural Area Reinforcement":"Bewehrung - Verlegebereich Fläche",
+      "Structural Area Reinforcement Symbols":"Symbole für Tragwerk-Flächenbewehrung",
+      "Structural Area Reinforcement Tags":"Tragwerk-Flächenbewehrung - Beschriftungen",
+      "Structural Beam System Tags":"Trägersystem - Beschriftungen",
+      "Structural Beam Systems":"Trägersysteme",
+      "Structural Column Tags":"Tragwerksstützenbeschriftungen",
+      "Structural Columns":"Tragwerksstützen",
+      "Structural Connection Tags":"Beschriftungen Tragwerksverbindung",
+      "Structural Connections":"Tragwerksverbindungen",
+      "Structural Fabric Areas":"Bewehrung - Verlegebereich Matten",
+      "Structural Fabric Reinforcement":"Bewehrung - Matten",
+      "Structural Fabric Reinforcement Symbols":"Symbole für Mattenbewehrung",
+      "Structural Fabric Reinforcement Tags":"Bewehrung - Mattenbeschriftungen",
+      "Structural Foundation Tags":"Fundamentbeschriftungen",
+      "Structural Foundations":"Fundamente",
+      "Structural Framing":"Skelettbau",
+      "Structural Framing Tags":"Trägerbeschriftung",
+      "Structural Internal Loads":"Interne Traglasten",
+      "Structural Load Cases":"Tragwerk Lastfälle",
+      "Structural Loads":"Lasten",
+      "Structural Path Reinforcement":"Bewehrung - linear",
+      "Structural Path Reinforcement Symbols":"Symbole für lineare Bewehrung",
+      "Structural Path Reinforcement Tags":"Bewehrung - lineare Bewehrungsbeschriftungen",
+      "Structural Rebar":"Bewehrung - Stabstahl",
+      "Structural Rebar Coupler Tags":"Beschriftungen Verbindungsmittel",
+      "Structural Rebar Couplers":"Verbindungsmittel",
+      "Structural Rebar Tags":"Bewehrung - Beschriftungen",
+      "Structural Stiffener Tags":"Steifen - Beschriftungen",
+      "Structural Stiffeners":"Steifen",
+      "Structural Tendon Tags":"Spannglied - Beschriftungen",
+      "Structural Tendons":"Spannglieder",
+      "Structural Truss Tags":"Fachwerkbinderbeschriftungen",
+      "Structural Trusses":"Fachwerkbinder",
+      "Structure":"Tragende Schicht",
+      "Substrate":"Träger",
+      "Supports":"Auflager",
+      "Supports":"Stützen",
+      "Surface Pattern":"Oberflächenmuster",
+      "Survey Point":"Vermessungspunkt",
+      "Switch System":"Schaltersystem",
+      "Symbol":"Symbol",
+      "Symbology":"Symbole",
+      "System-Zone Tags":"Systemzonen-Beschriftungen",
+      "System-Zones":"Systemzonen",
+      "Telephone Device Tags":"Telefongerätebeschriftungen",
+      "Telephone Devices":"Telefongeräte",
+      "Temperature Loads":"Temperaturlast",
+      "Temporary Structure Tags":"Beschriftungen für temporäre Konstruktionen",
+      "Temporary Structures":"Temporäre Konstruktionen",
+      "Terminations":"Endpfosten",
+      "Tertiary":"Pfette",
+      "Text Notes":"Text",
+      "Thermal/Air Layer":"Dämmung/Luftschicht",
+      "Thin Lines":"Feine Linien",
+      "Title Blocks":"Planköpfe",
+      "Top Rails":"Obere Holme",
+      "Top Segment":"Oberes Segment",
+      "Topography":"Topografie",
+      "Topography Links":"Topografieverknüpfung",
+      "Treads/Risers":"Auftritte/Steigungen",
+      "Triangulation Edges":"Triangulationskanten",
+      "Trusses":"Fachwerkbinder",
+      "Underground":"Untergrund",
+      "Underground Ceilings":"Unterirdische Decken",
+      "Underground Slabs":"Unterirdische Platten",
+      "Underground Walls":"Unterirdische Wände",
+      "Up Arrow":"Pfeil nach oben",
+      "Up Arrows":"Pfeile AUF",
+      "UP text":"Text AUF",
+      "UP Text":"Text AUF",
+      "Vertical Bracing":"Vertikaler Verband",
+      "Vertical Circulation":"Vertikale Erschließung",
+      "Vertical Circulation Tags":"Beschriftungen für vertikale Erschließung",
+      "Vibration Damper Tags":"Schwingungsdämpfer - Beschriftungen",
+      "Vibration Dampers":"Schwingungsdämpfer",
+      "Vibration Isolator Tags":"Schwingungsisolator - Beschriftungen",
+      "Vibration Isolators":"Schwingungsisolatoren",
+      "Vibration Management":"Schwingungsmanagement",
+      "View Reference":"Referenz anzeigen",
+      "View Titles":"Ansichtstitel",
+      "Viewports":"Ansichtsfenster",
+      "Views":"Ansichten",
+      "Wall Sweeps":"Profilierte Wände",
+      "Wall Tags":"Wandbeschriftungen",
+      "Walls":"Wände",
+      "Water Loops":"Wasserkreisläufe",
+      "Web":"Steg",
+      "Weld Tags":"Schweißnahtbezeichnungen",
+      "Welds":"Schweißnähte",
+      "Wide Lines":"Breite Linien",
+      "Wind Loads":"Windlasten",
+      "Window Tags":"Fensterbeschriftungen",
+      "Windows":"Fenster",
+      "Wire Tags":"Kabelbeschriftungen",
+      "Wire Tick Marks":"Kabelmarkierungen",
+      "Wires":"Kabel",
+      "Zone Equipment":"Zonengeräte",
+      "Zone Tags":"Zonenbeschriftungen"
+    };
+
+	function searchDictionary() {
+	  var input = document.getElementById("search").value;
+	  var lang = document.getElementById("language").value;
+	  var results = document.getElementById("results");
+
+	  // Clear previous results if input is empty
+	  if (input.trim() === "") {
+		results.innerHTML = "";
+		return;
+	  }
+
+	  // Filter and display matching entries
+	  var matchingEntries = Object.entries(dictionary).filter(function (entry) {
+		var term = lang === "english" ? entry[0] : entry[1];
+		return term.toLowerCase().includes(input.toLowerCase());
+	  });
+
+	  var table = document.createElement("table");
+	  var tableHead = document.createElement("thead");
+	  var tableBody = document.createElement("tbody");
+
+	  // Create table header
+	  var headerRow = document.createElement("tr");
+	  var headerEnglish = document.createElement("th");
+	  headerEnglish.textContent = "English";
+	  var headerGerman = document.createElement("th");
+	  headerGerman.textContent = "German";
+	  headerRow.appendChild(headerEnglish);
+	  headerRow.appendChild(headerGerman);
+	  tableHead.appendChild(headerRow);
+	  table.appendChild(tableHead);
+
+	  // Populate table body with matching entries
+	  matchingEntries.forEach(function (entry) {
+		var term = entry[0];
+		var translation = entry[1];
+
+		var row = document.createElement("tr");
+		var cellEnglish = document.createElement("td");
+		cellEnglish.textContent = term;
+		var cellGerman = document.createElement("td");
+		cellGerman.textContent = translation;
+		row.appendChild(cellEnglish);
+		row.appendChild(cellGerman);
+		tableBody.appendChild(row);
+	  });
+
+	  table.appendChild(tableBody);
+	  results.innerHTML = "";
+	  results.appendChild(table);
+	}
+  </script>
+</head>
+<body>
+  <div class="container">
+    <h1>Built-In Category Dictionary</h1>
+    <div class="search-container">
+      <input type="text" id="search" oninput="searchDictionary()" placeholder="Search...">
+      <select id="language" onchange="searchDictionary()">
+        <option value="english">English</option>
+        <option value="german">German</option>
+      </select>
+    </div>
+    <div id="results"></div>
+  </div>
+  <script>
+    // Call the searchDictionary function on page load to display initial results
+    searchDictionary();
+  </script>
+</body>
+</html>
