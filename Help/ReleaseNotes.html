@@ -134,6 +134,8 @@
         }
         
         .new-feature {
+            font-weight: 600;
+            color: #0a0f28;
             border-left-color: #0a0f28;
             background: linear-gradient(135deg, #f8f9fb 0%, #f0f2f8 100%);
         }
@@ -178,15 +180,106 @@
                 font-size: 1.8rem;
             }
         }
+		
+        .homepage-container {
+            position: absolute; /* Set to absolute to position relative to its parent (.container) */
+            top: 25px; /* Distance from the top of the parent (.container) */
+            right: 25px; /* Distance from the right of the parent (.container) */
+            display: flex;
+            align-items: center;
+            background-color: #f0f0f0;
+            padding: 10px 15px;
+            border-radius: 25px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+        }
+
+        .homepage-logo {
+            width: 30px; /* Adjust logo size */
+            height: 30px;
+            margin-right: 10px;
+            border-radius: 50%; /* Make it circular */
+            overflow: hidden; /* Ensure the image stays within the circle */
+        }
+
+        .homepage-logo img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .homepage-text a {
+            color: #333; /* Darker text color */
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .homepage-text a:hover {
+            text-decoration: underline;
+        }
+		
+		
+		
     </style>
 </head>
 <body>
     <div class="container">
+        <div class="homepage-container">
+            <div class="homepage-logo">
+                <a href="https://www.eklenty.com" target="_blank">
+                    <img src="https://www.eklenty.com/Assets/Logo/EklentyLogo620.png" alt="Eklenty Logo">
+                </a>
+            </div>
+            <div class="homepage-text">
+                <a href="https://www.eklenty.com" target="_blank">Eklenty</a>
+            </div>
+        </div>
+		
         <div class="header">
             <h1>Release Notes</h1>
         </div>
         
         <div class="content">
+			
+			
+            <div class="version-section">
+                <div class="version-header">
+                    <div class="version-number">v0.9.6</div>
+                    <div class="release-date">Release Date: 03.07.2025</div>
+                </div>
+                
+                <div class="feature-group">
+                    <h3>New Tool - Disconnect</h3>
+                    <ul class="feature-list">
+                        <li class="new-feature">Total Disconnect</li>
+                        <li class="new-feature">Mutual Disconnect</li>
+                    </ul>
+                </div>
+                
+                <div class="feature-group">
+                    <h3>Tee Fixer</h3>
+                    <ul class="feature-list">
+                        <li class="bugfix">Resolved the issue causing an error when a duct, connected to a port of the Tee fitting, is shorter than certain value. </li>
+                        <li class="bugfix">Resolved the issue causing an error when Tee has a round duct connected to it.</li>
+                    </ul>
+                </div>
+                
+                <div class="feature-group">
+                    <h3>3D Insert</h3>
+                    <ul class="feature-list">
+                        <li class="bugfix">Resolved the issue causing an error when round duct is involved.</li>
+                    </ul>
+                </div>
+                
+                <div class="feature-group">
+                    <h3>3D Insert</h3>
+                    <ul class="feature-list">
+                        <li class="bugfix">Bug fixes</li>
+                    </ul>
+                </div>
+            </div>		
+			
+			
             <div class="version-section">
                 <div class="version-header">
                     <div class="version-number">v0.9.5</div>
@@ -474,8 +567,8 @@
 				<div class="feature-group">
 					<h3>New Tools</h3>
 					<ul class="feature-list">
-						<li class="new-feature">3D Corner tool added.</li>
-						<li class="new-feature">3D Insert tool added.</li>
+						<li class="new-feature">3D Corner tool</li>
+						<li class="new-feature">3D Insert tool</li>
 					</ul>
 				</div>
 			</div>
