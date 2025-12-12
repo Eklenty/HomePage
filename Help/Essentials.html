@@ -597,6 +597,91 @@
                     </ul>
                 </div>
             </div>
+            
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/hRv2qNU708o?si=2qQfwJzexoDLcGpB" allowfullscreen title="What’s New in Eklenty v0.9.8.1"></iframe>
+            </div>
+            
+			<div class="tool-section">
+				<div class="tool-header">
+					<div class="tool-title">ReSlot</div>
+				</div>
+				<div class="tool-description">
+					Moves a shared parameter into a different parameter group within the Properties Palette. 
+					This allows you to reorganize how parameters are displayed, keeping your properties panel clean, 
+					logical, and aligned with your office standards.
+				</div>
+				<div class="steps-group">
+					<h3>Steps to use ReSlot:</h3>
+					<ul class="steps-list">
+						<li>Start the "ReSlot" tool from the ribbon.</li>
+						<li>Select the shared parameters you want to reorganize.</li>
+						<li>Select the new parameter group to which the shared parameter should be moved.</li>
+						<li>Confirm the operation to instantly update the parameter’s group in the Properties Palette.</li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="tool-section">
+				<div class="tool-header">
+					<div class="tool-title">Affecting Filters</div>
+				</div>
+				<div class="tool-description">
+					Analyzes the selected element and identifies all view filters—along with their rules—that affect it
+					in the current view. Helps you quickly diagnose visibility, color overrides, and unexpected filter behavior.
+				</div>
+				<div class="steps-group">
+					<h3>Steps to use Affecting Filters:</h3>
+					<ul class="steps-list">
+						<li>Select an element in the active view.</li>
+						<li>Start the "Affecting Filters" tool from the ribbon.</li>
+						<li>The tool will scan all applied view filters and determine which ones impact the selected element.</li>
+						<li>Review the detailed list of filters, rules, and conditions presented in the dialog.</li>
+						<li>Use the results to adjust your view templates, overrides, or filter definitions as needed.</li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="tool-section">
+				<div class="tool-header">
+					<div class="tool-title">AutoCut</div>
+				</div>
+				<div class="tool-description">
+					Automatically cuts openings in walls, floors, beams, and columns based on intersecting void families you select.
+					Ideal for MEP penetration workflows, saving significant manual drafting time and reducing coordination errors.
+				</div>
+				<div class="steps-group">
+					<h3>Steps to use AutoCut:</h3>
+					<ul class="steps-list">
+						<li>Start the "AutoCut" tool from the ribbon.</li>
+						<li>Select the host elements (walls, floors, beams, columns) to be cut.</li>
+						<li>Select the void families that should create openings.</li>
+						<li>The tool will automatically detect intersections and generate the appropriate openings.</li>
+						<li>Review the created openings and continue with your modeling workflow.</li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="tool-section">
+				<div class="tool-header">
+					<div class="tool-title">Clash Manager</div>
+				</div>
+				<div class="tool-description">
+					Imports Navisworks clash reports into Revit, visualizing clash points and verifying them against host
+					and linked model elements. Provides a structured way to review, isolate, and resolve clashes directly 
+					inside Revit without switching applications.
+				</div>
+				<div class="steps-group">
+					<h3>Steps to use Clash Manager:</h3>
+					<ul class="steps-list">
+						<li>Check "Clash Point", "Item ID", "Status", "Image" and "Individual Clashes Only" and Export your clash reports from Navisworks in XML format</li>
+						<li>Start the "Clash Manager" tool from the ribbon.</li>
+						<li>Import the XML clash report</li>
+						<li>Browse the list of clashes displayed in the Clash Manager window.</li>
+						<li>Select the Clashes in the list and hit Show button to select the elements that are involved in the clashes, or check "Automatically create and adjust 3D View" option to let the tool to create a 3D view for you.</li>
+					</ul>
+				</div>
+			</div>
         </div>
     </div>
 </body>
