@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <!-- saved from url=(0065)file:///C:/CSharp/Published/GitHub/zippp/chrome%20mods/index.html -->
-<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Eklenty</title>
-	<link rel="icon" type="image/x-icon" href="/Assets/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="/Assets/favicon.ico">
     <style>
         * {
             margin: 0;
@@ -182,33 +185,12 @@
             font-size: 1rem;
             line-height: 1.7;
         }
-
-        .essentials-card {
-            grid-column: 1 / -1;
-            background: linear-gradient(135deg, #f4f8f6 0%, #e8f0ed 100%);
-            border: 2px solid #5d9874;
-        }
-
-        .sheet-bridge-card {
-            background: linear-gradient(135deg, #f8f9fb 0%, #f0f2f8 100%);
-            border: 2px solid #8f9dbb;
-        }
-
-        .intersect-card {
-            background: linear-gradient(135deg, #f8f9fb 0%, #f0f2f8 100%);
-            border: 2px solid #8f9dbb;
-        }
-
-        .leapfrog-card {
-            background: linear-gradient(135deg, #f8f9fb 0%, #f0f2f8 100%);
-            border: 2px solid #8f9dbb;
-        }
-
-        .view-tools-card {
-            background: linear-gradient(135deg, #f8f9fb 0%, #f0f2f8 100%);
-            border: 2px solid #8f9dbb;
-        }
         
+        .default-card {
+            background: #f8f9fb;
+            border: 2px solid #8f9dbb;
+        }
+
         .footer {
             background: white;
             border-radius: 15px;
@@ -216,14 +198,14 @@
             box-shadow: 0 5px 20px rgba(10, 15, 40, 0.08);
             text-align: center;
         }
-        
+
         .social-links {
             display: flex;
             justify-content: center;
             gap: 20px;
             margin-bottom: 20px;
         }
-        
+
         .social-link {
             display: inline-flex;
             align-items: center;
@@ -236,23 +218,23 @@
             text-decoration: none;
             border: 2px solid #e9ecef;
         }
-        
+
         .social-link:hover {
             background: #0a0f28;
             border-color: #dcdcdc;
             transform: translateY(-2px);
         }
-        
+
         .social-link:hover .social-icon {
             filter: brightness(0) invert(1);
         }
-        
+
         .social-icon {
             width: 24px;
             height: 24px;
             transition: all 0.3s ease;
         }
-        
+
         /* Fallback styling if images don't load */
         .social-link::after {
             content: attr(data-fallback);
@@ -261,17 +243,17 @@
             color: #666;
             font-weight: bold;
         }
-        
+
         .social-link img {
             display: block;
         }
-        
+
         /* Show fallback text if image fails to load */
         .social-link img[src=""],
         .social-link img:not([src]) {
             display: none;
         }
-        
+
         .social-link:has(img[src=""])::after,
         .social-link:has(img:not([src])) ::after {
             display: block;
@@ -282,35 +264,35 @@
             .hero-title {
                 font-size: 2rem;
             }
-            
+
             .hero-subtitle {
                 font-size: 1rem;
             }
-            
+
             .logo-title-container {
                 flex-direction: column;
                 gap: 15px;
             }
-            
+
             .cta-section {
                 flex-direction: column;
                 margin: 20px;
                 padding: 20px;
             }
-            
+
             .tools-grid {
                 grid-template-columns: 1fr;
                 gap: 20px;
             }
-            
+
             .essentials-card {
                 grid-column: 1;
             }
-            
+
             .hero-header {
                 padding: 30px 20px;
             }
-            
+
             .tool-card {
                 padding: 25px;
             }
@@ -320,17 +302,18 @@
             .container {
                 padding: 15px;
             }
-            
+
             .hero-title {
                 font-size: 1.8rem;
             }
-            
+
             .tool-card {
                 padding: 20px;
             }
         }
     </style>
 </head>
+
 <body>
     <div class="container">
         <div class="hero-section">
@@ -342,10 +325,12 @@
                     <h1 class="hero-title">Eklenty Revit Add-In Package</h1>
                 </div>
                 <p class="hero-subtitle">
-                    A comprehensive set of tools for Autodesk® Revit® designed to improve modeling accuracy, system integrity, simplify family and system management, enhance data handling, and increase overall project efficiency.
+                    A comprehensive set of tools for Autodesk® Revit® designed to improve modeling accuracy, system
+                    integrity, simplify family and system management, enhance data handling, and increase overall
+                    project efficiency.
                 </p>
             </header>
-            
+
             <div class="cta-section">
                 <a href="https://www.eklenty.com/Download" class="cta-btn cta-primary">
                     Go To Download Page
@@ -357,48 +342,41 @@
         </div>
 
         <div class="tools-grid">
-            <div class="tool-card essentials-card">
-                <h3><a href="https://www.eklenty.com/Help/Essentials">Essentials</a></h3>
-                <p>A complete set of tools for Autodesk® Revit® designed to improve coordination, refine system connections, simplify family and system management, and increase model accuracy.</p>
+            <div class="tool-card default-card">
+                <h3><a href="https://www.eklenty.com/Help/Automation">Automation</a></h3>
+                <p>Tools designed to manage project configuration, automate modeling tasks, and improve coordination and data exchange.</p>
             </div>
 
-            <div class="tool-card sheet-bridge-card">
-                <h3><a href="https://www.eklenty.com/Help/SheetBridge">Sheet Bridge</a></h3>
-                <p>Easily export and import Schedules, View Lists, Sheet Lists, and Key Schedules to and from Excel. Use Excel's capabilities for efficient data management and bring updates back into your project with ease.</p>
+            <div class="tool-card default-card">
+                <h3><a href="https://www.eklenty.com/Help/Audit">Audit</a></h3>
+                <p>Tools designed to identify design integrity issues and address visibility and view-related problems.</p>
             </div>
 
-            <div class="tool-card intersect-card">
-                <h3><a href="https://www.eklenty.com/Help/Intersect">Intersect</a></h3>
-                <p>Aligns pipes or ducts with elevation conflicts for easier manual connections, particularly useful in sloped sanitary systems.</p>
+            <div class="tool-card default-card">
+                <h3><a href="https://www.eklenty.com/Help/Productivity">Productivity</a></h3>
+                <p>Tools designed to create, adjust, and manage connections between MEP elements, improving modeling speed and system consistency.</p>
             </div>
 
-            <div class="tool-card leapfrog-card">
-                <h3><a href="https://www.eklenty.com/Help/Leapfrog">Leapfrog</a></h3>
-                <p>Quickly resolve clashes by allowing pipes, ducts, cable trays, and conduits to jump over or under obstacles with precise, user-defined offsets and angles.</p>
-            </div>
-
-            <div class="tool-card view-tools-card">
-                <h3><a href="https://www.eklenty.com/Help/ViewTools">View Tools</a></h3>
-                <p>Manage element visibility by identifying hidden elements, pinning or unpinning views and restoring manually hidden elements.</p>
+            <div class="tool-card default-card">
+                <h3><a href="https://www.eklenty.com/Help/Selection">Selection</a></h3>
+                <p>Tools designed to simplify element selection, system-based picking, and navigation within host and linked models.</p>
             </div>
         </div>
 
         <footer class="footer">
             <div class="social-links" style="margin-top: 10px;">
                 <a href="https://www.linkedin.com/company/eklenty" class="social-link">
-                    <img src="https://www.eklenty.com/Assets/Media/LinkedIn.svg" 
-                         alt="LinkedIn" 
-                         class="social-icon"
-                         onerror="this.style.display='none'; this.parentElement.setAttribute('data-show-fallback', 'true')">
+                    <img src="https://www.eklenty.com/Assets/Media/LinkedIn.svg" alt="LinkedIn" class="social-icon"
+                        onerror="this.style.display='none'; this.parentElement.setAttribute('data-show-fallback', 'true')">
                 </a>
                 <a href="mailto:ceyhun@eklenty.com" class="social-link">
-                    <img src="https://www.eklenty.com/Assets/Media/MailEnvelope.png" 
-                         alt="Email" 
-                         class="social-icon"
-                         onerror="this.style.display='none'; this.parentElement.setAttribute('data-show-fallback', 'true')">
+                    <img src="https://www.eklenty.com/Assets/Media/MailEnvelope.png" alt="Email" class="social-icon"
+                        onerror="this.style.display='none'; this.parentElement.setAttribute('data-show-fallback', 'true')">
                 </a>
             </div>
         </footer>
     </div>
 
-</body></html>
+</body>
+
+</html>
