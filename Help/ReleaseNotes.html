@@ -1,427 +1,496 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Release Notes - Eklenty</title>
-    <link rel="icon" type="image/x-icon" href="/Assets/favicon.ico">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            line-height: 1.6;
-            color: #0a0f28;
-            background: linear-gradient(135deg, #f8fafb 0%, #e8f0ed 100%);
-            padding: 20px;
-            min-height: 100vh;
-        }
-        
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            background: white;
-            border-radius: 20px;
-            box-shadow: 0 10px 40px rgba(10, 15, 40, 0.1);
-            overflow: hidden;
-            position: relative; /* CRUCIAL: Makes .homepage-container position relative to THIS div */
-        }
-        
-        .header {
-            background: linear-gradient(135deg, #5d9874 0%, #0a0f28 85%);
-            color: #dcdcdc;
-            padding: 50px 40px;
-            text-align: center;
-        }
-        
-        .header h1 {
-            font-size: 3rem;
-            font-weight: 700;
-            margin: 0;
-        }
-        
-        .content {
-            padding: 40px;
-        }
-        
-        .version-section {
-            background: linear-gradient(135deg, #f4f8f6 0%, #e8f0ed 100%);
-            border: 2px solid #5d9874;
-            border-radius: 15px;
-            padding: 30px;
-            margin-bottom: 30px;
-        }
-        
-        .version-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 25px;
-            flex-wrap: wrap;
-            gap: 15px;
-        }
-        
-        .version-number {
-            font-size: 2.2rem;
-            font-weight: 700;
-            color: #0a0f28;
-        }
-        
-        .release-date {
-            color: #5d9874;
-            font-size: 1rem;
-            font-weight: 500;
-        }
-        
-        .feature-group {
-            margin-bottom: 25px;
-        }
-        
-        .feature-group h3 {
-            font-size: 1.3rem;
-            font-weight: 600;
-            color: #0a0f28;
-            margin-bottom: 12px;
-            padding-bottom: 8px;
-            border-bottom: 2px solid #5d9874;
-        }
-        
-        .feature-list {
-            list-style: none;
-            padding: 0;
-        }
-        
-        .feature-list li {
-            background: white;
-            margin-bottom: 8px;
-            padding: 12px 16px;
-            border-radius: 8px;
-            border-left: 4px solid #5d9874;
-            box-shadow: 0 2px 8px rgba(10, 15, 40, 0.05);
-            transition: all 0.2s ease;
-        }
-        
-        .feature-list li:hover {
-            transform: translateY(-1px);
-            box-shadow: 0 4px 15px rgba(10, 15, 40, 0.1);
-        }
-        
-        .feature-list li::before {
-            content: "•";
-            color: #5d9874;
-            font-weight: bold;
-            margin-right: 8px;
-        }
-        
-        .tool-name {
-            font-weight: 600;
-            color: #0a0f28;
-        }
-        
-        .improvement {
-            border-left-color: #8f9dbb;
-        }
-        
-        .improvement::before {
-            color: #8f9dbb;
-        }
-        
-        .bugfix {
-            border-left-color: #5d9874;
-        }
-        
-        .new-feature {
-            font-weight: 600;
-            color: #0a0f28;
-            border-left-color: #0a0f28;
-            background: linear-gradient(135deg, #f8f9fb 0%, #f0f2f8 100%);
-        }
-        
-        .new-feature::before {
-            color: #0a0f28;
-        }
-        
-        @media (max-width: 768px) {
-            .header h1 {
-                font-size: 2.2rem;
-            }
-            
-            .version-header {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-            
-            .version-number {
-                font-size: 1.8rem;
-            }
-            
-            .content {
-                padding: 25px;
-            }
-            
-            .version-section {
-                padding: 20px;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            body {
-                padding: 15px;
-            }
-            
-            .header {
-                padding: 30px 20px;
-            }
-            
-            .header h1 {
-                font-size: 1.8rem;
-            }
-        }
-		
-        .homepage-container {
-            position: absolute; /* Set to absolute to position relative to its parent (.container) */
-            top: 25px; /* Distance from the top of the parent (.container) */
-            right: 25px; /* Distance from the right of the parent (.container) */
-            display: flex;
-            align-items: center;
-            background-color: #f0f0f0;
-            padding: 10px 15px;
-            border-radius: 25px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-            z-index: 1000;
-        }
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Release Notes - Eklenty</title>
+	<link rel="icon" type="image/x-icon" href="/Assets/favicon.ico">
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
 
-        .homepage-logo {
-            width: 30px; /* Adjust logo size */
-            height: 30px;
-            margin-right: 10px;
-            border-radius: 50%; /* Make it circular */
-            overflow: hidden; /* Ensure the image stays within the circle */
-        }
+		body {
+			font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+			line-height: 1.6;
+			color: #0a0f28;
+			background: linear-gradient(135deg, #f8fafb 0%, #e8f0ed 100%);
+			padding: 20px;
+			min-height: 100vh;
+		}
 
-        .homepage-logo img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
+		.container {
+			max-width: 900px;
+			margin: 0 auto;
+			background: white;
+			border-radius: 20px;
+			box-shadow: 0 10px 40px rgba(10, 15, 40, 0.1);
+			overflow: hidden;
+			position: relative;
+			/* CRUCIAL: Makes .homepage-container position relative to THIS div */
+		}
 
-        .homepage-text a {
-            color: #333; /* Darker text color */
-            text-decoration: none;
-            font-weight: bold;
-        }
+		.header {
+			background: linear-gradient(135deg, #5d9874 0%, #0a0f28 85%);
+			color: #dcdcdc;
+			padding: 50px 40px;
+			text-align: center;
+		}
 
-        .homepage-text a:hover {
-            text-decoration: underline;
-        }
-		
-		
-		
-    </style>
+		.header h1 {
+			font-size: 3rem;
+			font-weight: 700;
+			margin: 0;
+		}
+
+		.content {
+			padding: 40px;
+		}
+
+		.version-section {
+			background: linear-gradient(135deg, #f4f8f6 0%, #e8f0ed 100%);
+			border: 2px solid #5d9874;
+			border-radius: 15px;
+			padding: 30px;
+			margin-bottom: 30px;
+		}
+
+		.version-header {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			margin-bottom: 25px;
+			flex-wrap: wrap;
+			gap: 15px;
+		}
+
+		.version-number {
+			font-size: 2.2rem;
+			font-weight: 700;
+			color: #0a0f28;
+		}
+
+		.release-date {
+			color: #5d9874;
+			font-size: 1rem;
+			font-weight: 500;
+		}
+
+		.feature-group {
+			margin-bottom: 25px;
+		}
+
+		.feature-group h3 {
+			font-size: 1.3rem;
+			font-weight: 600;
+			color: #0a0f28;
+			margin-bottom: 12px;
+			padding-bottom: 8px;
+			border-bottom: 2px solid #5d9874;
+		}
+
+		.feature-list {
+			list-style: none;
+			padding: 0;
+		}
+
+		.feature-list li {
+			background: white;
+			margin-bottom: 8px;
+			padding: 12px 16px;
+			border-radius: 8px;
+			border-left: 4px solid #5d9874;
+			box-shadow: 0 2px 8px rgba(10, 15, 40, 0.05);
+			transition: all 0.2s ease;
+		}
+
+		.feature-list li:hover {
+			transform: translateY(-1px);
+			box-shadow: 0 4px 15px rgba(10, 15, 40, 0.1);
+		}
+
+		.feature-list li::before {
+			content: "•";
+			color: #5d9874;
+			font-weight: bold;
+			margin-right: 8px;
+		}
+
+		.tool-name {
+			font-weight: 600;
+			color: #0a0f28;
+		}
+
+		.improvement {
+			border-left-color: #8f9dbb;
+		}
+
+		.improvement::before {
+			color: #8f9dbb;
+		}
+
+		.bugfix {
+			border-left-color: #5d9874;
+		}
+
+		.new-feature {
+			font-weight: 600;
+			color: #0a0f28;
+			border-left-color: #0a0f28;
+			background: linear-gradient(135deg, #f8f9fb 0%, #f0f2f8 100%);
+		}
+
+		.new-feature::before {
+			color: #0a0f28;
+		}
+
+		@media (max-width: 768px) {
+			.header h1 {
+				font-size: 2.2rem;
+			}
+
+			.version-header {
+				flex-direction: column;
+				align-items: flex-start;
+			}
+
+			.version-number {
+				font-size: 1.8rem;
+			}
+
+			.content {
+				padding: 25px;
+			}
+
+			.version-section {
+				padding: 20px;
+			}
+		}
+
+		@media (max-width: 480px) {
+			body {
+				padding: 15px;
+			}
+
+			.header {
+				padding: 30px 20px;
+			}
+
+			.header h1 {
+				font-size: 1.8rem;
+			}
+		}
+
+		.homepage-container {
+			position: absolute;
+			/* Set to absolute to position relative to its parent (.container) */
+			top: 25px;
+			/* Distance from the top of the parent (.container) */
+			right: 25px;
+			/* Distance from the right of the parent (.container) */
+			display: flex;
+			align-items: center;
+			background-color: #f0f0f0;
+			padding: 10px 15px;
+			border-radius: 25px;
+			box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+			z-index: 1000;
+		}
+
+		.homepage-logo {
+			width: 30px;
+			/* Adjust logo size */
+			height: 30px;
+			margin-right: 10px;
+			border-radius: 50%;
+			/* Make it circular */
+			overflow: hidden;
+			/* Ensure the image stays within the circle */
+		}
+
+		.homepage-logo img {
+			width: 100%;
+			height: auto;
+			display: block;
+		}
+
+		.homepage-text a {
+			color: #333;
+			/* Darker text color */
+			text-decoration: none;
+			font-weight: bold;
+		}
+
+		.homepage-text a:hover {
+			text-decoration: underline;
+		}
+	</style>
 </head>
+
 <body>
-    <div class="container">
-        <div class="homepage-container">
-            <div class="homepage-logo">
-                <a href="https://www.eklenty.com" target="_blank">
-                    <img src="https://www.eklenty.com/Assets/Logo/EklentyLogo620.png" alt="Eklenty Logo">
-                </a>
-            </div>
-            <div class="homepage-text">
-                <a href="https://www.eklenty.com" target="_blank">Eklenty</a>
-            </div>
-        </div>
-		
-        <div class="header">
-            <h1>Release Notes</h1>
-        </div>
-        
-        <div class="content">
-			
+	<div class="container">
+		<div class="homepage-container">
+			<div class="homepage-logo">
+				<a href="https://www.eklenty.com" target="_blank">
+					<img src="https://www.eklenty.com/Assets/Logo/EklentyLogo620.png" alt="Eklenty Logo">
+				</a>
+			</div>
+			<div class="homepage-text">
+				<a href="https://www.eklenty.com" target="_blank">Eklenty</a>
+			</div>
+		</div>
 
-			
-			<div class="version-section">
-                <div class="version-header">
-                    <div class="version-number">v0.9.8.1</div>
-                    <div class="release-date">Release Date: 14.12.2025</div>
-                </div>
-				
-                <div class="feature-group">
-                    <h3>New Tools added</h3>
-                    <ul class="feature-list">
-                        <li class="new-feature">Clash Manager</li>
-                        <li class="new-feature">AutoCut</li>
-                        <li class="new-feature">ReSlot</li>
-                        <li class="new-feature">Affecting Filters</li>
-                        <li class="new-feature">Linked Elements</li>
-                    </ul>
-                </div>		
-				
-                <div class="feature-group">
-                    <h3>Sheet Bridge</h3>
-                    <ul class="feature-list">						
-						<li class="bugfix">Resolved the issue causing Type Parameters to be exported in the wrong colour code</li>
-                    </ul>
-                </div>
+		<div class="header">
+			<h1>Release Notes</h1>
+		</div>
 
-                <div class="feature-group">
-                    <h3>Transition Connect</h3>
-                    <ul class="feature-list">
-                        <li class="bugfix">Bug Fixes</li>
-                    </ul>
-                </div>				
-                
-                <div class="feature-group">
-                    <h3>3D Insert</h3>
-                    <ul class="feature-list">
-                        <li class="bugfix">Resolved the issue causing an error when the tool is used for Conduits</li>
-                    </ul>
-                </div>		
-				
-                <div class="feature-group">
-                    <h3>Update Notifier added</h3>
-                    <ul class="feature-list">						
-						<li class="new-feature">When the new version is released you will get a message once you launch Revit.</li>
-                    </ul>
-                </div>
-				
-            </div>					
-			
-			
-			
+		<div class="content">
 			<div class="version-section">
-                <div class="version-header">
-                    <div class="version-number">v0.9.7</div>
-                    <div class="release-date">Release Date: 12.09.2025</div>
-                </div>     
-				
-                <div class="feature-group">
-                    <h3>Sheet Bridge</h3>
-                    <ul class="feature-list">						
+				<div class="version-header">
+					<div class="version-number">v0.9.9</div>
+					<div class="release-date">Release Date: 07.02.2025</div>
+				</div>
+
+				<div class="feature-group">
+					<h3>New Tools added</h3>
+					<ul class="feature-list">
+						<li class="new-feature">3D Views To IFC</li>
+						<li class="new-feature">3D Connect</li>
+					</ul>
+				</div>
+
+				<div class="feature-group">
+					<h3>General</h3>
+					<ul class="feature-list">
+						<li class="improvement">Icons have been redesigned</li>
+					</ul>
+				</div>
+
+				<div class="feature-group">
+					<h3>Sheet Bridge</h3>
+					<ul class="feature-list">
+						<li class="bugfix">Fixed the issue causing an error when a Parameter value is supposed to refer
+							another Element. (e.g. View Template of a View element)</li>
+					</ul>
+				</div>
+
+				<div class="feature-group">
+					<h3>System Members</h3>
+					<ul class="feature-list">
+						<li class="new-feature">Now supporting Insulation elements</li>
+					</ul>
+				</div>
+
+				<div class="feature-group">
+					<h3>Select System</h3>
+					<ul class="feature-list">
+						<li class="new-feature">Now supporting Insulation elements</li>
+					</ul>
+				</div>
+
+				<div class="feature-group">
+					<h3>Connect Nearest</h3>
+					<ul class="feature-list">
+						<li class="improvement">Connected connector size of the element no longer changes in case the
+							change affects another connector of the same element. (e.g. Tee Fitting pieces that isnt
+							configured to have different connector sizes on straight ends)</li>
+					</ul>
+				</div>
+			</div>
+
+
+
+			<div class="version-section">
+				<div class="version-header">
+					<div class="version-number">v0.9.8.1</div>
+					<div class="release-date">Release Date: 14.12.2025</div>
+				</div>
+
+				<div class="feature-group">
+					<h3>New Tools added</h3>
+					<ul class="feature-list">
+						<li class="new-feature">Clash Manager</li>
+						<li class="new-feature">AutoCut</li>
+						<li class="new-feature">ReSlot</li>
+						<li class="new-feature">Affecting Filters</li>
+						<li class="new-feature">Linked Elements</li>
+					</ul>
+				</div>
+
+				<div class="feature-group">
+					<h3>Sheet Bridge</h3>
+					<ul class="feature-list">
+						<li class="bugfix">Resolved the issue causing Type Parameters to be exported in the wrong colour
+							code</li>
+					</ul>
+				</div>
+
+				<div class="feature-group">
+					<h3>Transition Connect</h3>
+					<ul class="feature-list">
+						<li class="bugfix">Bug Fixes</li>
+					</ul>
+				</div>
+
+				<div class="feature-group">
+					<h3>3D Insert</h3>
+					<ul class="feature-list">
+						<li class="bugfix">Resolved the issue causing an error when the tool is used for Conduits</li>
+					</ul>
+				</div>
+
+				<div class="feature-group">
+					<h3>Update Notifier added</h3>
+					<ul class="feature-list">
+						<li class="new-feature">When the new version is released you will get a message once you launch
+							Revit.</li>
+					</ul>
+				</div>
+
+			</div>
+
+
+
+			<div class="version-section">
+				<div class="version-header">
+					<div class="version-number">v0.9.7</div>
+					<div class="release-date">Release Date: 12.09.2025</div>
+				</div>
+
+				<div class="feature-group">
+					<h3>Sheet Bridge</h3>
+					<ul class="feature-list">
 						<li class="bugfix">Resolved the issue causing error when importing enumerated values.</li>
 						<li class="improvement">Minor improvements</li>
-                    </ul>
-                </div>
-                
-                <div class="feature-group">
-                    <h3>3D Insert</h3>
-                    <ul class="feature-list">
-                        <li class="bugfix">Bug fixes</li>
-                    </ul>
-                </div>
-            </div>		
-			
-			
-            <div class="version-section">
-                <div class="version-header">
-                    <div class="version-number">v0.9.6</div>
-                    <div class="release-date">Release Date: 03.07.2025</div>
-                </div>
-                
-                <div class="feature-group">
-                    <h3>New Tool - Disconnect</h3>
-                    <ul class="feature-list">
-                        <li class="new-feature">Total Disconnect</li>
-                        <li class="new-feature">Mutual Disconnect</li>
-                    </ul>
-                </div>
-                
-                <div class="feature-group">
-                    <h3>Tee Fixer</h3>
-                    <ul class="feature-list">
-                        <li class="bugfix">Resolved the issue causing an error when a duct, connected to a port of the Tee fitting, is shorter than certain value. </li>
-                        <li class="bugfix">Resolved the issue causing an error when Tee has a round duct connected to it.</li>
-                    </ul>
-                </div>
-                
-                <div class="feature-group">
-                    <h3>3D Insert</h3>
-                    <ul class="feature-list">
-                        <li class="bugfix">Resolved the issue causing an error when round duct is involved.</li>
-                        <li class="bugfix">Bug fixes</li>
-                    </ul>
-                </div>
-            </div>		
-			
-			
-            <div class="version-section">
-                <div class="version-header">
-                    <div class="version-number">v0.9.5</div>
-                    <div class="release-date">Release Date: 09.06.2025</div>
-                </div>
-                
-                <div class="feature-group">
-                    <h3>System Updates</h3>
-                    <ul class="feature-list">
-                        <li class="new-feature">Starting from this version, Eklenty supports <span class="tool-name">Revit 2026</span></li>
-                    </ul>
-                </div>
-                
-                <div class="feature-group">
-                    <h3>New Tool - Find In Views</h3>
-                    <ul class="feature-list">
-                        <li class="new-feature">Find In Floor Plans</li>
-                        <li class="new-feature">Find In Sections</li>
-                        <li class="new-feature">Find In Elevations</li>
-                        <li class="new-feature">Find In Sheets</li>
-                        <li class="new-feature">Find In 3D Views</li>
-                        <li class="new-feature">Find In Schedules</li>
-                        <li class="new-feature">Find In All Views</li>
-                    </ul>
-                </div>
-                
-                <div class="feature-group">
-                    <h3>Sheet Bridge</h3>
-                    <ul class="feature-list">
-                        <li class="bugfix">Resolved an issue causing an error when the tool starts when a Multiple Category schedule is the active view</li>
-                        <li class="bugfix">Resolved the issue causing an error when importing changes of element categories that don't have Element Type definitions (e.g., Space instances)</li>
-                    </ul>
-                </div>
-                
-                <div class="feature-group">
-                    <h3>3D Insert</h3>
-                    <ul class="feature-list">
-                        <li class="bugfix">Resolved the issue where creation of a curve element causes an error when the element's length is under tolerance level</li>
-                        <li class="improvement">Minor improvements and bug fixes</li>
-                    </ul>
-                </div>
-                
-                <div class="feature-group">
-                    <h3>Align Gauge</h3>
-                    <ul class="feature-list">
-                        <li class="improvement">Tolerance of X and Y axis offset increased</li>
-                    </ul>
-                </div>
-                
-                <div class="feature-group">
-                    <h3>Why No See?</h3>
-                    <ul class="feature-list">
-                        <li class="bugfix">Resolved the issue that causes the tool to fail when a view filter criteria is left empty</li>
-                    </ul>
-                </div>
-                
-                <div class="feature-group">
-                    <h3>Connect Nearest</h3>
-                    <ul class="feature-list">
-                        <li class="improvement">Connector pairs forming an angle less than 165° will be ignored</li>
-                    </ul>
-                </div>
-                
-                <div class="feature-group">
-                    <h3>Sub Components</h3>
-                    <ul class="feature-list">
-                        <li class="improvement">Now also works for already selected elements instead of selecting everything from scratch</li>
-                        <li class="improvement">Will also select nested elements under other nested elements</li>
-                    </ul>
-                </div>
-            </div>			
-			
-			
-			
+					</ul>
+				</div>
+
+				<div class="feature-group">
+					<h3>3D Insert</h3>
+					<ul class="feature-list">
+						<li class="bugfix">Bug fixes</li>
+					</ul>
+				</div>
+			</div>
+
+
+			<div class="version-section">
+				<div class="version-header">
+					<div class="version-number">v0.9.6</div>
+					<div class="release-date">Release Date: 03.07.2025</div>
+				</div>
+
+				<div class="feature-group">
+					<h3>New Tool - Disconnect</h3>
+					<ul class="feature-list">
+						<li class="new-feature">Total Disconnect</li>
+						<li class="new-feature">Mutual Disconnect</li>
+					</ul>
+				</div>
+
+				<div class="feature-group">
+					<h3>Tee Fixer</h3>
+					<ul class="feature-list">
+						<li class="bugfix">Resolved the issue causing an error when a duct, connected to a port of the
+							Tee fitting, is shorter than certain value. </li>
+						<li class="bugfix">Resolved the issue causing an error when Tee has a round duct connected to
+							it.</li>
+					</ul>
+				</div>
+
+				<div class="feature-group">
+					<h3>3D Insert</h3>
+					<ul class="feature-list">
+						<li class="bugfix">Resolved the issue causing an error when round duct is involved.</li>
+						<li class="bugfix">Bug fixes</li>
+					</ul>
+				</div>
+			</div>
+
+
+			<div class="version-section">
+				<div class="version-header">
+					<div class="version-number">v0.9.5</div>
+					<div class="release-date">Release Date: 09.06.2025</div>
+				</div>
+
+				<div class="feature-group">
+					<h3>System Updates</h3>
+					<ul class="feature-list">
+						<li class="new-feature">Starting from this version, Eklenty supports <span
+								class="tool-name">Revit 2026</span></li>
+					</ul>
+				</div>
+
+				<div class="feature-group">
+					<h3>New Tool - Find In Views</h3>
+					<ul class="feature-list">
+						<li class="new-feature">Find In Floor Plans</li>
+						<li class="new-feature">Find In Sections</li>
+						<li class="new-feature">Find In Elevations</li>
+						<li class="new-feature">Find In Sheets</li>
+						<li class="new-feature">Find In 3D Views</li>
+						<li class="new-feature">Find In Schedules</li>
+						<li class="new-feature">Find In All Views</li>
+					</ul>
+				</div>
+
+				<div class="feature-group">
+					<h3>Sheet Bridge</h3>
+					<ul class="feature-list">
+						<li class="bugfix">Resolved an issue causing an error when the tool starts when a Multiple
+							Category schedule is the active view</li>
+						<li class="bugfix">Resolved the issue causing an error when importing changes of element
+							categories that don't have Element Type definitions (e.g., Space instances)</li>
+					</ul>
+				</div>
+
+				<div class="feature-group">
+					<h3>3D Insert</h3>
+					<ul class="feature-list">
+						<li class="bugfix">Resolved the issue where creation of a curve element causes an error when the
+							element's length is under tolerance level</li>
+						<li class="improvement">Minor improvements and bug fixes</li>
+					</ul>
+				</div>
+
+				<div class="feature-group">
+					<h3>Align Gauge</h3>
+					<ul class="feature-list">
+						<li class="improvement">Tolerance of X and Y axis offset increased</li>
+					</ul>
+				</div>
+
+				<div class="feature-group">
+					<h3>Why No See?</h3>
+					<ul class="feature-list">
+						<li class="bugfix">Resolved the issue that causes the tool to fail when a view filter criteria
+							is left empty</li>
+					</ul>
+				</div>
+
+				<div class="feature-group">
+					<h3>Connect Nearest</h3>
+					<ul class="feature-list">
+						<li class="improvement">Connector pairs forming an angle less than 165° will be ignored</li>
+					</ul>
+				</div>
+
+				<div class="feature-group">
+					<h3>Sub Components</h3>
+					<ul class="feature-list">
+						<li class="improvement">Now also works for already selected elements instead of selecting
+							everything from scratch</li>
+						<li class="improvement">Will also select nested elements under other nested elements</li>
+					</ul>
+				</div>
+			</div>
+
+
+
 			<div class="version-section">
 				<div class="version-header">
 					<div class="version-number">v0.9.4</div>
@@ -432,27 +501,30 @@
 					<h3>Sheet Bridge</h3>
 					<ul class="feature-list">
 						<li class="bugfix">Resolved an issue where importing type parameters causing error.</li>
-						<li class="improvement">Integer or Number type of parameter values are now imported as 0, when their excel cells are left blank.</li>
+						<li class="improvement">Integer or Number type of parameter values are now imported as 0, when
+							their excel cells are left blank.</li>
 					</ul>
 				</div>
 
 				<div class="feature-group">
 					<h3>3D Insert</h3>
 					<ul class="feature-list">
-						<li class="bugfix">Resolved the issue when connecting 2 off-centered Ducts with Tap (Takeoff) Fitting causes an error.</li>
+						<li class="bugfix">Resolved the issue when connecting 2 off-centered Ducts with Tap (Takeoff)
+							Fitting causes an error.</li>
 					</ul>
 				</div>
 
 				<div class="feature-group">
 					<h3>Buttons</h3>
 					<ul class="feature-list">
-						<li class="bugfix">Resolved the issue causing icon of Eklenty Button to disappear once the theme is changed in Revit 2024 and 2025</li>
+						<li class="bugfix">Resolved the issue causing icon of Eklenty Button to disappear once the theme
+							is changed in Revit 2024 and 2025</li>
 					</ul>
 				</div>
 			</div>
-			
-			
-			
+
+
+
 			<div class="version-section">
 				<div class="version-header">
 					<div class="version-number">v0.9.3 the First Open Beta Release</div>
@@ -463,22 +535,26 @@
 					<h3>Transition Connect</h3>
 					<ul class="feature-list">
 						<li class="new-feature">Now also supports Mechanical Equipments with duct connections.</li>
-						<li class="bugfix">Resolved the issue where aligned same size ducts causing Revit 2025 to crash</li>
+						<li class="bugfix">Resolved the issue where aligned same size ducts causing Revit 2025 to crash
+						</li>
 					</ul>
 				</div>
 
 				<div class="feature-group">
 					<h3>Connect Nearest</h3>
 					<ul class="feature-list">
-						<li class="improvement">Now the tool also changes the size of the connector of Family instances, if the connector sizes are associated to an instance parameter.</li>
+						<li class="improvement">Now the tool also changes the size of the connector of Family instances,
+							if the connector sizes are associated to an instance parameter.</li>
 					</ul>
 				</div>
 
 				<div class="feature-group">
 					<h3>TeeFixer</h3>
 					<ul class="feature-list">
-						<li class="bugfix">Resolved an issue that caused incorrect sizing of vertically oriented Tee fitting instances.</li>
-						<li class="bugfix">Resolved the issue where Rectangular to Round connections causes exception.</li>
+						<li class="bugfix">Resolved an issue that caused incorrect sizing of vertically oriented Tee
+							fitting instances.</li>
+						<li class="bugfix">Resolved the issue where Rectangular to Round connections causes exception.
+						</li>
 						<li class="bugfix">Resolved the issue causing Revit 2025 crash in rare cases.</li>
 					</ul>
 				</div>
@@ -486,9 +562,12 @@
 				<div class="feature-group">
 					<h3>Sheet Bridge</h3>
 					<ul class="feature-list">
-						<li class="bugfix">Resolved an issue where importing blank cells caused interpretation errors.</li>
-						<li class="improvement">The category of each schedule is now displayed in the UI, and the list can also be sorted by category.</li>
-						<li class="bugfix">Resolved an issue where numerical values were exported with floating-point precision errors instead of properly rounded values.</li>
+						<li class="bugfix">Resolved an issue where importing blank cells caused interpretation errors.
+						</li>
+						<li class="improvement">The category of each schedule is now displayed in the UI, and the list
+							can also be sorted by category.</li>
+						<li class="bugfix">Resolved an issue where numerical values were exported with floating-point
+							precision errors instead of properly rounded values.</li>
 						<li class="improvement">General UI improvements.</li>
 					</ul>
 				</div>
@@ -496,14 +575,17 @@
 				<div class="feature-group">
 					<h3>Why No See?</h3>
 					<ul class="feature-list">
-						<li class="new-feature">Support added for hidden Category Types (Model, Annotation, Imported etc.).</li>
+						<li class="new-feature">Support added for hidden Category Types (Model, Annotation, Imported
+							etc.).</li>
 					</ul>
 				</div>
 
 				<div class="feature-group">
 					<h3>Eklenty Button Added</h3>
 					<ul class="feature-list">
-						<li class="new-feature">About: Learn about Eklenty. Help: View user documentation. Update: Check for latest version. Contact: Reach out via email. LinkedIn: Visit Eklenty LinkedIn page.</li>
+						<li class="new-feature">About: Learn about Eklenty. Help: View user documentation. Update: Check
+							for latest version. Contact: Reach out via email. LinkedIn: Visit Eklenty LinkedIn page.
+						</li>
 					</ul>
 				</div>
 
@@ -514,8 +596,8 @@
 					</ul>
 				</div>
 			</div>
-			
-			
+
+
 			<div class="version-section">
 				<div class="version-header">
 					<div class="version-number">v0.9.2</div>
@@ -534,12 +616,13 @@
 				<div class="feature-group">
 					<h3>Sheet Bridge</h3>
 					<ul class="feature-list">
-						<li class="improvement">It is now safe to export Material Take-Off Schedules. Import function is still under development.</li>
+						<li class="improvement">It is now safe to export Material Take-Off Schedules. Import function is
+							still under development.</li>
 					</ul>
 				</div>
 			</div>
-			
-			
+
+
 			<div class="version-section">
 				<div class="version-header">
 					<div class="version-number">v0.9.1</div>
@@ -550,8 +633,10 @@
 					<h3>Connect Nearest</h3>
 					<ul class="feature-list">
 						<li class="improvement">Distance tolerance for ductwork elements is changed to 40 mm.</li>
-						<li class="improvement">Only connector of the flex ducts and flex pipes will be moved during connection</li>
-						<li class="bugfix">Resolved the issue where curve elements in certain conditions dragging the element connected to them while moving.</li>
+						<li class="improvement">Only connector of the flex ducts and flex pipes will be moved during
+							connection</li>
+						<li class="bugfix">Resolved the issue where curve elements in certain conditions dragging the
+							element connected to them while moving.</li>
 						<li class="bugfix">Bug fix</li>
 					</ul>
 				</div>
@@ -566,12 +651,13 @@
 				<div class="feature-group">
 					<h3>Transition Connect</h3>
 					<ul class="feature-list">
-						<li class="bugfix">Resolved the issue causing an error when elements selected with connectors facing away from each other.</li>
+						<li class="bugfix">Resolved the issue causing an error when elements selected with connectors
+							facing away from each other.</li>
 					</ul>
 				</div>
 			</div>
-			
-			
+
+
 			<div class="version-section">
 				<div class="version-header">
 					<div class="version-number">v0.9.0 Early Access Release</div>
@@ -585,7 +671,7 @@
 					</ul>
 				</div>
 			</div>
-			
+
 			<div class="version-section">
 				<div class="version-header">
 					<div class="version-number">v0.8.8</div>
@@ -596,7 +682,8 @@
 					<h3>3D Corner</h3>
 					<ul class="feature-list">
 						<li class="improvement">Tool relocated to Productivity panel.</li>
-						<li class="improvement">Object selection algorithm has been modified so that it won't allow selection of Insulation elements.</li>
+						<li class="improvement">Object selection algorithm has been modified so that it won't allow
+							selection of Insulation elements.</li>
 						<li class="new-feature">Tool automatically applies insulation based on selected elements.</li>
 					</ul>
 				</div>
@@ -605,7 +692,8 @@
 					<h3>3D Insert</h3>
 					<ul class="feature-list">
 						<li class="improvement">Tool relocated to Productivity panel.</li>
-						<li class="improvement">Object selection algorithm has been modified so that it won't allow selection of Insulation elements.</li>
+						<li class="improvement">Object selection algorithm has been modified so that it won't allow
+							selection of Insulation elements.</li>
 						<li class="new-feature">Tool automatically applies insulation based on selected elements.</li>
 					</ul>
 				</div>
@@ -613,19 +701,21 @@
 				<div class="feature-group">
 					<h3>Intersect</h3>
 					<ul class="feature-list">
-						<li class="bugfix">Resolved the issue causing an error when perpendicular elements are selected.</li>
+						<li class="bugfix">Resolved the issue causing an error when perpendicular elements are selected.
+						</li>
 					</ul>
 				</div>
 
 				<div class="feature-group">
 					<h3>Transition Connect</h3>
 					<ul class="feature-list">
-						<li class="improvement">Tool now disallows selection of 2 elements that are impossible to connect with a transition.</li>
+						<li class="improvement">Tool now disallows selection of 2 elements that are impossible to
+							connect with a transition.</li>
 						<li class="improvement">Tool now disallows selection of same element in both selection.</li>
 					</ul>
 				</div>
 			</div>
-			
+
 			<div class="version-section">
 				<div class="version-header">
 					<div class="version-number">v0.8.7</div>
@@ -640,9 +730,9 @@
 					</ul>
 				</div>
 			</div>
-			
-			
-			
+
+
+
 			<div class="version-section">
 				<div class="version-header">
 					<div class="version-number">v0.8.6</div>
@@ -659,7 +749,8 @@
 				<div class="feature-group">
 					<h3>ToggleInsulation</h3>
 					<ul class="feature-list">
-						<li class="bugfix">Resolved the issue where the tool throws an exception when a 3D view graphic settings are controlled by a View Template.</li>
+						<li class="bugfix">Resolved the issue where the tool throws an exception when a 3D view graphic
+							settings are controlled by a View Template.</li>
 					</ul>
 				</div>
 
@@ -677,8 +768,8 @@
 					</ul>
 				</div>
 			</div>
-			
-			
+
+
 			<div class="version-section">
 				<div class="version-header">
 					<div class="version-number">v0.8.5</div>
@@ -688,13 +779,14 @@
 				<div class="feature-group">
 					<h3>Sheetbridge</h3>
 					<ul class="feature-list">
-						<li class="new-feature">Indirect user created parameters are now supported (eg. user created Room instance parameters, Space instance parameters etc.).</li>
+						<li class="new-feature">Indirect user created parameters are now supported (eg. user created
+							Room instance parameters, Space instance parameters etc.).</li>
 					</ul>
 				</div>
 			</div>
-			
-			
-			
+
+
+
 			<div class="version-section">
 				<div class="version-header">
 					<div class="version-number">v0.8.4</div>
@@ -704,8 +796,10 @@
 				<div class="feature-group">
 					<h3>Sheetbridge</h3>
 					<ul class="feature-list">
-						<li class="bugfix">Bug fixed where a Family Type change returns different Family with the same type name.</li>
-						<li class="improvement">When an element doesn't exist in the model add-in reports the issue.</li>
+						<li class="bugfix">Bug fixed where a Family Type change returns different Family with the same
+							type name.</li>
+						<li class="improvement">When an element doesn't exist in the model add-in reports the issue.
+						</li>
 					</ul>
 				</div>
 
@@ -723,7 +817,7 @@
 					</ul>
 				</div>
 			</div>
-			
+
 			<div class="version-section">
 				<div class="version-header">
 					<div class="version-number">v0.8.3</div>
@@ -759,9 +853,9 @@
 				</div>
 			</div>
 
-			
-			
-			
+
+
+
 			<div class="version-section">
 				<div class="version-header">
 					<div class="version-number">v0.8.2</div>
@@ -775,9 +869,9 @@
 					</ul>
 				</div>
 			</div>
-			
-			
-			
+
+
+
 			<div class="version-section">
 				<div class="version-header">
 					<div class="version-number">v0.8.1</div>
@@ -788,7 +882,8 @@
 					<h3>SheetBridge</h3>
 					<ul class="feature-list">
 						<li class="new-feature">Key Schedules are now also supported.</li>
-						<li class="new-feature">Integer based String parameters are now fully supported (eg. "Condition Type" parameter of Space instances).</li>
+						<li class="new-feature">Integer based String parameters are now fully supported (eg. "Condition
+							Type" parameter of Space instances).</li>
 						<li class="bugfix">Resolved the issue where an empty schedule list can still be exported.</li>
 					</ul>
 				</div>
@@ -807,7 +902,7 @@
 					</ul>
 				</div>
 			</div>
-			
+
 			<div class="version-section">
 				<div class="version-header">
 					<div class="version-number">v0.8.0</div>
@@ -821,7 +916,7 @@
 					</ul>
 				</div>
 			</div>
-			
+
 			<div class="version-section">
 				<div class="version-header">
 					<div class="version-number">v0.7.9</div>
@@ -831,20 +926,22 @@
 				<div class="feature-group">
 					<h3>Pulldown Buttons</h3>
 					<ul class="feature-list">
-						<li class="bugfix">Resolved an issue where the Split Button icons wouldn't change their colors when the theme is changed in Revit 2024.</li>
+						<li class="bugfix">Resolved an issue where the Split Button icons wouldn't change their colors
+							when the theme is changed in Revit 2024.</li>
 					</ul>
 				</div>
 
 				<div class="feature-group">
 					<h3>SheetBridge</h3>
 					<ul class="feature-list">
-						<li class="bugfix">Resolved an issue where the first Integer based string parameter in the sheet getting ignored during import session.</li>
+						<li class="bugfix">Resolved an issue where the first Integer based string parameter in the sheet
+							getting ignored during import session.</li>
 					</ul>
 				</div>
 			</div>
-			
-			
-			
+
+
+
 			<div class="version-section">
 				<div class="version-header">
 					<div class="version-number">v0.7.8</div>
@@ -854,19 +951,25 @@
 				<div class="feature-group">
 					<h3>Leapfrog</h3>
 					<ul class="feature-list">
-						<li class="bugfix">Bug fix where a multi-system mechanical equipment gets involved with the selection and moves more than once.</li>
+						<li class="bugfix">Bug fix where a multi-system mechanical equipment gets involved with the
+							selection and moves more than once.</li>
 					</ul>
 				</div>
 
 				<div class="feature-group">
 					<h3>SelectFamily</h3>
 					<ul class="feature-list">
-						<li class="bugfix">Bug, causing exception when incompatible element is selected, is now resolved.</li>
-						<li class="new-feature">Legend Components are also can now be selected as reference element. The result will, however, exclude the legend component after running the tool.</li>
-						<li class="new-feature">Select Family tool is now split into 2 different tools: Select All Family, Select Visible Family.</li>
-						<li class="new-feature">Select All Family: selects all type independent family instances all accross the project.</li>
-						<li class="new-feature">Select Visible Family: selects all type independent family instances visible in the active view.</li>
-						
+						<li class="bugfix">Bug, causing exception when incompatible element is selected, is now
+							resolved.</li>
+						<li class="new-feature">Legend Components are also can now be selected as reference element. The
+							result will, however, exclude the legend component after running the tool.</li>
+						<li class="new-feature">Select Family tool is now split into 2 different tools: Select All
+							Family, Select Visible Family.</li>
+						<li class="new-feature">Select All Family: selects all type independent family instances all
+							accross the project.</li>
+						<li class="new-feature">Select Visible Family: selects all type independent family instances
+							visible in the active view.</li>
+
 					</ul>
 				</div>
 
@@ -887,23 +990,28 @@
 				<div class="feature-group">
 					<h3>TeeFixer</h3>
 					<ul class="feature-list">
-						<li class="bugfix">Fixed the issue where the tool fails to set the height of the fitting instance correctly.</li>
+						<li class="bugfix">Fixed the issue where the tool fails to set the height of the fitting
+							instance correctly.</li>
 					</ul>
 				</div>
 
 				<div class="feature-group">
 					<h3>SheetBridge</h3>
 					<ul class="feature-list">
-						<li class="bugfix">Resolved an issue where Space instances with their Space Type parameter initially set to Null would cause an exception during processing.</li>
-						<li class="improvement">ElementId type of parameters now exported as empty cells if they are set to Null.</li>
-						<li class="improvement">User can now empty an ElementId type of cell if he wants to set it to Null.</li>
-						<li class="improvement">the tool is now able to report all the cells that has faulty input and asks user to correct them.</li>
+						<li class="bugfix">Resolved an issue where Space instances with their Space Type parameter
+							initially set to Null would cause an exception during processing.</li>
+						<li class="improvement">ElementId type of parameters now exported as empty cells if they are set
+							to Null.</li>
+						<li class="improvement">User can now empty an ElementId type of cell if he wants to set it to
+							Null.</li>
+						<li class="improvement">the tool is now able to report all the cells that has faulty input and
+							asks user to correct them.</li>
 					</ul>
 				</div>
 			</div>
-			
-			
-			
+
+
+
 			<div class="version-section">
 				<div class="version-header">
 					<div class="version-number">v0.7.7</div>
@@ -917,8 +1025,8 @@
 					</ul>
 				</div>
 			</div>
-			
-			
+
+
 			<div class="version-section">
 				<div class="version-header">
 					<div class="version-number">v0.7.6</div>
@@ -935,44 +1043,50 @@
 				<div class="feature-group">
 					<h3>ZoomSelected</h3>
 					<ul class="feature-list">
-						<li class="bugfix">Fixed the issue causing the tool throw an exception when no element is selected.</li>
+						<li class="bugfix">Fixed the issue causing the tool throw an exception when no element is
+							selected.</li>
 					</ul>
 				</div>
 
 				<div class="feature-group">
 					<h3>SelectFamily</h3>
 					<ul class="feature-list">
-						<li class="bugfix">Fixed the issue causing the tool throw an exception when no element is selected.</li>
+						<li class="bugfix">Fixed the issue causing the tool throw an exception when no element is
+							selected.</li>
 					</ul>
 				</div>
 
 				<div class="feature-group">
 					<h3>SubComponents</h3>
 					<ul class="feature-list">
-						<li class="bugfix">Fixed the issue causing the tool throw an exception when no element is selected when prompted.</li>
+						<li class="bugfix">Fixed the issue causing the tool throw an exception when no element is
+							selected when prompted.</li>
 					</ul>
 				</div>
 
 				<div class="feature-group">
 					<h3>Leapfrog</h3>
 					<ul class="feature-list">
-						<li class="improvement">Prompts you to select elements if no MEPCurve element is selected before starting the tool.</li>
+						<li class="improvement">Prompts you to select elements if no MEPCurve element is selected before
+							starting the tool.</li>
 					</ul>
 				</div>
 
 				<div class="feature-group">
 					<h3>ToggleInsulation</h3>
 					<ul class="feature-list">
-						<li class="improvement">Refuses to function only when V/G Overrides Model is checked in View Template of the Active View.</li>
+						<li class="improvement">Refuses to function only when V/G Overrides Model is checked in View
+							Template of the Active View.</li>
 					</ul>
 				</div>
 			</div>
-			
-			
-			
-			
-			
-        </div>
-    </div>
+
+
+
+
+
+		</div>
+	</div>
 </body>
+
 </html>

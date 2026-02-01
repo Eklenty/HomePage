@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eklenty Audit Help</title>
+    <link rel="icon" type="image/x-icon" href="/Assets/favicon.ico">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #0a0f28;
+            background: linear-gradient(135deg, #f8fafb 0%, #e8f0ed 100%);
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(10, 15, 40, 0.1);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #5d9874 0%, #0a0f28 85%);
+            color: #dcdcdc;
+            padding: 50px 40px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin: 0;
+        }
+
+        .content {
+            padding: 50px 40px;
+        }
+
+        .homepage-container {
+            position: absolute;
+            top: 25px;
+            right: 25px;
+            display: flex;
+            align-items: center;
+            background-color: #f0f0f0;
+            padding: 10px 15px;
+            border-radius: 25px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+        }
+
+        .homepage-logo {
+            width: 30px;
+            height: 30px;
+            margin-right: 10px;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+
+        .homepage-logo img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .homepage-text a {
+            color: #333;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .homepage-text a:hover {
+            text-decoration: underline;
+        }
+
+        /* Tool Section - Enhanced Distinction */
+        .tool-section {
+            background: white;
+            border: 1px solid #e0e0e0;
+            border-radius: 20px;
+            padding: 0;
+            /* Remove default padding to let image bleed */
+            margin-bottom: 60px;
+            /* Increased separation */
+            box-shadow: 0 5px 25px rgba(10, 15, 40, 0.08);
+            overflow: hidden;
+            /* For proper rounding with image */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .tool-section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(10, 15, 40, 0.15);
+        }
+
+        .tool-content-wrapper {
+            padding: 35px;
+        }
+
+        .tool-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .tool-title {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #0a0f28;
+            margin: 0;
+        }
+
+        .tool-description {
+            color: #5d9874;
+            font-size: 1.1rem;
+            font-weight: 500;
+            margin-bottom: 25px;
+            line-height: 1.7;
+        }
+
+        .steps-group h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #0a0f28;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #5d9874;
+        }
+
+        .steps-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .steps-list li {
+            background: #f8fafb;
+            margin-bottom: 10px;
+            padding: 12px 18px;
+            border-radius: 10px;
+            border-left: 4px solid #0a0f28;
+            color: #444;
+            font-size: 0.95rem;
+            transition: background 0.2s ease;
+        }
+
+        .steps-list li:hover {
+            background: #f0f4f8;
+        }
+
+        .steps-list li::before {
+            content: "•";
+            color: #0a0f28;
+            font-weight: bold;
+            margin-right: 10px;
+            font-size: 1.2rem;
+            line-height: 0;
+            position: relative;
+            top: 2px;
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            /* 16:9 aspect ratio */
+            height: 0;
+            overflow: hidden;
+            border-bottom: 1px solid #eee;
+            /* subtle separator */
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* Note/Tip Sections */
+        .note-section,
+        .tip-section {
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 25px;
+            font-size: 0.95rem;
+        }
+
+        .note-section {
+            background: #fff8f5;
+            border: 1px solid #e6ccb3;
+            border-left: 5px solid #d9730d;
+        }
+
+        .tip-section {
+            background: #f4fdf8;
+            border: 1px solid #ccebd6;
+            border-left: 5px solid #5d9874;
+        }
+
+        .note-content h3,
+        .tip-content h3 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .note-content h3 {
+            color: #d9730d;
+        }
+
+        .tip-content h3 {
+            color: #5d9874;
+        }
+
+        .note-content ul,
+        .tip-content ul {
+            padding-left: 20px;
+            margin: 0;
+        }
+
+        .note-content li,
+        .tip-content li {
+            margin-bottom: 5px;
+        }
+
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2.2rem;
+            }
+
+            .tool-title {
+                font-size: 1.8rem;
+            }
+
+            .content {
+                padding: 25px;
+            }
+
+            .tool-content-wrapper {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="homepage-container">
+            <div class="homepage-logo">
+                <a href="https://www.eklenty.com" target="_blank">
+                    <img src="https://www.eklenty.com/Assets/Logo/EklentyLogo620.png" alt="Eklenty Logo">
+                </a>
+            </div>
+            <div class="homepage-text">
+                <a href="https://www.eklenty.com" target="_blank">Eklenty</a>
+            </div>
+        </div>
+
+        <div class="header">
+            <h1>Eklenty Audit Help</h1>
+        </div>
+
+        <div class="content">
+
+            <!-- Tool 1: Slipped Duct Taps -->
+            <div class="tool-section">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/P0Cl-8CeC28?rel=0&start=0" allowfullscreen
+                        title="Slipped Duct Taps Tool Demonstration Video"></iframe>
+                </div>
+                <div class="tool-content-wrapper">
+                    <div class="tool-header">
+                        <div class="tool-title">Slipped Duct Taps</div>
+                    </div>
+                    <div class="tool-description">Slipped Duct Taps identifies and lists duct tap elements that are
+                        misaligned or positioned away from the duct boundaries, helping to detect potential installation
+                        issues. The tool scans the entire project and reports any issues, printing the ElementId and
+                        Level Name of the found tap elements to the console.</div>
+                </div>
+            </div>
+
+            <!-- Tool 2: Align Gauge -->
+            <div class="tool-section">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/cReq-OnKshM?rel=0&start=0" allowfullscreen
+                        title="Align Gauge Tool Demonstration Video"></iframe>
+                </div>
+                <div class="tool-content-wrapper">
+                    <div class="tool-header">
+                        <div class="tool-title">Align Gauge</div>
+                    </div>
+                    <div class="tool-description">If you notice that a Duct, Pipe, Cable Tray, Conduit, or accessory
+                        element behaves unexpectedly during design or review, there’s a high possibility that the
+                        element is sloped, tilted, leaning, rotated, or a combination of these. Align Gauge helps you
+                        identify what's wrong with the element.</div>
+
+                    <div class="tip-section">
+                        <div class="tip-content">
+                            <h3>💡 Tip</h3>
+                            <ul>
+                                <li>If you find yourself needing to press the Tab key to connect two elements, it's a
+                                    sign that something is wrong with either of those elements.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="steps-group">
+                        <h3>Using Align Gauge:</h3>
+                        <ul class="steps-list">
+                            <li>Select the elements you suspect may have issues.</li>
+                            <li>Start Align Gauge.</li>
+                            <li>It will report the ElementId of the affected elements and describe the issues found.
+                            </li>
+                            <li>Align Gauge will also automatically select the elements with issues.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tool 3: View Dependents -->
+            <div class="tool-section">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/WFL0d5xHNzg?rel=0&start=103" allowfullscreen
+                        title="View Dependents Tool Demonstration Video"></iframe>
+                </div>
+                <div class="tool-content-wrapper">
+                    <div class="tool-header">
+                        <div class="tool-title">View Dependents</div>
+                    </div>
+                    <div class="tool-description">View Dependents prints the view names of view-dependent components
+                        (such as tags or dimensions) associated with the selected element. This tool helps you determine
+                        if elements you plan to move, delete, or modify have already been tagged or are referenced in
+                        dimensions across the project.</div>
+
+                    <div class="steps-group">
+                        <h3>Using View Dependents:</h3>
+                        <ul class="steps-list">
+                            <li>Select the elements you suspect may have dependencies.</li>
+                            <li>Start View Dependents.</li>
+                        </ul>
+                        <p style="margin-top: 15px; margin-bottom: 10px; font-weight: 500;">A console will open,
+                            displaying:</p>
+                        <ul class="steps-list">
+                            <li>ElementIds of the selected elements.</li>
+                            <li>ElementIds of the dependent elements related to the selected ones.</li>
+                            <li>The names of the views where these dependent elements can be found.</li>
+                        </ul>
+                        <p style="margin-top: 10px; font-style: italic; color: #666;">The information will be displayed
+                            in this specific order.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tool 4: Affecting Filters -->
+            <div class="tool-section">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/hRv2qNU708o?si=2qQfwJzexoDLcGpB?rel=0&start=440"
+                        allowfullscreen title="Affecting Filters Tool Demonstration Video"></iframe>
+                </div>
+                <div class="tool-content-wrapper">
+                    <div class="tool-header">
+                        <div class="tool-title">Affecting Filters</div>
+                    </div>
+                    <div class="tool-description">
+                        Analyzes a selected element to identify all view filters that affect it. The tool generates a
+                        report distinguishing between filters currently applied to the active view and other potential
+                        filters that are not.
+                    </div>
+                    <div class="steps-group">
+                        <h3>Steps to use Affecting Filters:</h3>
+                        <ul class="steps-list">
+                            <li>Select a single element in your model whose filter overrides you want to check.</li>
+                            <li>Go to the view where you want to analyze the filters.</li>
+                            <li>Start the Affecting Filters tool and review the generated report.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tool 5: Why No See? -->
+            <div class="tool-section">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/wRqmk5dSOMk?rel=0&start=5" allowfullscreen
+                        title="Why No See? Tool Demonstration Video"></iframe>
+                </div>
+                <div class="tool-content-wrapper">
+                    <div class="tool-header">
+                        <div class="tool-title">Why No See?</div>
+                    </div>
+                    <div class="tool-description">Checks why the selected element is not visible in the active view. It
+                        detects common visibility issues such as filters, category settings, view range, section box,
+                        crop box, manual hide, worksets, and phase settings.</div>
+                    <div class="steps-group">
+                        <h3>Steps to use Why No See?:</h3>
+                        <ul class="steps-list">
+                            <li>Find the element you want to see in another view.</li>
+                            <li>Go to the view where the element is not visible.</li>
+                            <li>Start Why No See? tool and read the report.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tool 6: Pin Views -->
+            <div class="tool-section">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/wRqmk5dSOMk?rel=0&start=212" allowfullscreen
+                        title="Pin/Unpin Views Tool Demonstration Video"></iframe>
+                </div>
+                <div class="tool-content-wrapper">
+                    <div class="tool-header">
+                        <div class="tool-title">Pin Views</div>
+                    </div>
+                    <div class="tool-description">Pins the selected views in the Project Browser and also pins selected
+                        Section lines along with the View element of this section.</div>
+                    <div class="steps-group">
+                        <h3>Steps to use Pin Views:</h3>
+                        <ul class="steps-list">
+                            <li>Select section line and/or views on Project Browser.</li>
+                            <li>Use the tools Pin Views.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="tool-content-wrapper">
+                    <div class="tool-header">
+                        <div class="tool-title">Unpin Views</div>
+                    </div>
+                    <div class="tool-description">Unpins the selected views in the Project Browser and also unpins
+                        selected Section lines along with the View element of this section.</div>
+                    <div class="steps-group">
+                        <h3>Steps to use Unpin Views:</h3>
+                        <ul class="steps-list">
+                            <li>Select section line and/or views on Project Browser.</li>
+                            <li>Use the tools Unpin Views.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tool 8: Restore Hidden -->
+            <div class="tool-section">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/wRqmk5dSOMk?rel=0&start=299" allowfullscreen
+                        title="Restore Hidden Tool Demonstration Video"></iframe>
+                </div>
+                <div class="tool-content-wrapper">
+                    <div class="tool-header">
+                        <div class="tool-title">Restore Hidden</div>
+                    </div>
+                    <div class="tool-description">Restores the visibility of all manually hidden elements in the active
+                        view.</div>
+                </div>
+            </div>
+
+            <!-- Tool 9: Find In Views -->
+            <div class="tool-section">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/RQAcYX56pZs?rel=0&start=0" allowfullscreen
+                        title="Find In Views Tool Demonstration Video"></iframe>
+                </div>
+                <div class="tool-content-wrapper">
+                    <div class="tool-header">
+                        <div class="tool-title">Find In Views</div>
+                    </div>
+                    <div class="tool-description">Scans the project for views where the selected element is visible. You
+                        can search within specific view types—such as Floor Plans, Sections, Elevations, Sheets, 3D
+                        Views, Schedules—or search across all views at once. The tool helps you quickly locate where an
+                        element appears and open those views directly.</div>
+                    <div class="steps-group">
+                        <h3>Steps to use Find In Views:</h3>
+                        <ul class="steps-list">
+                            <li>Select the element you want to locate in other views.</li>
+                            <li>Start one of the tools: Find In Floor Plans, Find In Sections, Find In Elevations, Find
+                                In Sheets, Find In 3D Views, Find In Schedules, or Find In All Views.</li>
+                            <li>Review the list of views where the element is visible.</li>
+                            <li>Select one or more views from the list and click the <strong>Open</strong> button to
+                                open those views.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eklenty Productivity Help</title>
+    <link rel="icon" type="image/x-icon" href="/Assets/favicon.ico">
+    <style>
+        /* Shared Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #0a0f28;
+            background: linear-gradient(135deg, #f8fafb 0%, #e8f0ed 100%);
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(10, 15, 40, 0.1);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #5d9874 0%, #0a0f28 85%);
+            color: #dcdcdc;
+            padding: 50px 40px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin: 0;
+        }
+
+        .content {
+            padding: 50px 40px;
+        }
+
+        /* Homepage Links */
+        .homepage-container {
+            position: absolute;
+            top: 25px;
+            right: 25px;
+            display: flex;
+            align-items: center;
+            background-color: #f0f0f0;
+            padding: 10px 15px;
+            border-radius: 25px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+        }
+
+        .homepage-logo {
+            width: 30px;
+            height: 30px;
+            margin-right: 10px;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+
+        .homepage-logo img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .homepage-text a {
+            color: #333;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .homepage-text a:hover {
+            text-decoration: underline;
+        }
+
+        /* Enhanced Tool Section */
+        .tool-section {
+            background: white;
+            border: 1px solid #e0e0e0;
+            border-radius: 20px;
+            padding: 0;
+            margin-bottom: 60px;
+            box-shadow: 0 5px 25px rgba(10, 15, 40, 0.08);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .tool-section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(10, 15, 40, 0.15);
+        }
+
+        .tool-content-wrapper {
+            padding: 35px;
+        }
+
+        .tool-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .tool-title {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #0a0f28;
+            margin: 0;
+        }
+
+        .tool-description {
+            color: #5d9874;
+            font-size: 1.1rem;
+            font-weight: 500;
+            margin-bottom: 25px;
+            line-height: 1.7;
+        }
+
+        .steps-group h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #0a0f28;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #5d9874;
+        }
+
+        .steps-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .steps-list li {
+            background: #f8fafb;
+            margin-bottom: 10px;
+            padding: 12px 18px;
+            border-radius: 10px;
+            border-left: 4px solid #0a0f28;
+            color: #444;
+            font-size: 0.95rem;
+            transition: background 0.2s ease;
+        }
+
+        .steps-list li:hover {
+            background: #f0f4f8;
+        }
+
+        .steps-list li::before {
+            content: "•";
+            color: #0a0f28;
+            font-weight: bold;
+            margin-right: 10px;
+            font-size: 1.2rem;
+            line-height: 0;
+            position: relative;
+            top: 2px;
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-bottom: 1px solid #eee;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* Notes & Tips */
+        .note-section,
+        .tip-section {
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 25px;
+            font-size: 0.95rem;
+        }
+
+        .note-section {
+            background: #fff8f5;
+            border: 1px solid #e6ccb3;
+            border-left: 5px solid #d9730d;
+        }
+
+        .tip-section {
+            background: #f4fdf8;
+            border: 1px solid #ccebd6;
+            border-left: 5px solid #5d9874;
+        }
+
+        .note-content h3,
+        .tip-content h3 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .note-content h3 {
+            color: #d9730d;
+        }
+
+        .tip-content h3 {
+            color: #5d9874;
+        }
+
+        .note-content ul,
+        .tip-content ul {
+            padding-left: 20px;
+        }
+
+        .note-content li,
+        .tip-content li {
+            margin-bottom: 5px;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2.2rem;
+            }
+
+            .tool-title {
+                font-size: 1.8rem;
+            }
+
+            .content {
+                padding: 25px;
+            }
+
+            .tool-content-wrapper {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="homepage-container">
+            <div class="homepage-logo">
+                <a href="https://www.eklenty.com" target="_blank">
+                    <img src="https://www.eklenty.com/Assets/Logo/EklentyLogo620.png" alt="Eklenty Logo">
+                </a>
+            </div>
+            <div class="homepage-text">
+                <a href="https://www.eklenty.com" target="_blank">Eklenty</a>
+            </div>
+        </div>
+
+        <div class="header">
+            <h1>Eklenty Productivity Help</h1>
+        </div>
+
+        <div class="content">
+
+            <!-- Tool 1: Transition Connect -->
+            <div class="tool-section">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/WFL0d5xHNzg?rel=0&start=164" allowfullscreen
+                        title="Transition Connect Tool Demonstration Video"></iframe>
+                </div>
+                <div class="tool-content-wrapper">
+                    <div class="tool-header">
+                        <div class="tool-title">Transition Connect</div>
+                    </div>
+                    <div class="tool-description">Transition Connect creates a transition fitting instance between two
+                        ducts.</div>
+                    <div class="steps-group">
+                        <h3>Using Transition Connect:</h3>
+                        <ul class="steps-list">
+                            <li>Start Transition Connect, and it will first ask you to select a duct with at least one
+                                open connection. Ensure that you click near the connection where you want the transition
+                                to be created.</li>
+                            <li>Next, select another duct or any element with an open duct connection. Again, click near
+                                the connection where you want the transition to be created.</li>
+                        </ul>
+                    </div>
+                    <div class="note-section">
+                        <div class="note-content">
+                            <h3>⚠️ Important Notes</h3>
+                            <ul>
+                                <li>Ensure that the connectors are properly aligned and oriented so a transition fitting
+                                    can be created.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tool 2: Tee Fixer -->
+            <div class="tool-section">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/WFL0d5xHNzg?rel=0&start=266" allowfullscreen
+                        title="Tee Fixer Tool Demonstration Video"></iframe>
+                </div>
+                <div class="tool-content-wrapper">
+                    <div class="tool-header">
+                        <div class="tool-title">Tee Fixer</div>
+                    </div>
+                    <div class="tool-description">Tee Fixer adjusts the connection sizes of duct Tee fittings to match
+                        the dimensions of the connected ducts, ensuring a seamless and accurate fit.</div>
+
+                    <div class="note-section">
+                        <div class="note-content">
+                            <h3>⚠️ Important Notes</h3>
+                            <ul>
+                                <li>This tool only works with Reducing type Tee fittings.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="steps-group">
+                        <h3>How to Use Tee Fixer:</h3>
+                        <ul class="steps-list">
+                            <li>Select your Tee fitting instances you want to fix and start the tool.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tool 3: Toggle Insulation -->
+            <div class="tool-section">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/WFL0d5xHNzg?rel=0&start=613" allowfullscreen
+                        title="Toggle Insulation Tool Demonstration Video"></iframe>
+                </div>
+                <div class="tool-content-wrapper">
+                    <div class="tool-header">
+                        <div class="tool-title">Toggle Insulation</div>
+                    </div>
+                    <div class="tool-description">Toggle Insulation allows you to toggle the visibility of duct and pipe
+                        insulation categories on and off.</div>
+
+                    <div class="note-section">
+                        <div class="note-content">
+                            <h3>⚠️ Important Notes</h3>
+                            <ul>
+                                <li>This tool will not work if the visibility setting is locked by the view template.
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tool 4: 3D Connect -->
+            <div class="tool-section">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/iX08l9u5jfk?rel=0&start=107" allowfullscreen
+                        title="3D Connect Tool Demonstration Video"></iframe>
+                </div>
+                <div class="tool-content-wrapper">
+                    <div class="tool-header">
+                        <div class="tool-title">3D Connect</div>
+                    </div>
+                    <div class="tool-description">Connects two elements of the same domain by adjusting alignment in 3D space.</div>
+                    <h3>Using 3D Connect:</h3>
+                    <ul class="steps-list">
+                        <li>Select the host element that you want the other element to connect to.</li>
+                        <li>Select the other element.</li>
+                    </ul>   
+                </div>
+                
+            </div>
+
+            <!-- Tool 5: Connect Nearest -->
+            <div class="tool-section">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/3jFJ6_32xsE?rel=0&start=215" allowfullscreen
+                        title="Connect Nearest Tool Demonstration Video"></iframe>
+                </div>
+                <div class="tool-content-wrapper">
+                    <div class="tool-header">
+                        <div class="tool-title">Connect Nearest</div>
+                    </div>
+                    <div class="tool-description">Connect Nearest connects the nearest open connectors of the selected
+                        elements.</div>
+                    <div class="steps-group">
+                        <h3>Using Connect Nearest:</h3>
+                        <ul class="steps-list">
+                            <li>Select the elements you want to connect.</li>
+                            <li>Start Connect Nearest.</li>
+                            <li>The tool works within a 40 mm tolerance for ductwork elements and 15 mm tolerance for
+                                other domain elements. If the connectors are apart from each other more than the
+                                tolerance value, they will be ignored.</li>
+                            <li>If only one of the elements is a system family (such as a pipe, duct, etc.), the system
+                                family will be moved towards the other connector, and a fitting will be created if
+                                needed.</li>
+                            <li>If both elements are families, they will still connect. However, you need to nudge the
+                                element you want to keep in position (by using the Right Arrow and Left Arrow one after
+                                another , or Up Arrow and Down Arrow one after another) to automatically move the other
+                                family instance into the correct position. You can nudge multiple elements at once.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tool 6: Total Disconnect -->
+            <div class="tool-section">
+                <div class="tool-content-wrapper">
+                    <div class="tool-header">
+                        <div class="tool-title">Total Disconnect</div>
+                    </div>
+                    <div class="tool-description">Disconnects all connectors of the selected element(s) from any
+                        connected elements.</div>
+                </div>
+                <div class="tool-content-wrapper">
+                    <div class="tool-header">
+                        <div class="tool-title">Mutual Disconnect</div>
+                    </div>
+                    <div class="tool-description">Disconnects the connection between two or multiple selected elements.</div>
+                </div>
+            </div>
+
+            <!-- Tool 8: Intersect -->
+            <div class="tool-section">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/TqhifhnDz4o?rel=0&start=0" allowfullscreen
+                        title="Intersect Tool Demonstration Video"></iframe>
+                </div>
+                <div class="tool-content-wrapper">
+                    <div class="tool-header">
+                        <div class="tool-title">Intersect Single and Multiple</div>
+                    </div>
+                    <div class="tool-description">In scenarios where you have two or more pipes or ducts that need to
+                        connect but cannot due to elevation conflicts (common in sanitary systems with sloped pipes),
+                        Intersect helps you resolve these issues without creating section views.</div>
+
+                    <div class="steps-group">
+                        <h3>Using Intersect Single:</h3>
+                        <ul class="steps-list">
+                            <li>Start Intersect Single.</li>
+                            <li>Select the main pipe or duct first.</li>
+                            <li>Select the pipe(s) or duct(s) that you want to extend and connect to the main pipe/duct.
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="tip-section">
+                        <div class="tip-content">
+                            <h3>💡 Tip</h3>
+                            <ul>
+                                <li>To select multiple elements, hold the Shift key before starting the tool, or use
+                                    Intersect Multiple.</li>
+                                <li>The tool will not directly connect the elements but will adjust the elevations of
+                                    the selected elements to enable the connection.</li>
+                                <li>If the selected pipes or ducts have the same orientation, the tool will only adjust
+                                    their elevation to match the reference element.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tool 9: Leapfrog -->
+            <div class="tool-section">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/cPhq0uEOdfM?rel=0&start=0" allowfullscreen
+                        title="Leapfrog Tool Demonstration Video"></iframe>
+                </div>
+                <div class="tool-content-wrapper">
+                    <div class="tool-header">
+                        <div class="tool-title">Leapfrog</div>
+                    </div>
+                    <div class="tool-description">When you have a clash, such as between a duct and a pipe, and you want
+                        to resolve the issue by cutting the pipe and making the cut section "leap" over the duct,
+                        Leapfrog helps you achieve that.</div>
+                    <div class="steps-group">
+                        <h3>Steps to use Leapfrog:</h3>
+                        <ul class="steps-list">
+                            <li>First, use Revit’s Split Element tool to cut your pipe. Ensure that union fittings are
+                                present at both ends of the cut.</li>
+                            <li>Select one of the pipe segments between the cut positions.</li>
+                            <li>Start Leapfrog, and a small dialog box will appear. In the dialog box, you will see text
+                                boxes for distance and angle.</li>
+                            <li>Enter the distance you want the pipe to "leap."</li>
+                            <li>Set the angle for the new pipe segments that will be created at the cut positions.</li>
+                            <li>Select one of the arrows on the right side of the dialog box:</li>
+                            <ul class="steps-list" style="margin-left: 20px;">
+                                <li>If you want the pipe to leap over the duct, choose the up arrow.</li>
+                                <li>If you want the pipe to leap below the duct, choose the down arrow.</li>
+                            </ul>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+
+</html>

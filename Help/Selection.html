@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eklenty Selection Help</title>
+    <link rel="icon" type="image/x-icon" href="/Assets/favicon.ico">
+    <style>
+        /* Shared Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #0a0f28;
+            background: linear-gradient(135deg, #f8fafb 0%, #e8f0ed 100%);
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(10, 15, 40, 0.1);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #5d9874 0%, #0a0f28 85%);
+            color: #dcdcdc;
+            padding: 50px 40px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin: 0;
+        }
+
+        .content {
+            padding: 50px 40px;
+        }
+
+        /* Homepage Links */
+        .homepage-container {
+            position: absolute;
+            top: 25px;
+            right: 25px;
+            display: flex;
+            align-items: center;
+            background-color: #f0f0f0;
+            padding: 10px 15px;
+            border-radius: 25px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+        }
+
+        .homepage-logo {
+            width: 30px;
+            height: 30px;
+            margin-right: 10px;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+
+        .homepage-logo img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .homepage-text a {
+            color: #333;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .homepage-text a:hover {
+            text-decoration: underline;
+        }
+
+        /* Enhanced Tool Section */
+        .tool-section {
+            background: white;
+            border: 1px solid #e0e0e0;
+            border-radius: 20px;
+            padding: 0;
+            margin-bottom: 60px;
+            box-shadow: 0 5px 25px rgba(10, 15, 40, 0.08);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .tool-section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(10, 15, 40, 0.15);
+        }
+
+        .tool-content-wrapper {
+            padding: 35px;
+        }
+
+        .tool-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .tool-title {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #0a0f28;
+            margin: 0;
+        }
+
+        .tool-description {
+            color: #5d9874;
+            font-size: 1.1rem;
+            font-weight: 500;
+            margin-bottom: 25px;
+            line-height: 1.7;
+        }
+
+        .steps-group h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #0a0f28;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #5d9874;
+        }
+
+        .steps-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .steps-list li {
+            background: #f8fafb;
+            margin-bottom: 10px;
+            padding: 12px 18px;
+            border-radius: 10px;
+            border-left: 4px solid #0a0f28;
+            color: #444;
+            font-size: 0.95rem;
+            transition: background 0.2s ease;
+        }
+
+        .steps-list li:hover {
+            background: #f0f4f8;
+        }
+
+        .steps-list li::before {
+            content: "•";
+            color: #0a0f28;
+            font-weight: bold;
+            margin-right: 10px;
+            font-size: 1.2rem;
+            line-height: 0;
+            position: relative;
+            top: 2px;
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-bottom: 1px solid #eee;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* Notes & Tips */
+        .note-section,
+        .tip-section {
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 25px;
+            font-size: 0.95rem;
+        }
+
+        .note-section {
+            background: #fff8f5;
+            border: 1px solid #e6ccb3;
+            border-left: 5px solid #d9730d;
+        }
+
+        .tip-section {
+            background: #f4fdf8;
+            border: 1px solid #ccebd6;
+            border-left: 5px solid #5d9874;
+        }
+
+        .note-content h3,
+        .tip-content h3 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .note-content h3 {
+            color: #d9730d;
+        }
+
+        .tip-content h3 {
+            color: #5d9874;
+        }
+
+        .note-content ul,
+        .tip-content ul {
+            padding-left: 20px;
+        }
+
+        .note-content li,
+        .tip-content li {
+            margin-bottom: 5px;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2.2rem;
+            }
+
+            .tool-title {
+                font-size: 1.8rem;
+            }
+
+            .content {
+                padding: 25px;
+            }
+
+            .tool-content-wrapper {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="homepage-container">
+            <div class="homepage-logo">
+                <a href="https://www.eklenty.com" target="_blank">
+                    <img src="https://www.eklenty.com/Assets/Logo/EklentyLogo620.png" alt="Eklenty Logo">
+                </a>
+            </div>
+            <div class="homepage-text">
+                <a href="https://www.eklenty.com" target="_blank">Eklenty</a>
+            </div>
+        </div>
+
+        <div class="header">
+            <h1>Eklenty Selection Help</h1>
+        </div>
+
+        <div class="content">
+
+            <!-- Tool 1: Sub Components -->
+            <div class="tool-section">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/WFL0d5xHNzg?rel=0&start=241" allowfullscreen
+                        title="Sub Components Tool Demonstration Video"></iframe>
+                </div>
+                <div class="tool-content-wrapper">
+                    <div class="tool-header">
+                        <div class="tool-title">Sub Components</div>
+                    </div>
+                    <div class="tool-description">If you have family instances with nested shared families, you may need
+                        to select those sub-components to modify their parameters.</div>
+                    <div class="steps-group">
+                        <h3>Steps to use Sub Components:</h3>
+                        <ul class="steps-list">
+                            <li>Start Sub Components.</li>
+                            <li>The tool will prompt you to select elements.</li>
+                            <li>After selecting the elements, the tool will automatically select all the sub-components
+                                within the selected family instances.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tool 2: System Members -->
+            <div class="tool-section">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/WFL0d5xHNzg?rel=0&start=325" allowfullscreen
+                        title="System Members Tool Demonstration Video"></iframe>
+                </div>
+                <div class="tool-content-wrapper">
+                    <div class="tool-header">
+                        <div class="tool-title">System Members</div>
+                    </div>
+                    <div class="tool-description">The System Members tool selects all components of the system(s) that
+                        the selected element(s) are connected to.</div>
+                    <div class="steps-group">
+                        <h3>Steps to use System Members:</h3>
+                        <ul class="steps-list">
+                            <li>Simply select elements that are connected to systems.</li>
+                            <li>Start System Members, and all components of the connected system(s) will be selected.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tool 3: Select System -->
+            <div class="tool-section">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/WFL0d5xHNzg?rel=0&start=355" allowfullscreen
+                        title="Select System Tool Demonstration Video"></iframe>
+                </div>
+                <div class="tool-content-wrapper">
+                    <div class="tool-header">
+                        <div class="tool-title">Select System</div>
+                    </div>
+                    <div class="tool-description">The Select System tool selects all of the system(s) that the selected
+                        element(s) are connected to.</div>
+                    <div class="steps-group">
+                        <h3>Steps to use Select System:</h3>
+                        <ul class="steps-list">
+                            <li>Simply select elements that are connected to systems.</li>
+                            <li>Start Select System, and connected system(s) will be selected.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tool 4: Select All Family -->
+            <div class="tool-section">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/WFL0d5xHNzg?rel=0&start=389" allowfullscreen
+                        title="Select All Family Tool Demonstration Video"></iframe>
+                </div>
+                <div class="tool-content-wrapper">
+                    <div class="tool-header">
+                        <div class="tool-title">Select All Family</div>
+                    </div>
+                    <div class="tool-description">The Select All Family tool selects all elements in the project that
+                        belong to the same family as the user-selected element(s).</div>
+                    <div class="steps-group">
+                        <h3>Steps to use Select All Family:</h3>
+                        <ul class="steps-list">
+                            <li>Select at least one Family Instance in your project.</li>
+                            <li>Start Select All Family, and it will select all instances of all types within the
+                                selected family across the entire project, excluding those in Legends.</li>
+                        </ul>
+                    </div>
+                    <div class="tip-section">
+                        <div class="tip-content">
+                            <h3>💡 Tip</h3>
+                            <ul>
+                                <li>You can also use Select All Family to select all instances of a family of a Legend
+                                    element.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="tool-content-wrapper">
+                    <div class="tool-header">
+                        <div class="tool-title">Select Visible Family</div>
+                    </div>
+                    <div class="tool-description">The Select Visible Family tool selects all elements in the project
+                        that belong to the same family as the user-selected element(s).</div>
+                    <div class="steps-group">
+                        <h3>Steps to use Select Visible Family:</h3>
+                        <ul class="steps-list">
+                            <li>Select at least one Family Instance in your project.</li>
+                            <li>Start Select Visible Family, and it will select all instances of all types within the
+                                selected family across the entire project, excluding those in Legends.</li>
+                        </ul>
+                    </div>
+                    <div class="note-section">
+                        <div class="note-content">
+                            <h3>⚠️ Important Notes</h3>
+                            <ul>
+                                <li>You can't use Select Visible Family to select all instances of a family of a Legend
+                                    element.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tool 6: Zoom Selected -->
+            <div class="tool-section">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/WFL0d5xHNzg?rel=0&start=560" allowfullscreen
+                        title="Zoom Selected Tool Demonstration Video"></iframe>
+                </div>
+                <div class="tool-content-wrapper">
+                    <div class="tool-header">
+                        <div class="tool-title">Zoom Selected</div>
+                    </div>
+                    <div class="tool-description">The Zoom Selected tool zooms in on the selected element(s) in the
+                        active view.</div>
+                    <div class="steps-group">
+                        <h3>Steps to use Zoom Selected:</h3>
+                        <ul class="steps-list">
+                            <li>Select your elements.</li>
+                            <li>If one or more of the selected elements are not visible in the active view, it will zoom
+                                in on the visible ones.</li>
+                            <li>If none of the selected elements are visible in the active view, a warning message will
+                                be displayed, and no zoom will be performed.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tool 7: Select Linked Elements -->
+            <div class="tool-section">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/hRv2qNU708o?si=2qQfwJzexoDLcGpB?rel=0&start=584"
+                        allowfullscreen title="Select Linked Elements Tool Demonstration Video"></iframe>
+                </div>
+                <div class="tool-content-wrapper">
+                    <div class="tool-header">
+                        <div class="tool-title">Select Linked Elements</div>
+                    </div>
+                    <div class="tool-description">
+                        Overcomes Revit's limitations by allowing you to select and highlight multiple individual
+                        elements
+                        directly within a linked model. This makes it easy to perform actions like copying elements from
+                        a
+                        link into your current project.
+                    </div>
+                    <div class="steps-group">
+                        <h3>Steps to use Select Linked Elements:</h3>
+                        <ul class="steps-list">
+                            <li>Start the "Select Linked Elements" tool from the ribbon.</li>
+                            <li>You will be prompted to click on the desired linked Revit model in your view.</li>
+                            <li>
+                                After selecting the link, you can then select one or more individual elements within
+                                that
+                                model.
+                            </li>
+                            <li>
+                                Once your selection is complete, you can proceed with other Revit commands, such as
+                                copying
+                                the elements to your host project.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+
+</html>
