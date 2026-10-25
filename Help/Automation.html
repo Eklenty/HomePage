@@ -481,7 +481,50 @@
                             </ul>
                         </div>
                     </div>
-                    
+
+                </div>
+            </div>
+
+            <!-- Tool 7: IFC Align -->
+            <div class="tool-section">
+                <!-- TODO: Add demonstration video
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/VIDEO_ID?rel=0&start=0" allowfullscreen
+                        title="IFC Align Tool Demonstration Video"></iframe>
+                </div>
+                -->
+                <div class="tool-content-wrapper">
+                    <div class="tool-header">
+                        <div class="tool-title">IFC Align</div>
+                    </div>
+                    <div class="tool-description">Moves and rotates linked IFC models so that they line up with your
+                        project, using Shared Coordinates, Survey Point, Project Base Point or Internal Origin as the
+                        reference.
+                    </div>
+                    <div class="steps-group">
+                        <h3>Using IFC Align:</h3>
+                        <ul class="steps-list">
+                            <li>Link your IFC model(s) into the project.</li>
+                            <li>Optionally, select the linked IFC model(s) you want to align before starting the tool.</li>
+                            <li>Start IFC Align tool</li>
+                            <li>Choose the reference to align by: Shared Coordinates, Survey Point, Project Base Point or Internal Origin.</li>
+                            <li>Choose whether rotation should be applied. When rotation is on, the True North of the IFC model is matched to the True North of your project. When it is off, the model is only moved.</li>
+                            <li>Click Align. If no IFC links were selected, pick them in the model and press Finish.</li>
+                            <li>A summary shows how many models were aligned, were already aligned, or failed.</li>
+                        </ul>
+                    </div>
+                    <div class="note-section">
+                        <div class="note-content">
+                            <h3>⚠️ Important Notes</h3>
+                            <ul>
+                                <li>Rotation is on by default for Shared Coordinates and Survey Point, and off by default for Project Base Point and Internal Origin. You can change it in either case.</li>
+                                <li>Only loaded IFC links can be aligned. Mirrored or tilted links are skipped.</li>
+                                <li>Pinned links are unpinned for the move and pinned again afterwards.</li>
+                                <li>The whole operation can be undone with a single Undo.</li>
+                            </ul>
+                        </div>
+                    </div>
+
                 </div>
             </div>
 

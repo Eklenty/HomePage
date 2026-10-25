@@ -336,6 +336,50 @@
                 </div>
             </div>
 
+            <!-- Tool: Straighten -->
+            <div class="tool-section">
+                <div class="tool-content-wrapper">
+                    <div class="tool-header">
+                        <div class="tool-title">Straighten</div>
+                    </div>
+                    <div class="tool-description">Straighten fixes what Align Gauge finds. Slightly sloped, leaning,
+                        off-axis or rotated Ducts, Pipes, Cable Trays and Conduits are levelled, plumbed and aligned
+                        to the project axes. Tilted or rotated fittings, accessories and other family instances are
+                        disconnected, rotated properly and reconnected to their neighbours.</div>
+
+                    <div class="steps-group">
+                        <h3>Using Straighten:</h3>
+                        <ul class="steps-list">
+                            <li>Select the elements you want to fix. You can use Align Gauge first to select the
+                                elements with issues.</li>
+                            <li>Start Straighten.</li>
+                            <li>The selected elements are disconnected, straightened starting from their correct
+                                neighbours, and reconnected where they were disconnected from.</li>
+                            <li>Elevations of horizontal elements without a correct neighbour are rounded to 5 mm.</li>
+                            <li>At the end every affected fitting is checked. Fittings that are still crooked are
+                                deleted, the connected elements are aligned and the fitting is re-created with the same
+                                type, insulation and lining.</li>
+                            <li>A summary is printed to the console and the changed elements are selected.</li>
+                        </ul>
+                    </div>
+
+                    <div class="note-section" style="margin-top: 25px;">
+                        <div class="note-content">
+                            <h3>⚠️ Note</h3>
+                            <ul>
+                                <li>Only small deviations are corrected, using the same limits as Align Gauge.
+                                    Intentionally sloped or angled elements are left alone.</li>
+                                <li>Sanitary and Vent pipes always keep their slope.</li>
+                                <li>When an element is held at both ends, it is still straightened and the element on
+                                    its other end is moved onto it, including elements that were not selected.</li>
+                                <li>Fittings that are connected to something other than Ducts, Pipes, Cable Trays or
+                                    Conduits cannot be re-created. They are reported in the console instead.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <!-- Tool 3: View Dependents -->
             <div class="tool-section">
                 <div class="video-container">
