@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<!--
+	Privacy notice for the Eklenty Revit add-in (update check and optional usage statistics).
+	BEFORE PUBLISHING: fill in every highlighted [placeholder] and have the text reviewed (legal review).
+	Served as https://www.eklenty.com/Privacy (referenced by EkyTelemetry.PrivacyNoticeUrl and the EULA).
+	Keep it in sync with Telemetry/PRIVACY.md and the consent dialog texts.
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Notice</title>
+	<link rel="icon" type="image/x-icon" href="/Assets/favicon.ico">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #0a0f28;
+            background: linear-gradient(135deg, #f8fafb 0%, #e8f0ed 100%);
+            padding: 20px;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(10, 15, 40, 0.1);
+            overflow: hidden;
+            position: relative;
+        }
+        .homepage-container {
+            position: absolute;
+            top: 25px;
+            right: 25px;
+            display: flex;
+            align-items: center;
+            background-color: #f0f0f0;
+            padding: 10px 15px;
+            border-radius: 25px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+        }
+        .homepage-logo {
+            width: 30px;
+            height: 30px;
+            margin-right: 10px;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+        .homepage-logo img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        .homepage-text a {
+            color: #333;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .homepage-text a:hover {
+            text-decoration: underline;
+        }
+        .header {
+            background: linear-gradient(135deg, #5d9874 0%, #0a0f28 85%);
+            color: #dcdcdc;
+            padding: 40px 30px;
+            text-align: center;
+        }
+        .header h1 {
+            font-size: 2.5rem;
+            font-weight: 300;
+            margin-bottom: 10px;
+        }
+        .languages a {
+            color: #dcdcdc;
+            margin: 0 8px;
+        }
+        .content {
+            padding: 30px;
+        }
+        .content section {
+            margin-bottom: 40px;
+        }
+        h2 {
+            font-size: 1.6rem;
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+        h3 {
+            font-size: 1.15rem;
+            font-weight: 600;
+            margin: 26px 0 8px;
+            color: #0a0f28;
+        }
+        p, li {
+            margin-bottom: 10px;
+        }
+        ul {
+            padding-left: 22px;
+        }
+        .updated {
+            color: #5d9874;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+        }
+        .note {
+            background: linear-gradient(135deg, #f4f8f6 0%, #e8f0ed 100%);
+            border-left: 4px solid #5d9874;
+            padding: 15px 20px;
+            border-radius: 0 10px 10px 0;
+            margin: 16px 0;
+        }
+        .todo {
+            background: #fff3b0;
+            padding: 0 4px;
+            border-radius: 3px;
+        }
+        a {
+            color: #3d6a88;
+        }
+        @media (max-width: 600px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+            .homepage-container {
+                position: static;
+                margin: 15px;
+                display: inline-flex;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <div class="homepage-container">
+            <div class="homepage-logo">
+                <a href="https://www.eklenty.com" target="_blank">
+                    <img src="https://www.eklenty.com/Assets/Logo/EklentyLogo620.png" alt="Eklenty Logo">
+                </a>
+            </div>
+            <div class="homepage-text">
+                <a href="https://www.eklenty.com" target="_blank">Eklenty</a>
+            </div>
+        </div>
+
+        <header class="header">
+            <h1>Privacy Notice</h1>
+            <div class="languages"><a href="#en">English</a> | <a href="#de">Deutsch</a></div>
+        </header>
+
+        <main class="content">
+
+            <!-- ============================== ENGLISH ============================== -->
+            <section id="en" lang="en">
+                <h2>Eklenty Revit Add-In</h2>
+                <p class="updated">Last updated: <span class="todo">[date]</span></p>
+
+                <p>This notice explains which data the Eklenty add-in for Autodesk&reg; Revit&reg; processes, why, and what your rights are. Eklenty is a free tool. It does not collect personal data, with two exceptions: the automatic update check, and optional usage statistics that are only sent if you agree.</p>
+
+                <h3>1. Controller</h3>
+                <p>Caglayan Ceyhun Yüzüak, <span class="todo">[postal address]</span><br>
+                E-mail: <a href="mailto:ceyhun@eklenty.com">ceyhun@eklenty.com</a></p>
+
+                <h3>2. Update check</h3>
+                <p>When Revit starts, Eklenty checks <strong>www.eklenty.com</strong> for a newer version. If you choose to update, the installer is downloaded from <strong>GitHub</strong>. For these connections your IP address is necessarily transmitted to the websites involved. Eklenty itself does not store it. The website is hosted by GitHub, Inc. (GitHub Pages), which may process technical connection data such as IP addresses according to its own privacy statement.</p>
+                <p><strong>Legal basis:</strong> our legitimate interest in providing you with current, secure versions (Art. 6(1)(f) GDPR).</p>
+
+                <h3>3. Optional usage statistics</h3>
+                <p><strong>This feature is off unless you switch it on.</strong> Eklenty asks for your permission after installation. If you do not agree, or close the question without answering, no usage statistics are collected. Eklenty works exactly the same either way.</p>
+
+                <p><strong>Purpose.</strong> To see how many installations are in use, which Eklenty and Revit versions they run, which tools are used, and in which countries Eklenty is used, so that we can improve features, compatibility and reliability and decide which Revit versions and languages to support.</p>
+
+                <p><strong>Data sent when the feature is on:</strong></p>
+                <ul>
+                    <li>a random installation identifier, created on your computer when you agree; it is stored in your Windows user profile and is not derived from your hardware, name or account;</li>
+                    <li>the Eklenty version and the Revit version;</li>
+                    <li>an event each time Revit starts with Eklenty loaded;</li>
+                    <li>the internal name of each Eklenty tool you start (for example "ClashManager"); this records that a tool was started, not what it did;</li>
+                    <li>a random event number used to avoid counting the same event twice.</li>
+                </ul>
+                <p>Our server adds the time at which it received the data and the country you are connecting from (for example "DE"). The country is determined by our hosting provider from the IP address of the connection; we store only the country code.</p>
+
+                <p><strong>Not collected through this feature:</strong> your name, e-mail address, Windows user name, computer name, hardware identifiers, Revit project or file names, file paths, model contents or geometry, IFC data, or your region, city or precise location. We do not store your IP address.</p>
+
+                <p><strong>Legal basis.</strong> Your consent (Art. 6(1)(a) GDPR, and &sect; 25(1) TDDDG for storing the identifier on your device). You can withdraw your consent at any time with effect for the future.</p>
+
+                <div class="note">
+                    <strong>Change your choice or delete your data:</strong> in Revit, open the <em>Eklenty</em> tab › <em>Information Desk</em> › <em>Privacy</em>.
+                    <ul>
+                        <li><strong>Turn off:</strong> Eklenty stops sending data immediately. The identifier stays on your computer, unused, so that your statistics continue if you switch the feature on again. Statistics already sent are kept until they are deleted automatically (see storage period).</li>
+                        <li><strong>Delete my data:</strong> Eklenty stops sending data, deletes the identifier from your computer and asks our server to delete all statistics linked to it. If you switch the feature on again later, a new identifier is created that is not linked to your earlier data.</li>
+                    </ul>
+                </div>
+
+                <p><strong>Storage period.</strong> Usage statistics are deleted automatically after 12 months. Installations from which we have received nothing for 12 months, including installations where statistics were turned off, are deleted together with all their data. Backup copies held by our hosting provider are overwritten within 7 days of a deletion.</p>
+
+                <p><strong>Hosting provider.</strong> The statistics are received and stored using Cloudflare Workers and Cloudflare D1, operated by Cloudflare, Inc., 101 Townsend St, San Francisco, CA 94107, USA, as our processor under a data processing agreement. The database is located in the European Union. Because Cloudflare operates a global network, data may be processed by Cloudflare in other countries, including the USA. Cloudflare is certified under the EU-U.S. Data Privacy Framework, and the EU Standard Contractual Clauses are agreed as an additional safeguard.</p>
+
+                <h3>4. Your rights</h3>
+                <p>You have the right to access, rectification, erasure, restriction of processing, data portability and objection, and the right to lodge a complaint with a data protection supervisory authority, for example <span class="todo">[the authority of your federal state]</span>.</p>
+                <p>To exercise your rights regarding usage statistics, please send us the installation identifier shown under <em>Eklenty</em> › <em>Information Desk</em> › <em>Privacy</em>. Without it we cannot find your data, because we hold no other information linking the statistics to you.</p>
+
+                <h3>5. Changes</h3>
+                <p>We update this notice when the add-in changes how it processes data. The current version is always available at <a href="https://www.eklenty.com/Privacy">www.eklenty.com/Privacy</a>.</p>
+            </section>
+
+            <!-- ============================== DEUTSCH ============================== -->
+            <section id="de" lang="de">
+                <h2>Eklenty Revit Add-In – Datenschutzhinweis</h2>
+                <p class="updated">Stand: <span class="todo">[Datum]</span></p>
+
+                <p>Dieser Hinweis erklärt, welche Daten das Eklenty Add-In für Autodesk&reg; Revit&reg; verarbeitet, warum, und welche Rechte Sie haben. Eklenty ist ein kostenloses Tool. Es erfasst keine personenbezogenen Daten, mit zwei Ausnahmen: der automatischen Update-Prüfung und optionalen Nutzungsstatistiken, die nur mit Ihrer Zustimmung gesendet werden.</p>
+
+                <h3>1. Verantwortlicher</h3>
+                <p>Caglayan Ceyhun Yüzüak, <span class="todo">[Postanschrift]</span><br>
+                E-Mail: <a href="mailto:ceyhun@eklenty.com">ceyhun@eklenty.com</a></p>
+
+                <h3>2. Update-Prüfung</h3>
+                <p>Beim Start von Revit prüft Eklenty auf <strong>www.eklenty.com</strong>, ob eine neuere Version verfügbar ist. Wenn Sie ein Update durchführen, wird das Installationsprogramm von <strong>GitHub</strong> heruntergeladen. Für diese Verbindungen wird Ihre IP-Adresse zwangsläufig an die beteiligten Websites übertragen. Eklenty selbst speichert sie nicht. Die Website wird von GitHub, Inc. (GitHub Pages) gehostet, die technische Verbindungsdaten wie IP-Adressen gemäß ihrer eigenen Datenschutzerklärung verarbeiten kann.</p>
+                <p><strong>Rechtsgrundlage:</strong> unser berechtigtes Interesse, Ihnen aktuelle und sichere Versionen bereitzustellen (Art. 6 Abs. 1 lit. f DSGVO).</p>
+
+                <h3>3. Optionale Nutzungsstatistiken</h3>
+                <p><strong>Diese Funktion ist ausgeschaltet, solange Sie sie nicht einschalten.</strong> Eklenty fragt nach der Installation um Ihre Zustimmung. Wenn Sie nicht zustimmen oder die Frage ohne Antwort schließen, werden keine Nutzungsstatistiken erfasst. Eklenty funktioniert in beiden Fällen genau gleich.</p>
+
+                <p><strong>Zweck.</strong> Zu sehen, wie viele Installationen genutzt werden, welche Eklenty- und Revit-Versionen sie verwenden, welche Tools genutzt werden und in welchen Ländern Eklenty genutzt wird, um Funktionen, Kompatibilität und Zuverlässigkeit zu verbessern und zu entscheiden, welche Revit-Versionen und Sprachen unterstützt werden.</p>
+
+                <p><strong>Gesendete Daten bei eingeschalteter Funktion:</strong></p>
+                <ul>
+                    <li>eine zufällige Installationskennung, die bei Ihrer Zustimmung auf Ihrem Computer erzeugt wird; sie wird in Ihrem Windows-Benutzerprofil gespeichert und nicht aus Ihrer Hardware, Ihrem Namen oder Konto abgeleitet;</li>
+                    <li>die Eklenty-Version und die Revit-Version;</li>
+                    <li>ein Ereignis bei jedem Start von Revit mit geladenem Eklenty;</li>
+                    <li>der interne Name jedes gestarteten Eklenty-Tools (zum Beispiel „ClashManager“); erfasst wird, dass ein Tool gestartet wurde, nicht was es getan hat;</li>
+                    <li>eine zufällige Ereignisnummer, die doppelte Zählungen verhindert.</li>
+                </ul>
+                <p>Unser Server ergänzt den Empfangszeitpunkt und das Land, aus dem Sie sich verbinden (zum Beispiel „DE“). Das Land wird von unserem Hosting-Anbieter anhand der IP-Adresse der Verbindung ermittelt; gespeichert wird nur der Ländercode.</p>
+
+                <p><strong>Nicht erfasst werden über diese Funktion:</strong> Ihr Name, Ihre E-Mail-Adresse, Ihr Windows-Benutzername, Computername, Hardwarekennungen, Revit-Projekt- oder Dateinamen, Dateipfade, Modellinhalte oder Geometrie, IFC-Daten sowie Ihre Region, Stadt oder Ihr genauer Standort. Ihre IP-Adresse wird nicht gespeichert.</p>
+
+                <p><strong>Rechtsgrundlage.</strong> Ihre Einwilligung (Art. 6 Abs. 1 lit. a DSGVO sowie &sect; 25 Abs. 1 TDDDG für das Speichern der Kennung auf Ihrem Gerät). Sie können Ihre Einwilligung jederzeit mit Wirkung für die Zukunft widerrufen.</p>
+
+                <div class="note">
+                    <strong>Entscheidung ändern oder Daten löschen:</strong> in Revit unter Registerkarte <em>Eklenty</em> › <em>Information Desk</em> › <em>Privacy</em>.
+                    <ul>
+                        <li><strong>Ausschalten:</strong> Eklenty sendet sofort keine Daten mehr. Die Kennung bleibt ungenutzt auf Ihrem Computer, damit Ihre Statistiken fortgesetzt werden, falls Sie die Funktion wieder einschalten. Bereits gesendete Statistiken bleiben bis zur automatischen Löschung gespeichert (siehe Speicherdauer).</li>
+                        <li><strong>Meine Daten löschen:</strong> Eklenty sendet keine Daten mehr, löscht die Kennung von Ihrem Computer und bittet unseren Server, alle damit verknüpften Statistiken zu löschen. Wenn Sie die Funktion später wieder einschalten, wird eine neue Kennung erzeugt, die nicht mit Ihren früheren Daten verknüpft ist.</li>
+                    </ul>
+                </div>
+
+                <p><strong>Speicherdauer.</strong> Nutzungsstatistiken werden nach 12 Monaten automatisch gelöscht. Installationen, von denen wir 12 Monate lang nichts empfangen haben, einschließlich Installationen mit ausgeschalteten Statistiken, werden mit allen zugehörigen Daten gelöscht. Sicherungskopien bei unserem Hosting-Anbieter werden innerhalb von 7 Tagen nach einer Löschung überschrieben.</p>
+
+                <p><strong>Hosting-Anbieter.</strong> Die Statistiken werden mit Cloudflare Workers und Cloudflare D1 empfangen und gespeichert, betrieben von Cloudflare, Inc., 101 Townsend St, San Francisco, CA 94107, USA, als unser Auftragsverarbeiter auf Grundlage eines Auftragsverarbeitungsvertrags. Die Datenbank befindet sich in der Europäischen Union. Da Cloudflare ein weltweites Netzwerk betreibt, können Daten von Cloudflare auch in anderen Ländern verarbeitet werden, einschließlich der USA. Cloudflare ist nach dem EU-U.S. Data Privacy Framework zertifiziert; zusätzlich sind die EU-Standardvertragsklauseln vereinbart.</p>
+
+                <h3>4. Ihre Rechte</h3>
+                <p>Sie haben das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung, Datenübertragbarkeit und Widerspruch sowie das Recht auf Beschwerde bei einer Datenschutz-Aufsichtsbehörde, zum Beispiel <span class="todo">[Aufsichtsbehörde Ihres Bundeslandes]</span>.</p>
+                <p>Um Ihre Rechte bezüglich der Nutzungsstatistiken auszuüben, senden Sie uns bitte die Installationskennung, die unter <em>Eklenty</em> › <em>Information Desk</em> › <em>Privacy</em> angezeigt wird. Ohne sie können wir Ihre Daten nicht finden, da wir keine anderen Informationen besitzen, die die Statistiken mit Ihnen verknüpfen.</p>
+
+                <h3>5. Änderungen</h3>
+                <p>Wir aktualisieren diesen Hinweis, wenn das Add-In die Verarbeitung von Daten ändert. Die aktuelle Fassung ist jederzeit unter <a href="https://www.eklenty.com/Privacy">www.eklenty.com/Privacy</a> abrufbar.</p>
+            </section>
+        </main>
+    </div>
+</body>
+</html>
