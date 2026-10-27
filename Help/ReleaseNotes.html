@@ -259,6 +259,14 @@
 					<ul class="feature-list">
 						<li class="new-feature">IFC Align</li>
 						<li class="new-feature">Straighten</li>
+						<li class="new-feature">Rest Disconnect</li>
+					</ul>
+				</div>
+				<div class="feature-group">
+					<h3>Disconnect</h3>
+					<ul class="feature-list">
+						<li class="new-feature">Rest Disconnect: disconnects the selected elements from all other connected elements, while the connections between the selected elements are kept.</li>
+						<li class="bugfix">Fixed: elements picked after starting the tool with nothing selected weren't disconnected.</li>
 					</ul>
 				</div>
 				<div class="feature-group">
@@ -306,7 +314,21 @@
 				<div class="feature-group">
 					<h3>Select Family</h3>
 					<ul class="feature-list">
-						<li class="new-feature">Can now also be utilized for the Family Types that are selected on the Project Browser</li>						
+						<li class="new-feature">Can now also be utilized for the Family Types that are selected on the Project Browser</li>
+					</ul>
+				</div>
+				<div class="feature-group">
+					<h3>Select System</h3>
+					<ul class="feature-list">
+						<li class="improvement">Systems that are already selected (e.g. from the System Browser) now stay selected along with the systems of the other selected elements.</li>
+					</ul>
+				</div>
+				<div class="feature-group">
+					<h3>Tee Fixer</h3>
+					<ul class="feature-list">
+						<li class="bugfix">Fixed incorrect sizing of round duct Tee fittings: branches no longer take the size of the main duct, and a rectangular duct connected through a transition no longer causes an error.</li>
+						<li class="improvement">The tool now detects which connector sizes of the fitting are linked to each other. Linked sizes take the largest connected duct size, the others are sized independently.</li>
+						<li class="improvement">Transitions between the Tee fitting and its ducts are now rebuilt to match the new size, or removed if the duct and the fitting end up the same size.</li>
 					</ul>
 				</div>
 			</div>
