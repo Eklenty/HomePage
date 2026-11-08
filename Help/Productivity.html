@@ -582,10 +582,12 @@
                             <li>Wall openings are turned to face the elements and centred on them. Their height is set
                                 through the level offset parameter.</li>
                             <li>Floor openings start at the selected level and reach the floor depth downwards.</li>
-                            <li>Width, height and diameter are rounded up to the next 50 mm, the level offset to the
+                            <li>An opening around a single element is sized to the nearest 1 mm. An opening around
+                                several elements is rounded up to the next 50 mm, with the level offset rounded to the
                                 nearest 5 mm.</li>
-                            <li>The opening is sized from the connector sizes of the elements, so insulation and lining
-                                aren't included. Add them to the clearance if you need them.</li>
+                            <li>A single pipe is sized from its outside diameter. Everything else is sized from the
+                                connector sizes. Insulation and lining aren't included, so add them to the clearance if
+                                you need them.</li>
                         </ul>
                     </div>
 
