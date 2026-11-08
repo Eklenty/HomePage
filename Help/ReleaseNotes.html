@@ -260,6 +260,26 @@
 						<li class="new-feature">IFC Align</li>
 						<li class="new-feature">Straighten</li>
 						<li class="new-feature">Rest Disconnect</li>
+						<li class="new-feature">Flex Gen</li>
+						<li class="new-feature">AutoBore</li>
+					</ul>
+				</div>
+				<div class="feature-group">
+					<h3>AutoBore</h3>
+					<ul class="feature-list">
+						<li class="new-feature">Places one opening family around the selected ducts, pipes, cable trays or conduits: a wall opening for horizontal runs, a floor opening for vertical runs.</li>
+						<li class="new-feature">The opening family is analysed automatically, and the opening is turned and centred on the elements. Width, height and diameter are rounded up to 50 mm, the level offset to 5 mm.</li>
+						<li class="new-feature">Optionally creates a separate opening for each selected element.</li>
+						<li class="new-feature">Levels are chosen from where the elements are, preferring structural levels such as TOS or OKRD (base) and BOS or UKD (top).</li>
+						<li class="new-feature">Remembers the settings and levels of each family type per project, separately for wall and floor openings. Recently used types can be removed from the list.</li>
+					</ul>
+				</div>
+				<div class="feature-group">
+					<h3>Flex Gen</h3>
+					<ul class="feature-list">
+						<li class="new-feature">Connects the nearest open ends of the selected elements with a flex duct or flex pipe that follows the direction of both ends.</li>
+						<li class="new-feature">An existing flex duct or flex pipe is stretched to the other element instead of adding a new one; two flex elements are joined into one.</li>
+						<li class="new-feature">Settings: Shift+Click the Flex Gen button to set the largest distance that's bridged (default 1500 mm).</li>
 					</ul>
 				</div>
 				<div class="feature-group">
@@ -282,6 +302,7 @@
 						<li class="new-feature">"Assigned To" can now be edited. Pick a name from the list or type a new one; the list filters as you type. With several rows selected, the name is applied to all of them.</li>
 						<li class="new-feature">An open XML file is locked for other users. If it's already open elsewhere, it opens read-only and can only be saved with "Save as".</li>
 						<li class="improvement">You're asked to save unsaved changes when closing the window.</li>
+						<li class="bugfix">Fixed: the level of a clashing element could be wrong in projects whose project base point isn't at elevation 0.</li>
 					</ul>
 				</div>
 				<div class="feature-group">
@@ -303,7 +324,11 @@
 						<li class="bugfix">Fixed: size changes on fittings could sometimes go undetected.</li>
 						<li class="improvement">A transition is now added only when it's actually needed: when connecting to a fitting with more than two connections (such as a tee or cross) whose other connections would change size.</li>						
 						<li class="improvement">Other fittings and elements are resized to match and connected directly, so you get fewer unnecessary transitions.</li>																	
-						<li class="improvement">Duct and pipe taps can now be connected to a nearby duct or pipe. Select the tap and the duct or pipe, then run Connect Nearest. The tap must be within 40 mm.</li>												
+						<li class="improvement">Duct and pipe taps can now be connected to a nearby duct or pipe. Select the tap and the duct or pipe, then run Connect Nearest. The tap must be within 40 mm.</li>
+						<li class="new-feature">Settings: Shift+Click the Connect Nearest button to set the largest gap that's closed for ducts, pipes, cable trays and conduits (defaults 40, 15, 40 and 15 mm). Electrical connectors use the conduit value.</li>
+						<li class="bugfix">Fixed: connecting a flex duct or flex pipe to a rigid one no longer deletes one of them. Only two rigid or two flex elements are merged.</li>
+						<li class="improvement">Flex ducts and pipes now follow the direction of the element they connect to, and merged flex elements keep their shape.</li>
+						<li class="improvement">Two elements are now connected only once, through their nearest open connectors.</li>
 					</ul>
 				</div>	
 				<div class="feature-group">

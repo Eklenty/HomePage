@@ -418,6 +418,44 @@
                 </div>
             </div>
 
+            <!-- Tool: Flex Gen -->
+            <div class="tool-section">
+                <div class="tool-content-wrapper">
+                    <div class="tool-header">
+                        <div class="tool-title">Flex Gen</div>
+                    </div>
+                    <div class="tool-description">Flex Gen connects the open ends of the selected elements with a flex
+                        duct or a flex pipe. Ducts and air terminals get a flex duct, pipes and plumbing fixtures get a
+                        flex pipe.</div>
+                    <div class="steps-group">
+                        <h3>Using Flex Gen:</h3>
+                        <ul class="steps-list">
+                            <li>Select the elements you want to connect, for example a duct and the air terminals
+                                around it.</li>
+                            <li>Start Flex Gen. If nothing is selected, pick the elements and click Finish.</li>
+                            <li>Each pair of nearest open ends is connected with a new flex that follows the direction
+                                of both ends.</li>
+                        </ul>
+                    </div>
+
+                    <div class="tip-section">
+                        <div class="tip-content">
+                            <h3>💡 Tip</h3>
+                            <ul>
+                                <li>Open ends further apart than 1500 mm are skipped. Shift+Click the Flex Gen button
+                                    to change this distance.</li>
+                                <li>If one of the elements is already a flex duct or flex pipe, no new flex is added.
+                                    Its open end is stretched to the other element instead.</li>
+                                <li>If both elements are flex ducts or flex pipes, they are joined into one.</li>
+                                <li>Two elements are connected only once, through their nearest open ends.</li>
+                                <li>A flex that would come out longer than the allowed distance isn't created. The tool
+                                    tells you which elements were skipped.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <!-- Tool 6: Total Disconnect -->
             <div class="tool-section">
                 <div class="tool-content-wrapper">
@@ -504,6 +542,75 @@
                                 <li>If you want the pipe to leap below the duct, choose the down arrow.</li>
                             </ul>
                         </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tool: AutoBore -->
+            <div class="tool-section">
+                <div class="tool-content-wrapper">
+                    <div class="tool-header">
+                        <div class="tool-title">AutoBore</div>
+                    </div>
+                    <div class="tool-description">AutoBore places an opening family around the selected ducts, pipes,
+                        cable trays or conduits. Horizontal runs get a wall opening, vertical runs get a floor opening.
+                        The opening is sized from the elements plus a clearance on each side, and AutoBore works out on
+                        its own how your opening family is built, so you don't have to set it up first.</div>
+
+                    <div class="steps-group">
+                        <h3>Using AutoBore:</h3>
+                        <ul class="steps-list">
+                            <li>Select the ducts, pipes, cable trays or conduits that go through the wall or floor, or
+                                start AutoBore and pick them, then click Finish.</li>
+                            <li>In the dialog, choose the opening family type. Types you used before in this project
+                                are listed under <b>Recently used</b>; to use another type, switch to <b>Select
+                                family</b>, choose a category and filter by family or type name.</li>
+                            <li>Check the level(s), the shape (round, rectangular or ellipse) and which family
+                                parameters hold the width, height, diameter, length, depth and level offset.</li>
+                            <li>Enter the clearance. It is added on each side, so 50 mm makes the opening 100 mm larger.
+                                For floor openings, also enter the floor depth.</li>
+                            <li>Click <b>Create</b>.</li>
+                            <li>Wall openings only: pick two points along the elements, for example on both faces of
+                                the wall. The distance between them is the depth of the opening, and the opening is
+                                placed between them.</li>
+                        </ul>
+                    </div>
+
+                    <div class="steps-group">
+                        <h3>How the opening is placed:</h3>
+                        <ul class="steps-list">
+                            <li>Wall openings are turned to face the elements and centred on them. Their height is set
+                                through the level offset parameter.</li>
+                            <li>Floor openings start at the selected level and reach the floor depth downwards.</li>
+                            <li>Width, height and diameter are rounded up to the next 50 mm, the level offset to the
+                                nearest 5 mm.</li>
+                            <li>The opening is sized from the connector sizes of the elements, so insulation and lining
+                                aren't included. Add them to the clearance if you need them.</li>
+                        </ul>
+                    </div>
+
+                    <div class="tip-section">
+                        <div class="tip-content">
+                            <h3>💡 Tip</h3>
+                            <ul>
+                                <li>One opening encloses all selected elements. To give every element its own opening,
+                                    tick <b>Create a separate opening for each element</b>.</li>
+                                <li>AutoBore remembers the settings of each family type per project, separately for
+                                    wall and floor openings. Remove a type you picked by mistake from the Recently used
+                                    list with its delete button.</li>
+                                <li>Levels are chosen from where the elements are. Structural levels are preferred:
+                                    TOS, TOC, SFL, SSL, OKRB, OKRD, OKD or OKB for the base level, and BOS, U/S, US,
+                                    UKD or UKRD for the top level. Dots in the names don't matter (T.O.S. counts as
+                                    TOS). If you change a level, AutoBore remembers it for elements in the same
+                                    storey.</li>
+                                <li>Level-based and two-level-based families are supported. Work plane-based or
+                                    face-based families can't be used.</li>
+                                <li>The elements must run straight and either horizontal or vertical, all parallel to
+                                    each other. Sloped runs, bends and a mix of horizontal and vertical elements are
+                                    reported, and you create those openings yourself.</li>
+                                <li>For wall openings, pick the two points in a plan view.</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
