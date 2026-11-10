@@ -569,7 +569,10 @@
                                 parameters hold the width, height, diameter, length, depth and level offset.</li>
                             <li>Enter the clearance. It is added on each side, so 50 mm makes the opening 100 mm larger.
                                 For floor openings, also enter the floor depth.</li>
-                            <li>Click <b>Create</b>.</li>
+                            <li>To adjust an opening that is already in the model instead of creating a new one, click
+                                <b>Use existing opening</b> and pick it. Its type is selected, with the remembered
+                                settings if you used that type before.</li>
+                            <li>Click <b>Create</b> (or <b>Adjust</b> for an existing opening).</li>
                             <li>Wall openings only: pick two points along the elements, for example on both faces of
                                 the wall. The distance between them is the depth of the opening, and the opening is
                                 placed between them.</li>
@@ -584,7 +587,8 @@
                             <li>Floor openings start at the selected level and reach the floor depth downwards.</li>
                             <li>An opening around a single element is sized to the nearest 1 mm. An opening around
                                 several elements is rounded up to the next 50 mm, with the level offset rounded to the
-                                nearest 5 mm.</li>
+                                nearest 5 mm. The depth is always rounded to 1 mm.</li>
+                            <li>An existing opening is resized, moved and turned in the same way as a new one.</li>
                             <li>A single pipe is sized from its outside diameter. Everything else is sized from the
                                 connector sizes. Insulation and lining aren't included, so add them to the clearance if
                                 you need them.</li>
@@ -609,7 +613,8 @@
                                     face-based families can't be used.</li>
                                 <li>The elements must run straight and either horizontal or vertical, all parallel to
                                     each other. Sloped runs, bends and a mix of horizontal and vertical elements are
-                                    reported, and you create those openings yourself.</li>
+                                    reported in the Eklenty Console, and you create those openings yourself.</li>
+                                <li>Insulation, lining, flex ducts and flex pipes in the selection are ignored.</li>
                                 <li>For wall openings, pick the two points in a plan view.</li>
                             </ul>
                         </div>
