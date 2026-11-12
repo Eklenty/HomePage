@@ -572,7 +572,7 @@
                             <li>To adjust an opening that is already in the model instead of creating a new one, click
                                 <b>Use existing opening</b> and pick it. Its type is selected, with the remembered
                                 settings if you used that type before.</li>
-                            <li>Click <b>Create</b> (or <b>Adjust</b> for an existing opening).</li>
+                            <li>Click <b>Create</b> (or <b>Adjust</b> for an existing opening), or press Enter.</li>
                             <li>Wall openings only: pick two points along the elements, for example on both faces of
                                 the wall. The distance between them is the depth of the opening, and the opening is
                                 placed between them.</li>
@@ -588,7 +588,11 @@
                             <li>An opening around a single element is sized to the nearest 1 mm. An opening around
                                 several elements is rounded up to the next 50 mm, with the level offset rounded to the
                                 nearest 5 mm. The depth is always rounded to 1 mm.</li>
-                            <li>An existing opening is resized, moved and turned in the same way as a new one.</li>
+                            <li>An existing opening is resized, moved and turned in the same way as a new one, also
+                                when it is mirrored.</li>
+                            <li>To find out how your opening family is built, AutoBore tests a temporary copy of it,
+                                which never stays in the model. This also works for families whose extents don't
+                                match their visible geometry.</li>
                             <li>A single pipe is sized from its outside diameter. Everything else is sized from the
                                 connector sizes. Insulation and lining aren't included, so add them to the clearance if
                                 you need them.</li>
@@ -604,6 +608,10 @@
                                 <li>AutoBore remembers the settings of each family type per project, separately for
                                     wall and floor openings. Remove a type you picked by mistake from the Recently used
                                     list with its delete button.</li>
+                                <li>The type you used last is preselected when AutoBore starts, separately for wall
+                                    and floor openings. In a project where you haven't used AutoBore yet, the type you
+                                    used last in another project is preselected, if this project has a family type
+                                    with the same name.</li>
                                 <li>Levels are chosen from where the elements are. Structural levels are preferred:
                                     TOS, TOC, SFL, SSL, OKRB, OKRD, OKD or OKB for the base level, and BOS, U/S, US,
                                     UKD or UKRD for the top level. Dots in the names don't matter (T.O.S. counts as
