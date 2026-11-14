@@ -380,6 +380,50 @@
                 </div>
             </div>
 
+            <!-- Tool: Tag Clash -->
+            <div class="tool-section">
+                <div class="tool-content-wrapper">
+                    <div class="tool-header">
+                        <div class="tool-title">Tag Clash</div>
+                    </div>
+                    <div class="tool-description">Tag Clash checks the views you choose for tags that overlap and
+                        block each other. Element tags as well as Room, Space and Area tags are compared, and every
+                        overlapping pair is listed in a window from which you can jump straight to it.</div>
+
+                    <div class="steps-group">
+                        <h3>Using Tag Clash:</h3>
+                        <ul class="steps-list">
+                            <li>Start Tag Clash.</li>
+                            <li>Choose the views to check. Only views that contain at least two tags are listed, and
+                                the active view can be added with one click.</li>
+                            <li>Click Check.</li>
+                            <li>The results window lists every overlapping pair with its view, the two tags and their
+                                ElementIds. The clashing tags are also selected.</li>
+                            <li>Click Show on a pair to open its view, select the two tags and zoom to them. The Show
+                                button you used last stays highlighted, so you can see where you left off.</li>
+                            <li>After moving tags, click Refresh to run the check again for the same views.</li>
+                            <li>Click Export to CSV to save the list with the view name and the two ElementIds. The
+                                file uses the list separator of your Windows region settings.</li>
+                        </ul>
+                    </div>
+
+                    <div class="note-section" style="margin-top: 25px;">
+                        <div class="note-content">
+                            <h3>⚠️ Note</h3>
+                            <ul>
+                                <li>Only the tag heads are compared. Leaders are left out, so a leader crossing
+                                    another tag is not reported.</li>
+                                <li>Tags are compared by their rectangular extents. A rotated tag can therefore be
+                                    reported although it only comes close to its neighbour.</li>
+                                <li>Tags that are hidden in a view are not checked.</li>
+                                <li>The check does not change your model.</li>
+                                <li>The window lists the first 500 overlaps. The CSV export contains all of them.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <!-- Tool 3: View Dependents -->
             <div class="tool-section">
                 <div class="video-container">
