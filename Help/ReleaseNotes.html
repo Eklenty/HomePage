@@ -124,6 +124,13 @@
 			color: #0a0f28;
 		}
 
+		.tool-desc {
+			font-weight: 400;
+			font-size: 0.92rem;
+			color: #4a5068;
+			margin: 4px 0 0 16px;
+		}
+
 		.improvement {
 			border-left-color: #8f9dbb;
 		}
@@ -257,44 +264,29 @@
 				<div class="feature-group">
 					<h3>New Tool added</h3>
 					<ul class="feature-list">
-						<li class="new-feature">IFC Align</li>
-						<li class="new-feature">Straighten</li>
-						<li class="new-feature">Rest Disconnect</li>
-						<li class="new-feature">Flex Gen</li>
-						<li class="new-feature">AutoBore</li>
-						<li class="new-feature">Tag Clash</li>
-					</ul>
-				</div>
-				<div class="feature-group">
-					<h3>Tag Clash</h3>
-					<ul class="feature-list">
-						<li class="new-feature">Checks the views you choose for tags that overlap each other and lists every overlapping pair in a window, from which a pair can be opened and zoomed to.</li>
-						<li class="new-feature">The check can be refreshed for the same views and the list exported to CSV.</li>
-					</ul>
-				</div>
-				<div class="feature-group">
-					<h3>AutoBore</h3>
-					<ul class="feature-list">
-						<li class="new-feature">Places one opening family around the selected ducts, pipes, cable trays or conduits: a wall opening for horizontal runs, a floor opening for vertical runs.</li>
-						<li class="new-feature">The opening family is analysed automatically, including families whose extents don't match their visible geometry, and the opening is turned and centred on the elements. An opening around a single element fits it to 1 mm, using the outside diameter for a pipe. Openings around several elements are rounded to 50 mm, with the level offset rounded to 5 mm.</li>
-						<li class="new-feature">Optionally creates a separate opening for each selected element.</li>
-						<li class="new-feature">An opening that is already in the model can be picked and adjusted instead of creating a new one.</li>
-						<li class="new-feature">Levels are chosen from where the elements are, preferring structural levels such as TOS or OKRD (base) and BOS or UKD (top).</li>
-						<li class="new-feature">Remembers the settings and levels of each family type per project, separately for wall and floor openings. Recently used types can be removed from the list, and the type used last is preselected, also in a project where AutoBore hasn't been used yet.</li>
-					</ul>
-				</div>
-				<div class="feature-group">
-					<h3>Flex Gen</h3>
-					<ul class="feature-list">
-						<li class="new-feature">Connects the nearest open ends of the selected elements with a flex duct or flex pipe that follows the direction of both ends.</li>
-						<li class="new-feature">An existing flex duct or flex pipe is stretched to the other element instead of adding a new one; two flex elements are joined into one.</li>
-						<li class="new-feature">Settings: Shift+Click the Flex Gen button to set the largest distance that's bridged (default 1500 mm).</li>
+						<li class="new-feature">IFC Align
+							<div class="tool-desc">Moves and rotates linked IFC models to line up with your project.</div>
+						</li>
+						<li class="new-feature">Straighten
+							<div class="tool-desc">Levels and aligns sloped or rotated ducts, pipes, cable trays, conduits and fittings.</div>
+						</li>
+						<li class="new-feature">Rest Disconnect
+							<div class="tool-desc">Disconnects the selected elements from everything else, keeping the connections between them.</div>
+						</li>
+						<li class="new-feature">Flex Gen
+							<div class="tool-desc">Connects the nearest open ends of the selected elements with a flex duct or flex pipe.</div>
+						</li>
+						<li class="new-feature">AutoBore
+							<div class="tool-desc">Places a wall or floor opening around the selected ducts, pipes, cable trays or conduits.</div>
+						</li>
+						<li class="new-feature">Tag Clash
+							<div class="tool-desc">Finds overlapping tags in the chosen views and lists them for review.</div>
+						</li>
 					</ul>
 				</div>
 				<div class="feature-group">
 					<h3>Disconnect</h3>
 					<ul class="feature-list">
-						<li class="new-feature">Rest Disconnect: disconnects the selected elements from all other connected elements, while the connections between the selected elements are kept.</li>
 						<li class="bugfix">Fixed: elements picked after starting the tool with nothing selected weren't disconnected.</li>
 					</ul>
 				</div>
