@@ -447,6 +447,93 @@
                 </div>
             </div>
 
+            <!-- Tool: TableCraft -->
+            <div class="tool-section">
+                <div class="tool-content-wrapper">
+                    <div class="tool-header">
+                        <div class="tool-title">TableCraft</div>
+                    </div>
+                    <div class="tool-description">TableCraft brings a formatted table from an Excel workbook into a
+                        drafting view or a legend view. The table is rebuilt from native Revit elements (text notes,
+                        detail lines and filled regions), so it stays editable in Revit and prints at the same size as
+                        in Excel, whatever the view scale.</div>
+
+                    <div class="steps-group">
+                        <h3>Using TableCraft:</h3>
+                        <ul class="steps-list">
+                            <li>Start TableCraft.</li>
+                            <li>Choose the target view type: Drafting View or Legend View.</li>
+                            <li>Choose &lt;New view&gt; and enter its name (the worksheet name is suggested), or pick an
+                                existing view. In an existing view, the table is placed to the right of what the view
+                                already contains.</li>
+                            <li>Click Browse… and choose the Excel workbook (.xlsx or .xlsm). The workbook can stay
+                                open in Excel.</li>
+                            <li>Choose the worksheet.</li>
+                            <li>Choose which cells to import (see Range options below). Options the worksheet doesn't
+                                offer are greyed out, and the range and its size are shown under each option.</li>
+                            <li>Click Create. The view opens, zoomed to the table, and a summary appears in the Eklenty
+                                Console.</li>
+                        </ul>
+                    </div>
+
+                    <div class="steps-group">
+                        <h3>Range options:</h3>
+                        <ul class="steps-list">
+                            <li><b>Print Area</b> uses the print area defined in Excel.</li>
+                            <li><b>Used Range</b> uses every cell that contains data or formatting.</li>
+                            <li><b>Selected Range</b> uses the cells that were selected in Excel when the workbook was
+                                last saved.</li>
+                            <li><b>Named Range</b> uses a range named in Excel (Formulas &gt; Name Manager).</li>
+                        </ul>
+                    </div>
+
+                    <div class="steps-group">
+                        <h3>What is kept from Excel:</h3>
+                        <ul class="steps-list">
+                            <li>Cell text as Excel displays it, including number and date formats.</li>
+                            <li>Font, size, bold, italic, underline and font colour. Bold, italic and underlined words
+                                inside a cell are kept too.</li>
+                            <li>Cell background colours, drawn as filled regions.</li>
+                            <li>Borders, drawn as detail lines: thin, medium, thick, dashed, dotted and double.</li>
+                            <li>Horizontal and vertical alignment, indent and text wrapping.</li>
+                            <li>Column widths, row heights, merged cells and hidden rows and columns.</li>
+                        </ul>
+                    </div>
+
+                    <div class="steps-group">
+                        <h3>Text types and line styles:</h3>
+                        <ul class="steps-list">
+                            <li>TableCraft creates the text types it needs, named after the font, for example
+                                <b>Eklenty_Calibri 11pt Bold</b>. The colour is added to the name when it isn't black,
+                                for example <b>Eklenty_Calibri 11pt 1F4E79</b>.</li>
+                            <li>An existing Eklenty_ text type with the same settings is reused, so importing again
+                                doesn't create duplicates.</li>
+                            <li>Borders and backgrounds use line styles and filled region types named the same way,
+                                for example <b>Eklenty_Border Thin</b> and <b>Eklenty_Fill D9E1F2</b>.</li>
+                        </ul>
+                    </div>
+
+                    <div class="note-section" style="margin-top: 25px;">
+                        <div class="note-content">
+                            <h3>⚠️ Note</h3>
+                            <ul>
+                                <li>Revit can only create a new legend view by duplicating an existing one. If the
+                                    project has no legend view yet, create one first, or use a drafting view.</li>
+                                <li>For Selected Range, save the workbook in Excel after selecting the cells.</li>
+                                <li>Rotated text is placed horizontally.</li>
+                                <li>A Revit text note uses one font, size and colour. If a cell mixes fonts, sizes or
+                                    colours, the cell's own font is used.</li>
+                                <li>Patterned cell fills are drawn as a solid colour.</li>
+                                <li>Images, charts and conditional formatting are not imported.</li>
+                                <li>A table can have up to 20,000 cells. For larger sheets, define a print area or a
+                                    named range around the table.</li>
+                                <li>The import is one undo step in Revit.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <!-- Tool 6: 3D Views to IFC -->
             <div class="tool-section">
                 <div class="video-container">
